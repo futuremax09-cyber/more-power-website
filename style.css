@@ -1160,3 +1160,356 @@ height:280px;
 }
 
 }
+/* ==========================================
+   MORE POWER - PART 5
+   FINAL LUXURY EFFECTS
+========================================== */
+
+/* Premium Glass Navbar */
+
+header{
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:
+
+0 10px 40px rgba(0,0,0,.45);
+
+}
+
+/* Logo Glow */
+
+.logo{
+
+text-shadow:
+
+0 0 20px rgba(212,175,55,.35);
+
+}
+
+/* Hero Paragraph */
+
+.hero p{
+
+max-width:580px;
+
+}
+
+/* Gold Divider */
+
+.gold-line{
+
+width:120px;
+height:4px;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+#d4af37,
+transparent
+);
+
+margin:25px auto;
+
+border-radius:30px;
+
+}
+
+/* Floating Animation */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+.card:nth-child(1){
+
+animation:floating 6s ease infinite;
+
+}
+
+.card:nth-child(2){
+
+animation:floating 6s ease infinite .8s;
+
+}
+
+.card:nth-child(3){
+
+animation:floating 6s ease infinite 1.6s;
+
+}
+
+/* Benefit Hover */
+
+.benefit:hover{
+
+background:
+
+linear-gradient(
+135deg,
+#161616,
+#0d0d0d
+);
+
+}
+
+/* FAQ Hover */
+
+.faq-box{
+
+transition:.35s;
+
+}
+
+.faq-box:hover{
+
+transform:translateY(-6px);
+
+box-shadow:
+
+0 18px 45px rgba(0,0,0,.35);
+
+}
+
+/* Pricing Glow */
+
+.offer{
+
+text-shadow:
+
+0 0 20px rgba(212,175,55,.45);
+
+}
+
+/* WhatsApp Button */
+
+.buy-btn,
+.buy-big,
+.order-btn{
+
+letter-spacing:.6px;
+
+}
+
+/* Button Hover */
+
+.buy-btn:hover,
+.buy-big:hover,
+.order-btn:hover{
+
+filter:brightness(1.08);
+
+}
+
+/* Footer */
+
+footer{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+footer::before{
+
+content:"";
+
+position:absolute;
+
+left:-200px;
+top:-150px;
+
+width:500px;
+height:500px;
+
+background:
+
+radial-gradient(circle,
+
+rgba(212,175,55,.08),
+
+transparent 70%);
+
+}
+
+/* Small Fade */
+
+.card,
+.benefit,
+.price-card,
+.faq-box{
+
+opacity:0;
+
+animation:
+
+fadeCard .8s forwards;
+
+}
+
+.card:nth-child(1){animation-delay:.15s;}
+.card:nth-child(2){animation-delay:.30s;}
+.card:nth-child(3){animation-delay:.45s;}
+
+@keyframes fadeCard{
+
+from{
+
+opacity:0;
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* Image Reflection */
+
+.hero-right img{
+
+-webkit-box-reflect:
+
+below -20px
+
+linear-gradient(
+
+transparent,
+
+rgba(255,255,255,.05)
+
+);
+
+}
+
+/* Luxury Border */
+
+.price-card{
+
+position:relative;
+
+}
+
+.price-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+border-radius:25px;
+
+background:
+
+linear-gradient(
+
+135deg,
+
+#d4af37,
+
+transparent,
+
+#d4af37
+
+);
+
+-webkit-mask:
+
+linear-gradient(#fff 0 0) content-box,
+
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+/* Final Responsive */
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:34px;
+
+}
+
+.hero p{
+
+font-size:16px;
+
+}
+
+nav{
+
+gap:14px;
+
+}
+
+.order-btn{
+
+padding:10px 20px;
+
+}
+
+.buy-btn,
+.learn-btn{
+
+width:100%;
+text-align:center;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.price-card{
+
+padding:35px 20px;
+
+}
+
+.about-grid,
+.benefit-grid{
+
+gap:18px;
+
+}
+
+}

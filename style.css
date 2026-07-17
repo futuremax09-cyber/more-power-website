@@ -259,3 +259,335 @@ animation:float 4s ease-in-out infinite;
 100%{transform:translateY(0);}
 
 }
+/* =========================
+   ABOUT SECTION
+========================= */
+
+.about{
+
+padding:110px 0;
+background:#0b0b0b;
+
+}
+
+.about h2,
+.benefits h2,
+.pricing h2,
+.faq h2{
+
+font-size:48px;
+text-align:center;
+margin-bottom:20px;
+color:#fff;
+
+}
+
+.about> .container>p{
+
+max-width:760px;
+margin:0 auto 60px;
+text-align:center;
+color:#bfbfbf;
+font-size:18px;
+
+}
+
+.about-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+
+}
+
+.card{
+
+background:#111;
+border:1px solid rgba(212,175,55,.15);
+border-radius:22px;
+padding:35px;
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+border-color:#d4af37;
+box-shadow:0 25px 50px rgba(212,175,55,.15);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+font-size:24px;
+color:#d4af37;
+
+}
+
+.card p{
+
+color:#cfcfcf;
+
+}
+
+/* =========================
+ BENEFITS
+========================= */
+
+.benefits{
+
+padding:110px 0;
+background:#050505;
+
+}
+
+.benefit-grid{
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+margin-top:60px;
+
+}
+
+.benefit{
+
+background:#111;
+padding:28px;
+border-radius:18px;
+font-size:18px;
+display:flex;
+align-items:center;
+gap:15px;
+border:1px solid rgba(255,255,255,.05);
+transition:.3s;
+
+}
+
+.benefit:hover{
+
+background:#181818;
+transform:translateY(-8px);
+
+}
+
+.benefit span{
+
+font-size:26px;
+color:#d4af37;
+
+}
+
+/* =========================
+ PRICE
+========================= */
+
+.pricing{
+
+padding:120px 0;
+background:linear-gradient(#0b0b0b,#050505);
+
+}
+
+.price-card{
+
+max-width:620px;
+margin:auto;
+background:#111;
+padding:55px;
+border-radius:25px;
+text-align:center;
+border:1px solid rgba(212,175,55,.2);
+
+}
+
+.price-card h3{
+
+font-size:42px;
+margin-bottom:25px;
+
+}
+
+.pricing-box{
+
+display:flex;
+justify-content:center;
+align-items:center;
+gap:25px;
+margin-bottom:35px;
+
+}
+
+.mrp{
+
+font-size:34px;
+color:#777;
+text-decoration:line-through;
+
+}
+
+.offer{
+
+font-size:60px;
+font-weight:800;
+color:#d4af37;
+
+}
+
+.buy-big{
+
+display:inline-block;
+background:linear-gradient(135deg,#d4af37,#f7de6b);
+color:#000;
+padding:18px 55px;
+border-radius:60px;
+font-weight:700;
+transition:.35s;
+
+}
+
+.buy-big:hover{
+
+transform:scale(1.05);
+
+}
+
+/* =========================
+ FAQ
+========================= */
+
+.faq{
+
+padding:120px 0;
+background:#0a0a0a;
+
+}
+
+.faq-box{
+
+max-width:850px;
+margin:25px auto;
+background:#111;
+padding:30px;
+border-radius:20px;
+border-left:5px solid #d4af37;
+
+}
+
+.faq-box h3{
+
+margin-bottom:12px;
+
+}
+
+.faq-box p{
+
+color:#ccc;
+
+}
+
+/* =========================
+ FOOTER
+========================= */
+
+footer{
+
+padding:70px 0;
+background:#000;
+text-align:center;
+border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-links{
+
+display:flex;
+justify-content:center;
+gap:30px;
+margin:30px 0;
+
+}
+
+.footer-links a{
+
+color:#d4af37;
+
+}
+
+/* =========================
+ MOBILE
+========================= */
+
+@media(max-width:991px){
+
+.hero-grid,
+.about-grid,
+.benefit-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero-left h1{
+
+font-size:46px;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+flex-wrap:wrap;
+
+}
+
+.hero-right{
+
+margin-top:50px;
+
+}
+
+.hero-right img{
+
+width:300px;
+
+}
+
+header .container{
+
+flex-direction:column;
+gap:18px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+justify-content:center;
+
+}
+
+.about h2,
+.benefits h2,
+.pricing h2,
+.faq h2{
+
+font-size:36px;
+
+}
+
+.offer{
+
+font-size:46px;
+
+}
+
+}

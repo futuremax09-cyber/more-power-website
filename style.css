@@ -591,3 +591,292 @@ font-size:46px;
 }
 
 }
+/* =========================
+   PREMIUM EFFECTS
+========================= */
+
+section{
+
+position:relative;
+overflow:hidden;
+
+}
+
+section::before{
+
+content:"";
+position:absolute;
+width:600px;
+height:600px;
+background:radial-gradient(circle,
+rgba(212,175,55,.08),
+transparent 70%);
+top:-250px;
+right:-200px;
+pointer-events:none;
+
+}
+
+.hero::after{
+
+content:"";
+position:absolute;
+left:-200px;
+bottom:-250px;
+
+width:550px;
+height:550px;
+
+background:radial-gradient(circle,
+rgba(16,124,65,.15),
+transparent 70%);
+
+pointer-events:none;
+
+}
+
+/* =========================
+BUTTON EFFECTS
+========================= */
+
+.buy-btn,
+.buy-big,
+.order-btn{
+
+position:relative;
+overflow:hidden;
+
+}
+
+.buy-btn::before,
+.buy-big::before,
+.order-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:70%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.45),
+transparent
+);
+
+transform:skewX(-20deg);
+
+transition:.8s;
+
+}
+
+.buy-btn:hover::before,
+.buy-big:hover::before,
+.order-btn:hover::before{
+
+left:170%;
+
+}
+
+/* =========================
+IMAGE EFFECT
+========================= */
+
+.hero-right img{
+
+transition:.5s;
+
+}
+
+.hero-right img:hover{
+
+transform:scale(1.05) rotate(-2deg);
+
+filter:
+
+drop-shadow(0 40px 80px rgba(212,175,55,.35));
+
+}
+
+/* =========================
+CARD EFFECT
+========================= */
+
+.card,
+.benefit,
+.price-card,
+.faq-box{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::after,
+.benefit::after,
+.price-card::after{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-120%;
+
+width:70%;
+height:100%;
+
+background:
+
+linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.08),
+
+transparent
+
+);
+
+transition:1s;
+
+}
+
+.card:hover::after,
+.benefit:hover::after,
+.price-card:hover::after{
+
+left:170%;
+
+}
+
+/* =========================
+SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#050505;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#d4af37;
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#f2d76b;
+
+}
+
+/* =========================
+TEXT SELECTION
+========================= */
+
+::selection{
+
+background:#d4af37;
+color:#000;
+
+}
+
+/* =========================
+FOOTER HOVER
+========================= */
+
+.footer-links a{
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:#fff;
+
+}
+
+/* =========================
+SMOOTH FADE
+========================= */
+
+.hero-left,
+.hero-right,
+.card,
+.benefit,
+.price-card,
+.faq-box{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* =========================
+GOLD LINE
+========================= */
+
+h2::after{
+
+content:"";
+
+display:block;
+
+width:90px;
+height:4px;
+
+margin:18px auto 0;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+#d4af37,
+transparent
+);
+
+border-radius:20px;
+
+}
+
+/* =========================
+END
+========================= */

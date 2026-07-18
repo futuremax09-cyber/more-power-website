@@ -1,1218 +1,7598 @@
-/* =========================================================
-   MORE POWER — STYLE.CSS V2
-   Premium Hindi + English Hybrid
-========================================================= */
+/* ============================================================
+   MORE POWER — WEBSITE V3
+   STYLE.CSS — PART 1
+   Luxury • Masculine • Responsive
+============================================================ */
+
+
+/* ============================================================
+   01. DESIGN SYSTEM
+============================================================ */
 
 :root {
-  --black: #020504;
-  --black-2: #050907;
-  --card: #09110d;
 
-  --green: #071b13;
-  --green-light: #0d2d20;
+  /* BACKGROUNDS */
 
-  --gold: #dcae4f;
-  --gold-light: #f2d27f;
-  --gold-dark: #9c7127;
+  --black:
+    #030403;
 
-  --white: #f7f2e8;
-  --text: #e7e3da;
-  --muted: #b8b8b0;
+  --black-soft:
+    #060806;
 
-  --border: rgba(220, 174, 79, 0.20);
-  --border-strong: rgba(220, 174, 79, 0.42);
+  --black-card:
+    #090c09;
 
-  --container: 1200px;
+  --emerald-dark:
+    #07130e;
 
-  --heading:
-    "Playfair Display",
-    "Noto Sans Devanagari",
+  --emerald:
+    #0b2117;
+
+  --emerald-soft:
+    #123425;
+
+
+  /* GOLD */
+
+  --gold:
+    #d6aa52;
+
+  --gold-light:
+    #f0d487;
+
+  --gold-bright:
+    #ffe4a0;
+
+  --gold-dark:
+    #9c722e;
+
+
+  /* TEXT */
+
+  --white:
+    #f8f4eb;
+
+  --text:
+    #e5e1d8;
+
+  --muted:
+    #aaa99f;
+
+  --muted-light:
+    #cac7be;
+
+
+  /* BORDERS */
+
+  --border:
+    rgba(214, 170, 82, 0.18);
+
+  --border-medium:
+    rgba(214, 170, 82, 0.32);
+
+  --border-strong:
+    rgba(214, 170, 82, 0.55);
+
+
+  /* FONTS */
+
+  --font-luxury:
+    "Cormorant Garamond",
     Georgia,
     serif;
 
-  --body:
-    "DM Sans",
-    "Noto Sans Devanagari",
+  --font-hindi:
+    "Noto Serif Devanagari",
+    serif;
+
+  --font-body:
+    "Manrope",
     Arial,
     sans-serif;
+
+
+  /* SIZES */
+
+  --container:
+    1240px;
+
+  --header-height:
+    92px;
+
+
+  /* SHADOW */
+
+  --gold-shadow:
+    0 20px 60px
+    rgba(214, 170, 82, 0.18);
+
 }
 
 
-/* =========================================================
-   RESET
-========================================================= */
+/* ============================================================
+   02. RESET
+============================================================ */
 
-* {
+*,
+*::before,
+*::after {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
+
 }
+
 
 html {
+
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+
+  scroll-padding-top:
+    var(--header-height);
+
 }
+
 
 body {
+
   min-height: 100vh;
+
   overflow-x: hidden;
 
-  background: var(--black);
-  color: var(--text);
+  background:
+    var(--black);
 
-  font-family: var(--body);
+  color:
+    var(--text);
+
+  font-family:
+    var(--font-body);
 
   font-size: 17px;
+
   font-weight: 500;
+
   line-height: 1.75;
 
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing:
+    antialiased;
+
+  text-rendering:
+    optimizeLegibility;
+
 }
 
-body.menu-open {
+
+body.menu-open,
+body.modal-open {
+
   overflow: hidden;
+
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
 
 a {
+
   color: inherit;
+
   text-decoration: none;
+
 }
+
+
+button,
+input,
+textarea,
+select {
+
+  font: inherit;
+
+}
+
 
 button {
-  font: inherit;
+
   cursor: pointer;
+
 }
 
-strong {
-  font-weight: 700;
+
+img {
+
+  display: block;
+
+  max-width: 100%;
+
 }
+
+
+ul,
+ol {
+
+  list-style: none;
+
+}
+
 
 ::selection {
-  background: var(--gold);
-  color: #111;
+
+  color:
+    #111;
+
+  background:
+    var(--gold-light);
+
 }
 
 
-/* =========================================================
-   GENERAL
-========================================================= */
-
-.container {
-  width: min(calc(100% - 48px), var(--container));
-  margin-inline: auto;
-}
-
-.section {
-  position: relative;
-
-  padding:
-    clamp(85px, 9vw, 125px)
-    0;
-
-  overflow: hidden;
-}
-
-section[id] {
-  scroll-margin-top: 85px;
-}
+/* ============================================================
+   03. GLOBAL TYPOGRAPHY
+============================================================ */
 
 h1,
 h2,
 h3,
+h4,
 blockquote {
-  font-family: var(--heading);
-  color: var(--white);
 
-  font-weight: 700;
+  margin: 0;
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-weight: 600;
+
 }
+
+
+h1 {
+
+  font-size:
+    clamp(
+      4.6rem,
+      7.2vw,
+      7.5rem
+    );
+
+  line-height:
+    0.93;
+
+  letter-spacing:
+    -0.045em;
+
+}
+
 
 h2 {
+
   font-size:
-    clamp(2.8rem, 4.8vw, 4.8rem);
+    clamp(
+      3.6rem,
+      5.5vw,
+      5.7rem
+    );
 
-  line-height: 1.12;
+  line-height:
+    0.98;
 
-  letter-spacing: -0.025em;
+  letter-spacing:
+    -0.035em;
+
 }
 
-h2 span,
-blockquote span {
-  color: var(--gold);
+
+h3 {
+
+  font-size:
+    clamp(
+      1.8rem,
+      2.5vw,
+      2.7rem
+    );
+
+  line-height:
+    1.08;
+
 }
+
 
 p {
-  color: var(--muted);
 
-  font-size: 1rem;
-  font-weight: 500;
+  color:
+    var(--muted-light);
 
-  line-height: 1.85;
-}
+  font-size:
+    1rem;
 
-.eyebrow {
-  display: inline-block;
+  font-weight:
+    500;
 
-  margin-bottom: 20px;
+  line-height:
+    1.85;
 
-  color: var(--gold-light);
-
-  font-family: var(--body);
-
-  font-size: 0.78rem;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-  line-height: 1.6;
-
-  text-transform: uppercase;
-}
-
-.section-heading {
-  max-width: 820px;
-  margin-bottom: 60px;
-}
-
-.section-heading.center {
-  margin-inline: auto;
-  text-align: center;
-}
-
-.section-heading p {
-  max-width: 670px;
-
-  margin:
-    22px auto 0;
-
-  font-size: 1.05rem;
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+strong {
 
-.btn {
-  display: inline-flex;
+  font-weight:
+    700;
 
-  align-items: center;
-  justify-content: center;
-
-  min-height: 58px;
-
-  padding: 0 30px;
-
-  border: 1px solid transparent;
-  border-radius: 2px;
-
-  font-family: var(--body);
-
-  font-size: 0.82rem;
-  font-weight: 800;
-
-  letter-spacing: 0.07em;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
 }
 
-.btn:hover {
-  transform: translateY(-3px);
+
+/* Hindi lines */
+
+.hero-copy h1,
+.section-intro h2,
+.confidence-content h3,
+.african-copy h2,
+.stallion-content h2 {
+
+  font-family:
+    var(--font-hindi);
+
+  font-weight:
+    700;
+
 }
 
-.btn-gold {
-  color: #151006;
+
+/* English / highlighted luxury words */
+
+h1 span,
+h2 span,
+h3 em,
+blockquote span {
+
+  font-family:
+    var(--font-luxury);
+
+  font-style:
+    italic;
+
+}
+
+
+/* ============================================================
+   04. GLOBAL LAYOUT
+============================================================ */
+
+.luxury-container {
+
+  position: relative;
+
+  z-index: 2;
+
+  width:
+    min(
+      calc(100% - 64px),
+      var(--container)
+    );
+
+  margin-inline:
+    auto;
+
+}
+
+
+.section-padding {
+
+  position: relative;
+
+  padding:
+    clamp(
+      100px,
+      10vw,
+      150px
+    )
+    0;
+
+  overflow: hidden;
+
+}
+
+
+section[id] {
+
+  scroll-margin-top:
+    var(--header-height);
+
+}
+
+
+/* ============================================================
+   05. BACKGROUND DECORATION
+============================================================ */
+
+.page-noise {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  pointer-events: none;
+
+  opacity: 0.025;
+
+  background-image:
+
+    repeating-radial-gradient(
+
+      circle at 0 0,
+
+      transparent 0,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.6
+      ) 1px,
+
+      transparent 2px
+
+    );
+
+  background-size:
+    7px 7px;
+
+}
+
+
+.ambient-light {
+
+  position: fixed;
+
+  z-index: -1;
+
+  width: 600px;
+
+  height: 600px;
+
+  border-radius:
+    50%;
+
+  pointer-events: none;
+
+  filter:
+    blur(100px);
+
+  opacity:
+    0.08;
+
+}
+
+
+.ambient-light-one {
+
+  top: -250px;
+
+  left: -250px;
 
   background:
+    var(--gold);
+
+}
+
+
+.ambient-light-two {
+
+  right: -300px;
+
+  bottom: 10%;
+
+  background:
+    #1d744e;
+
+}
+
+
+/* ============================================================
+   06. PREMIUM LABELS
+============================================================ */
+
+.premium-label {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  width:
+    max-content;
+
+  max-width:
+    100%;
+
+  margin-bottom:
+    25px;
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+  line-height:
+    1.5;
+
+  text-transform:
+    uppercase;
+
+}
+
+
+.label-line {
+
+  display: block;
+
+  flex: 0 0 42px;
+
+  width: 42px;
+
+  height: 1px;
+
+  background:
+
     linear-gradient(
-      135deg,
-      #ad7b28,
-      #f1cf77,
-      #c69236
+
+      90deg,
+
+      transparent,
+
+      var(--gold)
+
+    );
+
+}
+
+
+.premium-label
+.label-line:last-child {
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      var(--gold),
+
+      transparent
+
+    );
+
+}
+
+
+.section-number {
+
+  display: block;
+
+  margin-bottom:
+    20px;
+
+  color:
+    rgba(
+      240,
+      212,
+      135,
+      0.72
+    );
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+}
+
+
+/* ============================================================
+   07. SECTION INTRO
+============================================================ */
+
+.section-intro {
+
+  max-width:
+    900px;
+
+  margin-bottom:
+    70px;
+
+}
+
+
+.section-intro.centered {
+
+  margin-inline:
+    auto;
+
+  text-align:
+    center;
+
+}
+
+
+.section-intro.centered
+.premium-label {
+
+  margin-inline:
+    auto;
+
+}
+
+
+.section-intro h2 span {
+
+  display: block;
+
+  margin-top:
+    5px;
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.section-intro > p {
+
+  max-width:
+    690px;
+
+  margin:
+    28px auto 0;
+
+  font-size:
+    1.05rem;
+
+  line-height:
+    1.9;
+
+}
+
+
+/* ============================================================
+   08. PRIMARY GOLD BUTTON
+============================================================ */
+
+.primary-gold-btn {
+
+  position: relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    24px;
+
+  min-width:
+    245px;
+
+  min-height:
+    64px;
+
+  padding:
+    7px
+    8px
+    7px
+    27px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      224,
+      151,
+      0.50
+    );
+
+  border-radius:
+    3px;
+
+  color:
+    #171106;
+
+  background:
+
+    linear-gradient(
+
+      120deg,
+
+      #9f722a
+      0%,
+
+      #d6aa52
+      26%,
+
+      #f4da8c
+      52%,
+
+      #c5943c
+      78%,
+
+      #a8752a
+      100%
+
     );
 
   box-shadow:
-    0 12px 40px
-    rgba(220, 174, 79, 0.18);
+    var(--gold-shadow);
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.055em;
+
+  transition:
+
+    transform
+    0.35s ease,
+
+    box-shadow
+    0.35s ease;
+
 }
 
-.btn-gold:hover {
-  box-shadow:
-    0 18px 55px
-    rgba(220, 174, 79, 0.34);
-}
 
-.btn-outline-gold {
-  color: var(--gold-light);
+.primary-gold-btn::before {
 
-  border-color: var(--gold);
+  content: "";
+
+  position:
+    absolute;
+
+  top:
+    -100%;
+
+  left:
+    -50%;
+
+  width:
+    35%;
+
+  height:
+    300%;
 
   background:
-    rgba(220, 174, 79, 0.04);
+
+    linear-gradient(
+
+      90deg,
+
+      transparent,
+
+      rgba(
+        255,
+        255,
+        255,
+        0.45
+      ),
+
+      transparent
+
+    );
+
+  transform:
+    rotate(25deg);
+
+  transition:
+    left
+    0.7s ease;
+
 }
 
-.btn-outline-gold:hover {
-  color: #111;
-  background: var(--gold);
+
+.primary-gold-btn:hover {
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+
+    0 25px 70px
+    rgba(
+      214,
+      170,
+      82,
+      0.34
+    );
+
 }
 
-.btn-large {
-  min-height: 66px;
 
-  padding-inline: 38px;
+.primary-gold-btn:hover::before {
 
-  font-size: 0.88rem;
+  left:
+    130%;
+
 }
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+.button-circle {
 
-.header {
-  position: fixed;
+  position:
+    relative;
 
-  top: 0;
-  left: 0;
+  z-index: 2;
 
-  z-index: 1000;
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  flex:
+    0 0 48px;
+
+  width:
+    48px;
+
+  height:
+    48px;
+
+  border-radius:
+    2px;
+
+  color:
+    var(--gold-light);
+
+  background:
+    #11140f;
+
+  font-size:
+    1.05rem;
+
+}
+
+
+/* ============================================================
+   09. SECONDARY BUTTON
+============================================================ */
+
+.secondary-luxury-btn {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    18px;
+
+  min-height:
+    64px;
+
+  padding:
+    0 25px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.55
+    );
+
+  color:
+    var(--white);
+
+  font-size:
+    0.82rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.04em;
+
+  transition:
+
+    color
+    0.3s ease,
+
+    border-color
+    0.3s ease;
+
+}
+
+
+.secondary-luxury-btn:hover {
+
+  color:
+    var(--gold-light);
+
+  border-color:
+    var(--gold-light);
+
+}
+
+
+/* ============================================================
+   10. HEADER
+============================================================ */
+
+.site-header {
+
+  position:
+    fixed;
+
+  top:
+    0;
+
+  left:
+    0;
+
+  z-index:
+    1000;
+
+  width:
+    100%;
+
+  height:
+    var(--header-height);
+
+  border-bottom:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.12
+    );
+
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(
+        3,
+        5,
+        4,
+        0.92
+      ),
+
+      rgba(
+        3,
+        5,
+        4,
+        0.72
+      )
+
+    );
+
+  backdrop-filter:
+    blur(18px);
+
+  -webkit-backdrop-filter:
+    blur(18px);
+
+  transition:
+
+    height
+    0.35s ease,
+
+    background
+    0.35s ease,
+
+    box-shadow
+    0.35s ease;
+
+}
+
+
+.site-header.scrolled {
+
+  height:
+    76px;
+
+  background:
+    rgba(
+      3,
+      5,
+      4,
+      0.97
+    );
+
+  box-shadow:
+
+    0 12px 45px
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+
+}
+
+
+.header-inner {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    auto
+    1fr
+    auto;
+
+  align-items:
+    center;
+
+  gap:
+    35px;
+
+  width:
+    min(
+      calc(100% - 70px),
+      1380px
+    );
+
+  height:
+    100%;
+
+  margin-inline:
+    auto;
+
+}
+
+
+/* ============================================================
+   11. BRAND LOGO
+============================================================ */
+
+.brand-logo {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  width:
+    max-content;
+
+}
+
+
+.brand-name {
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.7rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.075em;
+
+  line-height:
+    1;
+
+}
+
+
+.brand-tagline {
+
+  margin-top:
+    7px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.48rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.22em;
+
+}
+
+
+/* ============================================================
+   12. DESKTOP NAV
+============================================================ */
+
+.desktop-navigation {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    clamp(
+      24px,
+      2.7vw,
+      46px
+    );
+
+}
+
+
+.desktop-navigation a {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  min-height:
+    52px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.79
+    );
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.015em;
+
+  transition:
+    color
+    0.3s ease;
+
+}
+
+
+.desktop-navigation a::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  left:
+    50%;
+
+  bottom:
+    5px;
+
+  width:
+    0;
+
+  height:
+    1px;
+
+  background:
+    var(--gold);
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width
+    0.3s ease;
+
+}
+
+
+.desktop-navigation a:hover {
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.desktop-navigation a:hover::after {
+
+  width:
+    100%;
+
+}
+
+
+/* ============================================================
+   13. HEADER ORDER BUTTON — BIGGER
+============================================================ */
+
+.header-order-btn {
+
+  position:
+    relative;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    16px;
+
+  min-width:
+    165px;
+
+  min-height:
+    56px;
+
+  padding:
+    0 20px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      222,
+      144,
+      0.62
+    );
+
+  border-radius:
+    2px;
+
+  color:
+    #151006;
+
+  background:
+
+    linear-gradient(
+
+      120deg,
+
+      #ad7d2d,
+
+      #e1bb64
+      48%,
+
+      #c18d34
+
+    );
+
+  box-shadow:
+
+    0 10px 32px
+    rgba(
+      214,
+      170,
+      82,
+      0.18
+    );
+
+  font-size:
+    0.86rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.065em;
+
+  transition:
+
+    transform
+    0.3s ease,
+
+    box-shadow
+    0.3s ease;
+
+}
+
+
+.header-order-btn:hover {
+
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+
+    0 17px 42px
+    rgba(
+      214,
+      170,
+      82,
+      0.32
+    );
+
+}
+
+
+.btn-arrow {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    27px;
+
+  height:
+    27px;
+
+  color:
+    var(--gold-light);
+
+  background:
+    #10130f;
+
+  font-size:
+    0.8rem;
+
+}
+
+
+/* ============================================================
+   14. MOBILE MENU BUTTON
+============================================================ */
+
+.mobile-menu-btn {
+
+  display:
+    none;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  gap:
+    6px;
+
+  width:
+    50px;
+
+  height:
+    50px;
+
+  padding:
+    0 11px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.02
+    );
+
+}
+
+
+.mobile-menu-btn span {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    2px;
+
+  background:
+    var(--gold-light);
+
+}
+
+
+/* ============================================================
+   15. MOBILE NAVIGATION
+============================================================ */
+
+.mobile-navigation {
+
+  position:
+    fixed;
+
+  top:
+    0;
+
+  right:
+    -110%;
+
+  z-index:
+    1200;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  width:
+    min(
+      90%,
+      460px
+    );
+
+  height:
+    100dvh;
+
+  padding:
+    28px
+    32px
+    38px;
+
+  border-left:
+    1px solid
+    var(--border-medium);
+
+  background:
+
+    linear-gradient(
+
+      160deg,
+
+      #08130e,
+
+      #020403
+      70%
+
+    );
+
+  box-shadow:
+
+    -25px 0 80px
+    rgba(
+      0,
+      0,
+      0,
+      0.65
+    );
+
+  transition:
+    right
+    0.45s
+    cubic-bezier(
+      0.77,
+      0,
+      0.18,
+      1
+    );
+
+}
+
+
+.mobile-navigation.active {
+
+  right:
+    0;
+
+}
+
+
+.mobile-nav-top {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding-bottom:
+    25px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+}
+
+
+.mobile-nav-top button {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  color:
+    var(--gold-light);
+
+  background:
+    transparent;
+
+  font-size:
+    1.8rem;
+
+  font-weight:
+    300;
+
+}
+
+
+.mobile-navigation nav {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  margin-top:
+    28px;
+
+}
+
+
+.mobile-navigation nav a {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    20px;
+
+  min-height:
+    68px;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.55rem;
+
+  font-weight:
+    600;
+
+}
+
+
+.mobile-navigation nav a span {
+
+  color:
+    var(--gold);
+
+  font-family:
+    var(--font-body);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    800;
+
+}
+
+
+.mobile-nav-order {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  min-height:
+    65px;
+
+  margin-top:
+    auto;
+
+  padding:
+    0 22px;
+
+  color:
+    #151006;
+
+  background:
+
+    linear-gradient(
+
+      120deg,
+
+      #ad7d2d,
+
+      #edcd7c,
+
+      #bd8730
+
+    );
+
+  font-size:
+    0.85rem;
+
+  font-weight:
+    800;
+
+}
+
+
+.mobile-nav-order strong {
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.7rem;
+
+}
+
+
+.menu-backdrop {
+
+  position:
+    fixed;
+
+  inset:
+    0;
+
+  z-index:
+    1100;
+
+  visibility:
+    hidden;
+
+  opacity:
+    0;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(5px);
+
+  transition:
+
+    opacity
+    0.35s ease,
+
+    visibility
+    0.35s ease;
+
+}
+
+
+.menu-backdrop.active {
+
+  visibility:
+    visible;
+
+  opacity:
+    1;
+
+}
+
+
+/* ============================================================
+   16. HERO SECTION
+============================================================ */
+
+.hero-section {
+
+  position:
+    relative;
+
+  min-height:
+    100vh;
+
+  padding-top:
+    var(--header-height);
+
+  overflow:
+    hidden;
+
+  isolation:
+    isolate;
+
+  background:
+    var(--black);
+
+}
+
+
+.hero-background {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -5;
+
+  background-image:
+    url("couple-bedroom.png");
+
+  background-size:
+    cover;
+
+  background-position:
+    center 40%;
+
+  background-repeat:
+    no-repeat;
+
+  transform:
+    scale(1.025);
+
+}
+
+
+.hero-dark-overlay {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -4;
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(
+        1,
+        3,
+        2,
+        0.98
+      )
+      0%,
+
+      rgba(
+        2,
+        6,
+        4,
+        0.94
+      )
+      31%,
+
+      rgba(
+        2,
+        7,
+        5,
+        0.70
+      )
+      53%,
+
+      rgba(
+        1,
+        3,
+        2,
+        0.24
+      )
+      75%,
+
+      rgba(
+        1,
+        2,
+        1,
+        0.50
+      )
+      100%
+
+    );
+
+}
+
+
+.hero-gold-glow {
+
+  position:
+    absolute;
+
+  z-index:
+    -3;
+
+  top:
+    10%;
+
+  left:
+    27%;
+
+  width:
+    500px;
+
+  height:
+    500px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.13
+      ),
+
+      transparent
+      68%
+
+    );
+
+  filter:
+    blur(15px);
+
+}
+
+
+.hero-section::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  z-index:
+    -2;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  height:
+    210px;
+
+  background:
+
+    linear-gradient(
+
+      transparent,
+
+      rgba(
+        3,
+        4,
+        3,
+        0.97
+      )
+
+    );
+
+}
+
+
+/* ============================================================
+   17. HERO CONTAINER
+============================================================ */
+
+.hero-container {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    minmax(
+      0,
+      1.05fr
+    )
+    minmax(
+      360px,
+      0.75fr
+    );
+
+  align-items:
+    center;
+
+  gap:
+    40px;
+
+  width:
+    min(
+      calc(100% - 90px),
+      1360px
+    );
+
+  min-height:
+    calc(
+      100vh -
+      var(--header-height)
+    );
+
+  margin-inline:
+    auto;
+
+  padding:
+    55px 0
+    105px;
+
+}
+
+
+/* ============================================================
+   18. HERO COPY
+============================================================ */
+
+.hero-copy {
+
+  position:
+    relative;
+
+  z-index:
+    5;
+
+  max-width:
+    750px;
+
+}
+
+
+.hero-copy h1 {
+
+  max-width:
+    760px;
+
+  text-shadow:
+
+    0 5px 35px
+    rgba(
+      0,
+      0,
+      0,
+      0.50
+    );
+
+}
+
+
+.hero-copy h1
+.hero-gold-text {
+
+  display:
+    block;
+
+  margin:
+    7px 0;
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.12em;
+
+  font-style:
+    italic;
+
+  font-weight:
+    600;
+
+}
+
+
+.hero-description {
+
+  max-width:
+    650px;
+
+  margin-top:
+    30px;
+
+  color:
+    rgba(
+      248,
+      244,
+      235,
+      0.79
+    );
+
+  font-size:
+    1.06rem;
+
+  line-height:
+    1.9;
+
+}
+
+
+.hero-description strong {
+
+  color:
+    var(--white);
+
+  font-weight:
+    700;
+
+}
+
+
+/* ============================================================
+   19. HERO BENEFITS
+============================================================ */
+
+.hero-benefits {
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    10px;
+
+  margin-top:
+    27px;
+
+}
+
+
+.hero-benefit {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  min-height:
+    39px;
+
+  padding:
+    0 14px;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.20
+    );
+
+  background:
+    rgba(
+      6,
+      17,
+      12,
+      0.48
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.83
+    );
+
+  font-size:
+    0.73rem;
+
+  font-weight:
+    700;
+
+}
+
+
+.benefit-symbol {
+
+  color:
+    var(--gold);
+
+  font-size:
+    0.7rem;
+
+}
+
+
+/* ============================================================
+   20. HERO ACTIONS
+============================================================ */
+
+.hero-actions {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    20px;
+
+  margin-top:
+    34px;
+
+}
+
+
+.hero-price-note {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    10px;
+
+  margin-top:
+    23px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.52
+    );
+
+  font-size:
+    0.73rem;
+
+  font-weight:
+    600;
+
+}
+
+
+.hero-price-note del {
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.60
+    );
+
+}
+
+
+.hero-price-note strong {
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.gold-dot {
+
+  width:
+    4px;
+
+  height:
+    4px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--gold);
+
+}
+
+
+/* ============================================================
+   21. HERO PRODUCT
+============================================================ */
+
+.hero-product-wrap {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  align-self:
+    stretch;
+
+  min-height:
+    610px;
+
+}
+
+
+.product-halo {
+
+  position:
+    absolute;
+
+  width:
+    510px;
+
+  height:
+    510px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        222,
+        180,
+        91,
+        0.16
+      )
+      0%,
+
+      rgba(
+        12,
+        66,
+        44,
+        0.11
+      )
+      38%,
+
+      transparent
+      69%
+
+    );
+
+}
+
+
+.product-halo::before,
+.product-halo::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.16
+    );
+
+  border-radius:
+    50%;
+
+}
+
+
+.product-halo::before {
+
+  inset:
+    38px;
+
+}
+
+
+.product-halo::after {
+
+  inset:
+    82px;
+
+  border-style:
+    dashed;
+
+}
+
+
+.hero-product-image {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    min(
+      100%,
+      540px
+    );
+
+  max-height:
+    610px;
+
+  object-fit:
+    contain;
+
+  filter:
+
+    drop-shadow(
+      0 45px 55px
+      rgba(
+        0,
+        0,
+        0,
+        0.72
+      )
+    );
+
+  animation:
+
+    productFloat
+    5.5s
+    ease-in-out
+    infinite;
+
+}
+
+
+@keyframes productFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-13px);
+
+  }
+
+}
+
+
+/* ============================================================
+   22. HERO PRODUCT BADGE
+============================================================ */
+
+.hero-product-badge {
+
+  position:
+    absolute;
+
+  z-index:
+    5;
+
+  top:
+    13%;
+
+  right:
+    1%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    105px;
+
+  height:
+    105px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  border-radius:
+    50%;
+
+  color:
+    var(--gold-light);
+
+  background:
+    rgba(
+      4,
+      10,
+      7,
+      0.80
+    );
+
+  backdrop-filter:
+    blur(10px);
+
+}
+
+
+.hero-product-badge span {
+
+  font-size:
+    0.52rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.14em;
+
+}
+
+
+.hero-product-badge strong {
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.25rem;
+
+}
+
+
+/* ============================================================
+   23. FLOATING CARDS
+============================================================ */
+
+.floating-card {
+
+  position:
+    absolute;
+
+  z-index:
+    6;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  min-width:
+    205px;
+
+  padding:
+    14px 16px;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.24
+    );
+
+  background:
+    rgba(
+      4,
+      10,
+      7,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(13px);
+
+  box-shadow:
+
+    0 15px 40px
+    rgba(
+      0,
+      0,
+      0,
+      0.30
+    );
+
+}
+
+
+.floating-card > span {
+
+  color:
+    var(--gold);
+
+}
+
+
+.floating-card small {
+
+  display:
+    block;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.5rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+.floating-card strong {
+
+  display:
+    block;
+
+  margin-top:
+    2px;
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1rem;
+
+}
+
+
+.floating-card-one {
+
+  left:
+    -3%;
+
+  bottom:
+    21%;
+
+}
+
+
+.floating-card-two {
+
+  right:
+    -3%;
+
+  bottom:
+    10%;
+
+}
+
+
+/* ============================================================
+   24. HERO BOTTOM STRIP
+============================================================ */
+
+.hero-bottom-strip {
+
+  position:
+    absolute;
+
+  z-index:
+    8;
+
+  left:
+    50%;
+
+  bottom:
+    0;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      1fr
+    );
+
+  width:
+    min(
+      calc(100% - 90px),
+      1360px
+    );
+
+  min-height:
+    78px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-left:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(
+      3,
+      7,
+      5,
+      0.72
+    );
+
+  backdrop-filter:
+    blur(14px);
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.hero-bottom-strip div {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  padding:
+    0 22px;
+
+  border-right:
+    1px solid
+    var(--border);
+
+}
+
+
+.hero-bottom-strip span {
+
+  color:
+    var(--gold);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    800;
+
+}
+
+
+.hero-bottom-strip strong {
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.76
+    );
+
+  font-size:
+    0.66rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.11em;
+
+}
+
+
+/* ============================================================
+   25. SCROLL INDICATOR
+============================================================ */
+
+.scroll-indicator {
+
+  position:
+    absolute;
+
+  z-index:
+    9;
+
+  right:
+    28px;
+
+  bottom:
+    105px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+}
+
+
+.scroll-indicator span {
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    );
+
+  font-size:
+    0.52rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.18em;
+
+  writing-mode:
+    vertical-rl;
+
+}
+
+
+.scroll-indicator i {
+
+  position:
+    relative;
+
+  display:
+    block;
+
+  width:
+    1px;
+
+  height:
+    50px;
+
+  overflow:
+    hidden;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.18
+    );
+
+}
+
+
+.scroll-indicator i::after {
+
+  content: "";
+
+  position:
+    absolute;
+
+  top:
+    -50%;
+
+  left:
+    0;
+
+  width:
+    100%;
+
+  height:
+    50%;
+
+  background:
+    var(--gold);
+
+  animation:
+
+    scrollLine
+    2s
+    linear
+    infinite;
+
+}
+
+
+@keyframes scrollLine {
+
+  to {
+
+    top:
+      110%;
+
+  }
+
+}
+
+
+/* ============================================================
+   26. CONFIDENCE SECTION
+============================================================ */
+
+.confidence-section {
+
+  background:
+
+    radial-gradient(
+
+      circle at
+      20% 50%,
+
+      rgba(
+        28,
+        99,
+        67,
+        0.18
+      ),
+
+      transparent
+      34%
+
+    ),
+
+    linear-gradient(
+
+      180deg,
+
+      #030403,
+
+      #07100c,
+
+      #030504
+
+    );
+
+}
+
+
+.confidence-layout {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  gap:
+    clamp(
+      60px,
+      8vw,
+      115px
+    );
+
+  align-items:
+    center;
+
+}
+
+
+/* ============================================================
+   27. CONFIDENCE VISUAL
+============================================================ */
+
+.confidence-visual {
+
+  position:
+    relative;
+
+}
+
+
+.visual-frame {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    flex-end;
+
+  justify-content:
+    center;
+
+  min-height:
+    640px;
+
+  overflow:
+    hidden;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.16
+    );
+
+  background:
+
+    radial-gradient(
+
+      circle at
+      50% 45%,
+
+      rgba(
+        29,
+        105,
+        71,
+        0.24
+      ),
+
+      transparent
+      52%
+
+    ),
+
+    linear-gradient(
+
+      150deg,
+
+      #0a1710,
+
+      #030504
+
+    );
+
+}
+
+
+.visual-frame::before {
+
+  content: "";
+
+  position:
+    absolute;
+
+  inset:
+    20px;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.09
+    );
+
+}
+
+
+.visual-glow {
+
+  position:
+    absolute;
+
+  bottom:
+    5%;
+
+  width:
+    450px;
+
+  height:
+    450px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.14
+      ),
+
+      transparent
+      67%
+
+    );
+
+}
+
+
+.visual-frame img {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    min(
+      100%,
+      590px
+    );
+
+  max-height:
+    620px;
+
+  object-fit:
+    contain;
+
+  object-position:
+    bottom;
+
+  filter:
+
+    drop-shadow(
+      0 35px 50px
+      rgba(
+        0,
+        0,
+        0,
+        0.72
+      )
+    );
+
+}
+
+
+.frame-corner {
+
+  position:
+    absolute;
+
+  z-index:
+    6;
+
+  width:
+    55px;
+
+  height:
+    55px;
+
+}
+
+
+.corner-one {
+
+  top:
+    10px;
+
+  left:
+    10px;
+
+  border-top:
+    1px solid
+    var(--gold);
+
+  border-left:
+    1px solid
+    var(--gold);
+
+}
+
+
+.corner-two {
+
+  top:
+    10px;
+
+  right:
+    10px;
+
+  border-top:
+    1px solid
+    var(--gold);
+
+  border-right:
+    1px solid
+    var(--gold);
+
+}
+
+
+.corner-three {
+
+  bottom:
+    10px;
+
+  left:
+    10px;
+
+  border-bottom:
+    1px solid
+    var(--gold);
+
+  border-left:
+    1px solid
+    var(--gold);
+
+}
+
+
+.corner-four {
+
+  right:
+    10px;
+
+  bottom:
+    10px;
+
+  border-right:
+    1px solid
+    var(--gold);
+
+  border-bottom:
+    1px solid
+    var(--gold);
+
+}
+
+
+.visual-caption {
+
+  position:
+    absolute;
+
+  z-index:
+    7;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  bottom:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    18px;
+
+  min-height:
+    64px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(
+      2,
+      5,
+      3,
+      0.78
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+}
+
+
+.visual-caption span {
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.15em;
+
+}
+
+
+.visual-caption strong {
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.35rem;
+
+}
+
+
+/* ============================================================
+   28. CONFIDENCE CONTENT
+============================================================ */
+
+.confidence-content h3 {
+
+  max-width:
+    620px;
+
+  font-size:
+    clamp(
+      3rem,
+      4.8vw,
+      5rem
+    );
+
+  line-height:
+    1.13;
+
+}
+
+
+.confidence-content h3 em {
+
+  display:
+    block;
+
+  margin-top:
+    6px;
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.confidence-content > p {
+
+  max-width:
+    610px;
+
+  margin-top:
+    24px;
+
+  font-size:
+    1.02rem;
+
+}
+
+
+.confidence-features {
+
+  display:
+    grid;
+
+  gap:
+    0;
+
+  margin-top:
+    42px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+}
+
+
+.confidence-feature {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    55px
+    1fr;
+
+  gap:
+    20px;
+
+  align-items:
+    start;
+
+  padding:
+    22px 0;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+}
+
+
+.feature-number {
+
+  color:
+    var(--gold);
+
+  font-size:
+    0.66rem;
+
+  font-weight:
+    800;
+
+}
+
+
+.confidence-feature strong {
+
+  display:
+    block;
+
+  margin-bottom:
+    4px;
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.35rem;
+
+}
+
+
+.confidence-feature p {
+
+  font-size:
+    0.82rem;
+
+}
+
+
+/* ============================================================
+   29. AFRICAN FORMULA SECTION
+============================================================ */
+
+.african-formula-section {
+
+  position:
+    relative;
+
+  isolation:
+    isolate;
+
+  background:
+
+    linear-gradient(
+
+      120deg,
+
+      #020403,
+
+      #08160f
+      48%,
+
+      #030504
+
+    );
+
+}
+
+
+.african-pattern {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  z-index:
+    -3;
+
+  opacity:
+    0.14;
+
+  background-image:
+
+    linear-gradient(
+
+      30deg,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.10
+      )
+      12%,
+
+      transparent
+      12.5%,
+
+      transparent
+      87%,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.10
+      )
+      87.5%
+
+    ),
+
+    linear-gradient(
+
+      150deg,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.08
+      )
+      12%,
+
+      transparent
+      12.5%,
+
+      transparent
+      87%,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.08
+      )
+      87.5%
+
+    );
+
+  background-size:
+    80px 140px;
+
+}
+
+
+.african-gold-light {
+
+  position:
+    absolute;
+
+  z-index:
+    -2;
+
+  top:
+    50%;
+
+  right:
+    5%;
+
+  width:
+    600px;
+
+  height:
+    600px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.12
+      ),
+
+      transparent
+      68%
+
+    );
+
+  transform:
+    translateY(-50%);
+
+}
+
+
+.african-formula-layout {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    0.95fr
+    1.05fr;
+
+  gap:
+    clamp(
+      60px,
+      8vw,
+      110px
+    );
+
+  align-items:
+    center;
+
+}
+
+
+/* ============================================================
+   30. AFRICAN COPY
+============================================================ */
+
+.african-copy h2 span {
+
+  display:
+    block;
+
+  margin-top:
+    6px;
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.african-copy > p {
+
+  max-width:
+    600px;
+
+  margin-top:
+    24px;
+
+}
+
+
+.african-lead {
+
+  color:
+    var(--white);
+
+  font-size:
+    1.12rem !important;
+
+}
+
+
+.african-quote {
+
+  position:
+    relative;
+
+  margin-top:
+    34px;
+
+  padding:
+    27px
+    28px
+    27px
+    60px;
+
+  border-left:
+    2px solid
+    var(--gold);
+
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.07
+      ),
+
+      transparent
+
+    );
+
+}
+
+
+.quote-mark {
+
+  position:
+    absolute;
+
+  top:
+    4px;
+
+  left:
+    15px;
+
+  color:
+    rgba(
+      214,
+      170,
+      82,
+      0.42
+    );
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    4rem;
+
+  line-height:
+    1;
+
+}
+
+
+.african-quote p {
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.5rem;
+
+  line-height:
+    1.35;
+
+}
+
+
+.african-quote strong {
+
+  display:
+    block;
+
+  color:
+    var(--gold-light);
+
+  font-style:
+    italic;
+
+}
+
+
+.formula-points {
+
+  display:
+    grid;
+
+  gap:
+    12px;
+
+  margin-top:
+    32px;
+
+}
+
+
+.formula-points div {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    13px;
+
+}
+
+
+.formula-points span {
+
+  color:
+    var(--gold);
+
+}
+
+
+.formula-points p {
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.74
+    );
+
+  font-size:
+    0.86rem;
+
+  font-weight:
+    600;
+
+}
+
+
+/* ============================================================
+   31. AFRICAN PRODUCT
+============================================================ */
+
+.african-product {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    660px;
+
+}
+
+
+.african-product-glow {
+
+  position:
+    absolute;
+
+  width:
+    520px;
+
+  height:
+    520px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.14
+      ),
+
+      rgba(
+        22,
+        94,
+        62,
+        0.09
+      )
+      43%,
+
+      transparent
+      69%
+
+    );
+
+}
+
+
+.african-product img {
+
+  position:
+    relative;
+
+  z-index:
+    3;
+
+  width:
+    min(
+      100%,
+      590px
+    );
+
+  max-height:
+    630px;
+
+  object-fit:
+    contain;
+
+  filter:
+
+    drop-shadow(
+      0 45px 60px
+      rgba(
+        0,
+        0,
+        0,
+        0.70
+      )
+    );
+
+}
+
+
+.african-product-circle {
+
+  position:
+    absolute;
+
+  z-index:
+    2;
+
+  width:
+    540px;
+
+  height:
+    540px;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.17
+    );
+
+  border-radius:
+    50%;
+
+}
+
+
+.african-product-circle span {
+
+  position:
+    absolute;
+
+  color:
+    rgba(
+      240,
+      212,
+      135,
+      0.40
+    );
+
+  font-size:
+    0.58rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.16em;
+
+}
+
+
+.african-product-circle
+span:nth-child(1) {
+
+  top:
+    12%;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.african-product-circle
+span:nth-child(2) {
+
+  top:
+    50%;
+
+  right:
+    -10%;
+
+  transform:
+    rotate(90deg);
+
+}
+
+
+.african-product-circle
+span:nth-child(3) {
+
+  bottom:
+    10%;
+
+  left:
+    50%;
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.formula-seal {
+
+  position:
+    absolute;
+
+  z-index:
+    6;
+
+  right:
+    0;
+
+  bottom:
+    14%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  width:
+    128px;
+
+  height:
+    128px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      4,
+      11,
+      7,
+      0.86
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  box-shadow:
+
+    0 20px 45px
+    rgba(
+      0,
+      0,
+      0,
+      0.45
+    );
+
+}
+
+
+.formula-seal span {
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.47rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+.formula-seal strong {
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.25rem;
+
+  line-height:
+    0.95;
+
+}
+
+
+/* ============================================================
+   32. STALLION POWER SECTION
+============================================================ */
+
+.stallion-power-section {
+
+  position:
+    relative;
+
+  padding:
+    clamp(
+      100px,
+      10vw,
+      150px
+    )
+    0;
+
+  overflow:
+    hidden;
+
+  background:
+
+    radial-gradient(
+
+      circle at
+      23% 50%,
+
+      rgba(
+        29,
+        104,
+        70,
+        0.24
+      ),
+
+      transparent
+      34%
+
+    ),
+
+    #030504;
+
+}
+
+
+.stallion-bg-glow {
+
+  position:
+    absolute;
+
+  left:
+    8%;
+
+  top:
+    50%;
+
+  width:
+    550px;
+
+  height:
+    550px;
+
+  border-radius:
+    50%;
+
+  background:
+
+    radial-gradient(
+
+      circle,
+
+      rgba(
+        214,
+        170,
+        82,
+        0.10
+      ),
+
+      transparent
+      67%
+
+    );
+
+  transform:
+    translateY(-50%);
+
+}
+
+
+.stallion-layout {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.08fr
+    0.92fr;
+
+  gap:
+    clamp(
+      55px,
+      7vw,
+      100px
+    );
+
+  align-items:
+    center;
+
+}
+
+
+/* ============================================================
+   33. STALLION VISUAL
+============================================================ */
+
+.stallion-visual {
+
+  position:
+    relative;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    650px;
+
+}
+
+
+.stallion-visual img {
+
+  position:
+    relative;
+
+  z-index:
+    4;
+
+  width:
+    min(
+      100%,
+      680px
+    );
+
+  max-height:
+    650px;
+
+  object-fit:
+    contain;
+
+  filter:
+
+    drop-shadow(
+      0 45px 60px
+      rgba(
+        0,
+        0,
+        0,
+        0.75
+      )
+    );
+
+}
+
+
+.stallion-ring {
+
+  position:
+    absolute;
+
+  border:
+    1px solid
+    rgba(
+      214,
+      170,
+      82,
+      0.16
+    );
+
+  border-radius:
+    50%;
+
+}
+
+
+.ring-one {
+
+  width:
+    510px;
+
+  height:
+    510px;
+
+}
+
+
+.ring-two {
+
+  width:
+    420px;
+
+  height:
+    420px;
+
+  border-style:
+    dashed;
+
+  animation:
+
+    ringRotate
+    35s
+    linear
+    infinite;
+
+}
+
+
+@keyframes ringRotate {
+
+  to {
+
+    transform:
+      rotate(360deg);
+
+  }
+
+}
+
+
+.stallion-word {
+
+  position:
+    absolute;
+
+  z-index:
+    2;
+
+  left:
+    0;
+
+  bottom:
+    4%;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  opacity:
+    0.16;
+
+  pointer-events:
+    none;
+
+}
+
+
+.stallion-word span,
+.stallion-word strong {
+
+  color:
+    var(--gold-light);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    clamp(
+      5rem,
+      9vw,
+      9rem
+    );
+
+  font-weight:
+    700;
+
+  line-height:
+    0.67;
+
+  letter-spacing:
+    -0.06em;
+
+}
+
+
+/* ============================================================
+   34. STALLION CONTENT
+============================================================ */
+
+.stallion-content h2 span {
+
+  display:
+    block;
+
+  margin-top:
+    7px;
+
+  color:
+    var(--gold-light);
+
+}
+
+
+.stallion-content > p {
+
+  max-width:
+    590px;
+
+  margin-top:
+    24px;
+
+}
+
+
+.stallion-lead {
+
+  color:
+    var(--white);
+
+  font-size:
+    1.1rem !important;
+
+}
+
+
+.stallion-stats {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  margin-top:
+    40px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-left:
+    1px solid
+    var(--border);
+
+}
+
+
+.stallion-stats div {
+
+  min-height:
+    145px;
+
+  padding:
+    20px;
+
+  border-right:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.018
+    );
+
+}
+
+
+.stallion-stats span {
+
+  display:
+    block;
+
+  color:
+    var(--gold);
+
+  font-size:
+    0.62rem;
+
+  font-weight:
+    800;
+
+}
+
+
+.stallion-stats strong {
+
+  display:
+    block;
+
+  margin-top:
+    22px;
+
+  color:
+    var(--white);
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    1.25rem;
+
+}
+
+
+.stallion-stats small {
+
+  display:
+    block;
+
+  margin-top:
+    3px;
+
+  color:
+    var(--muted);
+
+  font-size:
+    0.66rem;
+
+}
+
+
+.luxury-text-link {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  gap:
+    18px;
+
+  margin-top:
+    32px;
+
+  padding-bottom:
+    7px;
+
+  border-bottom:
+    1px solid
+    var(--gold);
+
+  color:
+    var(--gold-light);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    0.12em;
+
+}
+
+
+/* ============================================================
+   35. REVEAL ANIMATION BASE
+   FAIL-SAFE: content remains visible without JS
+============================================================ */
+
+.reveal {
+
+  opacity:
+    1;
+
+  transform:
+    none;
+
+}
+
+
+.js-ready
+.reveal {
+
+  opacity:
+    0;
+
+  transform:
+    translateY(28px);
+
+  transition:
+
+    opacity
+    0.75s ease,
+
+    transform
+    0.75s
+    cubic-bezier(
+      0.2,
+      0.7,
+      0.2,
+      1
+    );
+
+}
+
+
+.js-ready
+.reveal.visible {
+
+  opacity:
+    1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+/* ============================================================
+   36. LARGE TABLET
+============================================================ */
+
+@media
+(max-width: 1180px) {
+
+  :root {
+
+    --header-height:
+      82px;
+
+  }
+
+
+  .header-inner {
+
+    width:
+      calc(
+        100% - 42px
+      );
+
+  }
+
+
+  .desktop-navigation {
+
+    gap:
+      20px;
+
+  }
+
+
+  .desktop-navigation a {
+
+    font-size:
+      0.8rem;
+
+  }
+
+
+  .header-order-btn {
+
+    min-width:
+      145px;
+
+    min-height:
+      52px;
+
+  }
+
+
+  .hero-container {
+
+    width:
+      calc(
+        100% - 55px
+      );
+
+    grid-template-columns:
+      1.05fr
+      0.8fr;
+
+  }
+
+
+  .hero-bottom-strip {
+
+    width:
+      calc(
+        100% - 55px
+      );
+
+  }
+
+
+  .floating-card-two {
+
+    right:
+      0;
+
+  }
+
+}
+
+
+/* ============================================================
+   37. TABLET / MOBILE NAV SWITCH
+============================================================ */
+
+@media
+(max-width: 980px) {
+
+  .desktop-navigation {
+
+    display:
+      none;
+
+  }
+
+
+  .header-inner {
+
+    grid-template-columns:
+      1fr
+      auto
+      auto;
+
+  }
+
+
+  .mobile-menu-btn {
+
+    display:
+      flex;
+
+  }
+
+
+  .hero-container {
+
+    grid-template-columns:
+      1fr;
+
+    min-height:
+      auto;
+
+    padding:
+      85px 0
+      120px;
+
+  }
+
+
+  .hero-copy {
+
+    max-width:
+      760px;
+
+  }
+
+
+  .hero-product-wrap {
+
+    min-height:
+      570px;
+
+  }
+
+
+  .hero-product-image {
+
+    max-height:
+      560px;
+
+  }
+
+
+  .confidence-layout,
+  .african-formula-layout,
+  .stallion-layout {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .confidence-visual {
+
+    max-width:
+      720px;
+
+    margin-inline:
+      auto;
+
+  }
+
+
+  .confidence-content {
+
+    max-width:
+      720px;
+
+    margin-inline:
+      auto;
+
+  }
+
+
+  .african-copy {
+
+    max-width:
+      720px;
+
+  }
+
+
+  .african-product {
+
+    min-height:
+      580px;
+
+  }
+
+
+  .stallion-visual {
+
+    min-height:
+      570px;
+
+  }
+
+
+  .stallion-content {
+
+    max-width:
+      760px;
+
+  }
+
+}
+
+
+/* ============================================================
+   38. MOBILE — SAME BRAND, RESPONSIVE COMPOSITION
+============================================================ */
+
+@media
+(max-width: 768px) {
+
+  :root {
+
+    --header-height:
+      70px;
+
+  }
+
+
+  body {
+
+    font-size:
+      16px;
+
+  }
+
+
+  .luxury-container {
+
+    width:
+      calc(
+        100% - 32px
+      );
+
+  }
+
+
+  .section-padding {
+
+    padding:
+      78px 0;
+
+  }
+
+
+  h1 {
+
+    font-size:
+      clamp(
+        3.35rem,
+        13vw,
+        5rem
+      );
+
+    line-height:
+      1.03;
+
+  }
+
+
+  h2 {
+
+    font-size:
+      clamp(
+        2.75rem,
+        10.8vw,
+        4.3rem
+      );
+
+    line-height:
+      1.08;
+
+  }
+
+
+  p {
+
+    font-size:
+      0.96rem;
+
+    line-height:
+      1.8;
+
+  }
+
+
+  .premium-label {
+
+    gap:
+      10px;
+
+    margin-bottom:
+      17px;
+
+    font-size:
+      0.64rem;
+
+    letter-spacing:
+      0.13em;
+
+  }
+
+
+  .label-line {
+
+    flex-basis:
+      26px;
+
+    width:
+      26px;
+
+  }
+
+
+  .section-intro {
+
+    margin-bottom:
+      45px;
+
+  }
+
+
+  .section-intro > p {
+
+    margin-top:
+      20px;
+
+    font-size:
+      0.95rem;
+
+  }
+
+
+  /* HEADER */
+
+  .site-header {
+
+    height:
+      70px;
+
+  }
+
+
+  .site-header.scrolled {
+
+    height:
+      66px;
+
+  }
+
+
+  .header-inner {
+
+    width:
+      calc(
+        100% - 28px
+      );
+
+    gap:
+      10px;
+
+  }
+
+
+  .brand-name {
+
+    font-size:
+      1.3rem;
+
+  }
+
+
+  .brand-tagline {
+
+    margin-top:
+      5px;
+
+    font-size:
+      0.38rem;
+
+  }
+
+
+  .header-order-btn {
+
+    min-width:
+      118px;
+
+    min-height:
+      46px;
+
+    padding:
+      0 12px;
+
+    font-size:
+      0.68rem;
+
+  }
+
+
+  .header-order-btn
+  .btn-arrow {
+
+    display:
+      none;
+
+  }
+
+
+  .mobile-menu-btn {
+
+    width:
+      46px;
+
+    height:
+      46px;
+
+  }
+
+
+  /* HERO */
+
+  .hero-section {
+
+    min-height:
+      auto;
+
+  }
+
+
+  .hero-background {
+
+    background-position:
+      62% top;
+
+  }
+
+
+  .hero-dark-overlay {
+
+    background:
+
+      linear-gradient(
+
+        180deg,
+
+        rgba(
+          1,
+          3,
+          2,
+          0.25
+        )
+        0%,
+
+        rgba(
+          1,
+          4,
+          3,
+          0.46
+        )
+        27%,
+
+        rgba(
+          2,
+          6,
+          4,
+          0.88
+        )
+        55%,
+
+        rgba(
+          2,
+          5,
+          3,
+          0.99
+        )
+        79%,
+
+        #030403
+        100%
+
+      );
+
+  }
+
+
+  .hero-container {
+
+    width:
+      calc(
+        100% - 32px
+      );
+
+    padding:
+      55vh 0
+      105px;
+
+  }
+
+
+  .hero-copy {
+
+    max-width:
+      100%;
+
+  }
+
+
+  .hero-copy h1 {
+
+    max-width:
+      600px;
+
+  }
+
+
+  .hero-description {
+
+    margin-top:
+      21px;
+
+    font-size:
+      0.94rem;
+
+  }
+
+
+  .hero-benefits {
+
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      7px;
+
+    margin-top:
+      20px;
+
+  }
+
+
+  .hero-benefit {
+
+    width:
+      max-content;
+
+    max-width:
+      100%;
+
+  }
+
+
+  .hero-actions {
+
+    display:
+      grid;
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      11px;
+
+    margin-top:
+      25px;
+
+  }
+
+
+  .primary-gold-btn {
+
+    width:
+      100%;
+
+    min-height:
+      60px;
+
+  }
+
+
+  .secondary-luxury-btn {
+
+    width:
+      max-content;
+
+    min-height:
+      52px;
+
+    padding-left:
+      0;
+
+  }
+
+
+  .hero-product-wrap {
+
+    display:
+      none;
+
+  }
+
+
+  .hero-price-note {
+
+    margin-top:
+      18px;
+
+  }
+
+
+  .hero-bottom-strip {
+
+    position:
+      relative;
+
+    left:
+      auto;
+
+    bottom:
+      auto;
+
+    grid-template-columns:
+      repeat(
+        2,
+        1fr
+      );
+
+    width:
+      calc(
+        100% - 32px
+      );
+
+    margin:
+      -72px auto 0;
+
+    transform:
+      none;
+
+  }
+
+
+  .hero-bottom-strip div {
+
+    min-height:
+      64px;
+
+    padding:
+      0 12px;
+
+    border-bottom:
+      1px solid
+      var(--border);
+
+  }
+
+
+  .hero-bottom-strip strong {
+
+    font-size:
+      0.55rem;
+
+  }
+
+
+  .scroll-indicator {
+
+    display:
+      none;
+
+  }
+
+
+  /* CONFIDENCE */
+
+  .confidence-layout {
+
+    gap:
+      45px;
+
+  }
+
+
+  .visual-frame {
+
+    min-height:
+      480px;
+
+  }
+
+
+  .visual-frame img {
+
+    max-height:
+      465px;
+
+  }
+
+
+  .confidence-content h3 {
+
+    font-size:
+      clamp(
+        2.7rem,
+        10vw,
+        4rem
+      );
+
+  }
+
+
+  .confidence-content > p {
+
+    margin-top:
+      19px;
+
+    font-size:
+      0.95rem;
+
+  }
+
+
+  .confidence-features {
+
+    margin-top:
+      30px;
+
+  }
+
+
+  /* AFRICAN */
+
+  .african-formula-layout {
+
+    gap:
+      35px;
+
+  }
+
+
+  .african-copy > p {
+
+    margin-top:
+      19px;
+
+  }
+
+
+  .african-quote {
+
+    padding:
+      23px
+      18px
+      23px
+      48px;
+
+  }
+
+
+  .african-quote p {
+
+    font-size:
+      1.25rem;
+
+  }
+
+
+  .african-product {
+
+    min-height:
+      440px;
+
+  }
+
+
+  .african-product img {
+
+    max-height:
+      450px;
+
+  }
+
+
+  .african-product-circle {
+
+    width:
+      360px;
+
+    height:
+      360px;
+
+  }
+
+
+  .african-product-glow {
+
+    width:
+      390px;
+
+    height:
+      390px;
+
+  }
+
+
+  .formula-seal {
+
+    right:
+      2%;
+
+    bottom:
+      8%;
+
+    width:
+      105px;
+
+    height:
+      105px;
+
+  }
+
+
+  /* STALLION */
+
+  .stallion-power-section {
+
+    padding:
+      78px 0;
+
+  }
+
+
+  .stallion-layout {
+
+    gap:
+      40px;
+
+  }
+
+
+  .stallion-visual {
+
+    min-height:
+      450px;
+
+  }
+
+
+  .stallion-visual img {
+
+    max-height:
+      470px;
+
+  }
+
+
+  .ring-one {
+
+    width:
+      360px;
+
+    height:
+      360px;
+
+  }
+
+
+  .ring-two {
+
+    width:
+      300px;
+
+    height:
+      300px;
+
+  }
+
+
+  .stallion-word {
+
+    bottom:
+      7%;
+
+  }
+
+
+  .stallion-content > p {
+
+    margin-top:
+      19px;
+
+  }
+
+
+  .stallion-stats {
+
+    margin-top:
+      30px;
+
+  }
+
+
+  .stallion-stats div {
+
+    min-height:
+      125px;
+
+    padding:
+      15px 10px;
+
+  }
+
+
+  .stallion-stats strong {
+
+    margin-top:
+      17px;
+
+    font-size:
+      1rem;
+
+  }
+
+
+  .stallion-stats small {
+
+    font-size:
+      0.58rem;
+
+  }
+
+}
+
+
+/* ============================================================
+   39. SMALL MOBILE
+============================================================ */
+
+@media
+(max-width: 480px) {
+
+  .header-order-btn {
+
+    min-width:
+      105px;
+
+    padding:
+      0 9px;
+
+    font-size:
+      0.62rem;
+
+  }
+
+
+  .brand-name {
+
+    font-size:
+      1.15rem;
+
+  }
+
+
+  .brand-tagline {
+
+    letter-spacing:
+      0.13em;
+
+  }
+
+
+  .mobile-menu-btn {
+
+    width:
+      42px;
+
+    height:
+      42px;
+
+  }
+
+
+  .hero-container {
+
+    padding-top:
+      50vh;
+
+  }
+
+
+  .hero-copy h1 {
+
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4rem
+      );
+
+  }
+
+
+  .hero-price-note {
+
+    gap:
+      7px;
+
+    font-size:
+      0.66rem;
+
+  }
+
+
+  .visual-frame {
+
+    min-height:
+      420px;
+
+  }
+
+
+  .visual-frame img {
+
+    max-height:
+      410px;
+
+  }
+
+
+  .visual-caption {
+
+    gap:
+      10px;
+
+    min-height:
+      56px;
+
+  }
+
+
+  .visual-caption strong {
+
+    font-size:
+      1.1rem;
+
+  }
+
+
+  .confidence-feature {
+
+    grid-template-columns:
+      38px
+      1fr;
+
+    gap:
+      12px;
+
+  }
+
+
+  .african-product {
+
+    min-height:
+      390px;
+
+  }
+
+
+  .african-product img {
+
+    max-height:
+      400px;
+
+  }
+
+
+  .african-product-circle {
+
+    width:
+      310px;
+
+    height:
+      310px;
+
+  }
+
+
+  .formula-seal {
+
+    width:
+      90px;
+
+    height:
+      90px;
+
+  }
+
+
+  .formula-seal strong {
+
+    font-size:
+      1rem;
+
+  }
+
+
+  .stallion-visual {
+
+    min-height:
+      390px;
+
+  }
+
+
+  .stallion-visual img {
+
+    max-height:
+      400px;
+
+  }
+
+
+  .ring-one {
+
+    width:
+      310px;
+
+    height:
+      310px;
+
+  }
+
+
+  .ring-two {
+
+    width:
+      260px;
+
+    height:
+      260px;
+
+  }
+
+
+  .stallion-stats {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+
+  .stallion-stats div {
+
+    min-height:
+      auto;
+
+    padding:
+      16px;
+
+  }
+
+
+  .stallion-stats strong {
+
+    margin-top:
+      7px;
+
+  }
+
+}
+
+
+/* ============================================================
+   STYLE.CSS PART 1 ENDS HERE
+
+   PART 2 CONTINUES BELOW:
+   - Ingredients
+   - Intimacy / Couple
+   - Moving statement
+   - Banana/Cucumber visual cards
+   - Benefits
+   - Stallion quote
+   - Premium ₹2,999 offer
+============================================================ */
+/* ============================================================
+   MORE POWER — WEBSITE V3
+   STYLE.CSS — PART 2
+   CONTINUE DIRECTLY AFTER PART 1
+============================================================ */
+
+
+/* ============================================================
+   40. INGREDIENTS SECTION
+============================================================ */
+
+.ingredients-section {
+
+  position: relative;
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(30, 105, 71, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #030504 0%,
+      #07100c 50%,
+      #030403 100%
+    );
+
+}
+
+
+.ingredients-ambient {
+
+  position: absolute;
+  z-index: -1;
+
+  top: 15%;
+  left: -220px;
+
+  width: 560px;
+  height: 560px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.10),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+}
+
+
+/* ============================================================
+   41. INGREDIENTS MAIN LAYOUT
+============================================================ */
+
+.ingredients-main-layout {
 
   display: grid;
 
   grid-template-columns:
-    auto 1fr auto;
+    minmax(360px, 0.82fr)
+    minmax(0, 1.18fr);
 
   align-items: center;
 
-  width: 100%;
-  min-height: 82px;
+  gap:
+    clamp(
+      55px,
+      7vw,
+      100px
+    );
 
-  padding: 0 5vw;
-
-  border-bottom:
-    1px solid
-    rgba(220, 174, 79, 0.10);
-
-  background:
-    rgba(2, 6, 4, 0.88);
-
-  backdrop-filter: blur(16px);
-
-  transition:
-    min-height 0.3s ease,
-    background 0.3s ease;
 }
 
-.header.scrolled {
-  min-height: 70px;
 
-  background:
-    rgba(2, 5, 4, 0.96);
-}
+/* ============================================================
+   42. INGREDIENTS VISUAL
+============================================================ */
 
-.brand {
-  display: flex;
-  flex-direction: column;
+.ingredients-visual {
 
-  width: max-content;
-}
+  position: relative;
 
-.brand-main {
-  color: var(--gold-light);
-
-  font-family: var(--heading);
-
-  font-size: 1.45rem;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  line-height: 1.1;
-}
-
-.brand-sub {
-  margin-top: 5px;
-
-  color:
-    rgba(255, 255, 255, 0.58);
-
-  font-size: 0.5rem;
-  font-weight: 800;
-
-  letter-spacing: 0.18em;
-}
-
-.desktop-nav {
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  gap:
-    clamp(24px, 3vw, 45px);
+  min-height: 650px;
+
 }
 
-.desktop-nav a {
+
+.ingredients-image-wrap {
+
   position: relative;
 
-  color:
-    rgba(255, 255, 255, 0.72);
+  z-index: 4;
 
-  font-size: 0.78rem;
-  font-weight: 700;
+  display: flex;
 
-  transition: color 0.3s ease;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 620px;
+
 }
 
-.desktop-nav a:hover {
+
+.ingredients-image-wrap::before {
+
+  content: "";
+
+  position: absolute;
+
+  width: 78%;
+  height: 78%;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.15),
+      rgba(20, 82, 55, 0.10) 45%,
+      transparent 70%
+    );
+
+}
+
+
+.ingredients-image-wrap img {
+
+  position: relative;
+
+  z-index: 3;
+
+  width:
+    min(
+      100%,
+      560px
+    );
+
+  max-height: 610px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 40px 60px
+      rgba(0, 0, 0, 0.70)
+    );
+
+}
+
+
+.ingredients-circle {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.15);
+
+}
+
+
+.ingredients-circle.circle-one {
+
+  width: 500px;
+  height: 500px;
+
+}
+
+
+.ingredients-circle.circle-two {
+
+  width: 405px;
+  height: 405px;
+
+  border-style: dashed;
+
+  animation:
+    ingredientCircleRotate
+    40s linear infinite;
+
+}
+
+
+@keyframes ingredientCircleRotate {
+
+  to {
+    transform: rotate(360deg);
+  }
+
+}
+
+
+.botanical-badge {
+
+  position: absolute;
+
+  z-index: 7;
+
+  right: -10px;
+  bottom: 13%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 145px;
+  height: 145px;
+
+  padding: 15px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  border-radius: 50%;
+
+  text-align: center;
+
+  background:
+    rgba(4, 11, 7, 0.88);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 22px 50px
+    rgba(0, 0, 0, 0.50);
+
+}
+
+
+.botanical-badge span,
+.botanical-badge small {
+
+  color: var(--muted);
+
+  font-size: 0.48rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.botanical-badge strong {
+
+  margin: 3px 0;
+
   color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.65rem;
+
+  line-height: 1;
+
 }
 
-.desktop-nav a::after {
+
+/* ============================================================
+   43. INGREDIENT CARDS
+============================================================ */
+
+.ingredient-cards {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-left:
+    1px solid
+    var(--border);
+
+}
+
+
+.ingredient-card {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    40px 1fr;
+
+  gap: 15px;
+
+  min-height: 220px;
+
+  padding:
+    27px 24px;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+
+}
+
+
+.ingredient-card::after {
+
   content: "";
 
   position: absolute;
 
   left: 0;
-  bottom: -9px;
+  bottom: 0;
 
   width: 0;
-  height: 1px;
-
-  background: var(--gold);
-
-  transition: width 0.3s ease;
-}
-
-.desktop-nav a:hover::after {
-  width: 100%;
-}
-
-.nav-cta {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 46px;
-
-  padding: 0 23px;
-
-  border: 1px solid var(--gold);
-
-  color: var(--gold-light);
-
-  font-size: 0.76rem;
-  font-weight: 800;
-
-  transition:
-    color 0.3s ease,
-    background 0.3s ease;
-}
-
-.nav-cta:hover {
-  color: #111;
-  background: var(--gold);
-}
-
-.menu-toggle {
-  display: none;
-
-  width: 42px;
-
-  border: 0;
-
-  background: transparent;
-}
-
-.menu-toggle span {
-  display: block;
-
-  width: 100%;
   height: 2px;
 
-  margin: 7px 0;
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold-dark),
+      var(--gold-light)
+    );
 
-  background: var(--gold-light);
+  transition:
+    width 0.45s ease;
+
 }
 
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
+.ingredient-card:hover {
 
-.mobile-menu {
-  position: fixed;
+  z-index: 2;
 
-  top: 0;
-  right: -100%;
-
-  z-index: 990;
-
-  display: flex;
-
-  flex-direction: column;
-  justify-content: center;
-
-  gap: 22px;
-
-  width: min(88%, 420px);
-  height: 100vh;
-
-  padding: 100px 38px 50px;
-
-  border-left: 1px solid var(--border);
+  transform:
+    translateY(-5px);
 
   background:
-    rgba(3, 10, 7, 0.99);
+    linear-gradient(
+      145deg,
+      rgba(214, 170, 82, 0.07),
+      rgba(12, 46, 31, 0.10)
+    );
 
-  backdrop-filter: blur(20px);
+  border-color:
+    rgba(214, 170, 82, 0.32);
 
-  transition: right 0.4s ease;
 }
 
-.mobile-menu.active {
-  right: 0;
+
+.ingredient-card:hover::after {
+
+  width: 100%;
+
 }
 
-.mobile-menu > a:not(.btn) {
-  padding-bottom: 14px;
 
-  border-bottom:
-    1px solid
-    rgba(255, 255, 255, 0.09);
+.ingredient-index {
+
+  padding-top: 4px;
+
+  color: var(--gold);
+
+  font-size: 0.64rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.ingredient-card h3 {
 
   color: var(--white);
 
-  font-family: var(--heading);
+  font-size: 1.7rem;
 
-  font-size: 1.5rem;
-  font-weight: 700;
 }
 
 
-/* =========================================================
-   HERO
-========================================================= */
+.ingredient-type {
 
-.hero {
-  position: relative;
+  display: block;
 
-  display: flex;
+  margin-top: 6px;
 
-  align-items: center;
+  color: var(--gold);
 
-  min-height: 100vh;
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+}
+
+
+.ingredient-card p {
+
+  margin-top: 15px;
+
+  font-size: 0.82rem;
+
+  line-height: 1.75;
+
+}
+
+
+/* ============================================================
+   44. INGREDIENT DISCLAIMER
+============================================================ */
+
+.ingredient-disclaimer {
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  gap: 20px;
+
+  align-items: start;
+
+  max-width: 1000px;
+
+  margin:
+    55px auto 0;
 
   padding:
-    125px 7vw
-    70px;
+    21px 25px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.16);
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
+}
+
+
+.ingredient-disclaimer span {
+
+  padding:
+    5px 9px;
+
+  color: var(--gold-light);
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.ingredient-disclaimer p {
+
+  font-size: 0.74rem;
+
+  line-height: 1.7;
+
+}
+
+
+/* ============================================================
+   45. INTIMACY LUXURY SECTION
+============================================================ */
+
+.intimacy-luxury-section {
+
+  position: relative;
+
+  min-height: 850px;
 
   overflow: hidden;
 
   isolation: isolate;
 
-  background: #020403;
+  background: #020302;
+
 }
 
-.hero-bg {
+
+.intimacy-background {
+
   position: absolute;
 
   inset: 0;
 
-  z-index: -3;
+  z-index: -5;
 
   background-image:
     url("couple-bedroom.png");
 
   background-size: cover;
 
+  background-position: center;
+
   background-repeat: no-repeat;
 
-  background-position:
-    center center;
-
-  transform: scale(1.02);
 }
 
-.hero-overlay {
+
+.intimacy-dark-layer {
+
   position: absolute;
 
   inset: 0;
 
-  z-index: -2;
+  z-index: -4;
 
   background:
     linear-gradient(
       90deg,
-      rgba(1, 5, 3, 0.98) 0%,
-      rgba(2, 8, 5, 0.92) 27%,
-      rgba(2, 7, 5, 0.62) 52%,
-      rgba(0, 0, 0, 0.14) 76%,
-      rgba(0, 0, 0, 0.30) 100%
+      rgba(2, 4, 3, 0.97) 0%,
+      rgba(3, 8, 5, 0.90) 38%,
+      rgba(3, 7, 5, 0.55) 65%,
+      rgba(2, 3, 2, 0.70) 100%
     );
+
 }
 
-.hero::after {
-  content: "";
+
+.intimacy-gold-light {
 
   position: absolute;
 
-  left: 0;
-  right: 0;
-  bottom: 0;
+  z-index: -3;
 
-  z-index: -1;
+  right: 12%;
+  top: 15%;
 
-  height: 180px;
+  width: 600px;
+  height: 600px;
 
-  background:
-    linear-gradient(
-      transparent,
-      var(--black)
-    );
-}
+  border-radius: 50%;
 
-.hero-content {
-  width: min(650px, 53vw);
-}
-
-.hero h1 {
-  max-width: 670px;
-
-  font-family:
-    "Noto Sans Devanagari",
-    var(--heading);
-
-  color: var(--white);
-
-  font-size:
-    clamp(3.7rem, 6.5vw, 6.5rem);
-
-  font-weight: 700;
-
-  line-height: 1.08;
-
-  letter-spacing: -0.045em;
-}
-
-.hero h1 span {
-  display: block;
-
-  margin: 2px 0;
-
-  color: var(--gold);
-
-  font-family: var(--heading);
-
-  font-size: 1.15em;
-  font-style: italic;
-}
-
-.hero-copy {
-  max-width: 610px;
-
-  margin-top: 26px;
-
-  color:
-    rgba(255, 255, 255, 0.80);
-
-  font-size: 1.06rem;
-  font-weight: 500;
-
-  line-height: 1.8;
-}
-
-.hero-copy strong {
-  color: var(--white);
-}
-
-.hero-points {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 9px 20px;
-
-  margin-top: 23px;
-
-  color: var(--gold-light);
-
-  font-size: 0.76rem;
-  font-weight: 700;
-}
-
-.hero-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 27px;
-
-  margin-top: 31px;
-}
-
-.text-link {
-  padding-bottom: 4px;
-
-  border-bottom:
-    1px solid
-    rgba(220, 174, 79, 0.55);
-
-  color: var(--white);
-
-  font-size: 0.82rem;
-  font-weight: 700;
-}
-
-.text-link:hover {
-  color: var(--gold);
-}
-
-
-/* =========================================================
-   PRODUCT INTRO
-========================================================= */
-
-.product-intro {
   background:
     radial-gradient(
-      circle at 20% 48%,
-      rgba(26, 89, 61, 0.22),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      #030705,
-      #07100c
+      circle,
+      rgba(214, 170, 82, 0.16),
+      transparent 66%
     );
+
 }
 
-.split-layout {
+
+.intimacy-luxury-layout {
+
   display: grid;
 
   grid-template-columns:
     0.9fr 1.1fr;
 
-  gap:
-    clamp(55px, 7vw, 95px);
-
   align-items: center;
+
+  gap: 50px;
+
+  min-height: 850px;
+
+  padding:
+    110px 0;
+
 }
 
-.product-visual {
+
+/* ============================================================
+   46. INTIMACY COPY
+============================================================ */
+
+.intimacy-luxury-copy {
+
+  position: relative;
+
+  z-index: 6;
+
+  max-width: 650px;
+
+}
+
+
+.intimacy-luxury-copy h2 {
+
+  font-family:
+    var(--font-hindi);
+
+  font-weight: 700;
+
+}
+
+
+.intimacy-luxury-copy h2 span {
+
+  display: block;
+
+  margin:
+    7px 0;
+
+  color: var(--gold-light);
+
+}
+
+
+.intimacy-luxury-copy > p {
+
+  max-width: 610px;
+
+  margin-top: 24px;
+
+}
+
+
+.intimacy-lead {
+
+  color:
+    rgba(255, 255, 255, 0.90);
+
+  font-size: 1.1rem !important;
+
+}
+
+
+.intimacy-lead strong {
+
+  color: var(--gold-light);
+
+}
+
+
+.intimacy-statement {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1px;
+
+  margin:
+    35px 0;
+
+  padding-left: 22px;
+
+  border-left:
+    2px solid
+    var(--gold);
+
+}
+
+
+.intimacy-statement span,
+.intimacy-statement strong {
+
+  font-family:
+    var(--font-luxury);
+
+  font-size:
+    clamp(
+      1.6rem,
+      2.6vw,
+      2.5rem
+    );
+
+  line-height: 1.12;
+
+}
+
+
+.intimacy-statement span {
+
+  color:
+    rgba(255, 255, 255, 0.55);
+
+}
+
+
+.intimacy-statement strong {
+
+  color: var(--gold-light);
+
+  font-style: italic;
+
+}
+
+
+/* ============================================================
+   47. INTIMACY COUPLE
+============================================================ */
+
+.intimacy-couple {
+
   position: relative;
 
   display: flex;
 
-  align-items: center;
+  align-self: stretch;
+
+  align-items: flex-end;
+
   justify-content: center;
 
-  min-height: 530px;
+  min-height: 680px;
+
 }
 
-.product-visual img {
+
+.couple-halo {
+
+  position: absolute;
+
+  bottom: 5%;
+
+  width: 560px;
+  height: 560px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.18),
+      rgba(26, 88, 61, 0.08) 45%,
+      transparent 68%
+    );
+
+}
+
+
+.intimacy-couple img {
+
   position: relative;
 
-  z-index: 2;
+  z-index: 4;
 
-  width: min(100%, 580px);
+  width:
+    min(
+      100%,
+      720px
+    );
 
-  max-height: 560px;
+  max-height: 720px;
 
   object-fit: contain;
 
+  object-position: bottom;
+
   filter:
     drop-shadow(
-      0 35px 45px
-      rgba(0, 0, 0, 0.65)
+      0 45px 70px
+      rgba(0, 0, 0, 0.75)
     );
+
 }
 
-.gold-orbit {
+
+.intimacy-floating-text {
+
   position: absolute;
 
-  width: 430px;
-  height: 430px;
+  z-index: 7;
 
-  border:
+  right: 0;
+  bottom: 12%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  min-width: 180px;
+
+  padding:
+    17px 20px;
+
+  border-left:
+    2px solid
+    var(--gold);
+
+  background:
+    rgba(3, 8, 5, 0.72);
+
+  backdrop-filter: blur(12px);
+
+}
+
+
+.intimacy-floating-text small {
+
+  color: var(--muted);
+
+  font-size: 0.53rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.intimacy-floating-text strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.55rem;
+
+}
+
+
+/* ============================================================
+   48. BOLD STATEMENT STRIP
+============================================================ */
+
+.bold-statement-section {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    24px 0;
+
+  border-top:
     1px solid
-    rgba(220, 174, 79, 0.19);
+    var(--border-medium);
 
-  border-radius: 50%;
-}
-
-.gold-orbit::before {
-  content: "";
-
-  position: absolute;
-
-  inset: 42px;
-
-  border:
-    1px dashed
-    rgba(220, 174, 79, 0.15);
-
-  border-radius: 50%;
-}
-
-.section-copy > p {
-  max-width: 650px;
-
-  margin-top: 25px;
-
-  font-size: 1.03rem;
-}
-
-.feature-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 13px;
-
-  margin-top: 38px;
-}
-
-.feature-card {
-  min-height: 225px;
-
-  padding: 26px 23px;
-
-  border: 1px solid var(--border);
+  border-bottom:
+    1px solid
+    var(--border-medium);
 
   background:
     linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.035),
-      rgba(255, 255, 255, 0.008)
+      90deg,
+      #080e0a,
+      #11190f,
+      #080e0a
     );
 
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease;
 }
 
-.feature-card:hover {
-  transform: translateY(-7px);
 
-  border-color: var(--border-strong);
+.statement-track {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap:
+    clamp(
+      20px,
+      3vw,
+      48px
+    );
+
+  width: max-content;
+
+  min-width: 100%;
+
+  padding:
+    0 30px;
+
+  white-space: nowrap;
+
 }
 
-.feature-card > span {
-  display: block;
 
-  margin-bottom: 25px;
+.statement-track span {
+
+  color:
+    rgba(255, 255, 255, 0.76);
+
+  font-family: var(--font-luxury);
+
+  font-size:
+    clamp(
+      1.25rem,
+      2.2vw,
+      2rem
+    );
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.statement-track i {
 
   color: var(--gold);
 
   font-size: 0.72rem;
-  font-weight: 800;
-}
 
-.feature-card h3 {
-  margin-bottom: 12px;
+  font-style: normal;
 
-  font-size: 1.55rem;
-  line-height: 1.2;
-}
-
-.feature-card p {
-  font-size: 0.84rem;
-
-  line-height: 1.75;
 }
 
 
-/* =========================================================
-   BENEFITS
-========================================================= */
+/* ============================================================
+   49. VISUAL POWER SECTION
+============================================================ */
 
-.benefits {
+.visual-power-section {
+
+  isolation: isolate;
+
   background:
     linear-gradient(
       180deg,
-      #07100c,
-      #030504
-    );
-}
-
-.benefit-grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 17px;
-}
-
-.benefit-card {
-  position: relative;
-
-  min-height: 315px;
-
-  padding: 35px 27px;
-
-  border:
-    1px solid
-    rgba(220, 174, 79, 0.15);
-
-  background:
-    linear-gradient(
-      150deg,
-      rgba(14, 51, 37, 0.55),
-      rgba(5, 8, 7, 0.80)
+      #030403,
+      #07100c 48%,
+      #030403
     );
 
-  transition:
-    transform 0.35s ease,
-    border-color 0.35s ease;
-}
-
-.benefit-card:hover {
-  transform: translateY(-8px);
-
-  border-color: var(--border-strong);
-}
-
-.benefit-card .icon {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 55px;
-  height: 55px;
-
-  margin-bottom: 45px;
-
-  border: 1px solid var(--border-strong);
-
-  border-radius: 50%;
-
-  color: var(--gold);
-
-  font-size: 1.2rem;
-}
-
-.benefit-card h3 {
-  margin-bottom: 13px;
-
-  font-size: 1.85rem;
-}
-
-.benefit-card p {
-  font-size: 0.88rem;
-
-  line-height: 1.8;
 }
 
 
-/* =========================================================
-   HORSE / POWER
-========================================================= */
+.visual-power-glow {
 
-.power-section {
-  background:
-    radial-gradient(
-      circle at 75% 50%,
-      rgba(32, 101, 69, 0.25),
-      transparent 36%
-    ),
-    #040706;
-}
-
-.power-glow {
   position: absolute;
 
-  right: 8%;
-  top: 50%;
+  z-index: -1;
 
   width: 500px;
   height: 500px;
 
   border-radius: 50%;
 
+  filter: blur(15px);
+
+}
+
+
+.visual-glow-left {
+
+  top: 30%;
+  left: -240px;
+
   background:
     radial-gradient(
       circle,
-      rgba(220, 174, 79, 0.11),
-      transparent 67%
+      rgba(214, 170, 82, 0.10),
+      transparent 68%
     );
 
-  transform: translateY(-50%);
 }
 
-.power-layout {
-  display: grid;
 
-  grid-template-columns:
-    0.9fr 1.1fr;
+.visual-glow-right {
 
-  gap: 45px;
-
-  align-items: center;
-}
-
-.power-copy {
-  position: relative;
-  z-index: 3;
-}
-
-.power-copy > p {
-  max-width: 570px;
-
-  margin-top: 27px;
-}
-
-.power-stats {
-  display: grid;
-
-  grid-template-columns:
-    repeat(3, 1fr);
-
-  gap: 10px;
-
-  margin-top: 38px;
-}
-
-.power-stats div {
-  padding: 20px 14px;
-
-  border-top: 2px solid var(--gold);
+  right: -230px;
+  bottom: 10%;
 
   background:
-    rgba(255, 255, 255, 0.02);
-}
-
-.power-stats strong {
-  display: block;
-
-  margin-bottom: 6px;
-
-  color: var(--gold-light);
-
-  font-size: 0.78rem;
-  font-weight: 800;
-}
-
-.power-stats span {
-  color: var(--muted);
-
-  font-size: 0.75rem;
-}
-
-.horse-visual {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 590px;
-}
-
-.horse-product {
-  width: min(100%, 650px);
-
-  max-height: 640px;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 35px 50px
-      rgba(0, 0, 0, 0.72)
+    radial-gradient(
+      circle,
+      rgba(32, 111, 75, 0.15),
+      transparent 68%
     );
 
-  animation:
-    horseFloat 5s
-    ease-in-out infinite;
-}
-
-@keyframes horseFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-12px);
-  }
 }
 
 
-/* =========================================================
-   COMPARISON
-========================================================= */
+/* ============================================================
+   50. VISUAL STORY GRID
+============================================================ */
 
-.visual-metaphor {
-  background:
-    linear-gradient(
-      180deg,
-      #040706,
-      #09150f,
-      #040706
-    );
-}
+.visual-story-grid {
 
-.comparison-grid {
   display: grid;
 
   grid-template-columns:
     repeat(2, 1fr);
 
-  gap: 25px;
+  gap:
+    clamp(
+      25px,
+      4vw,
+      50px
+    );
 
-  max-width: 1050px;
-
-  margin-inline: auto;
 }
 
-.comparison-card {
+
+.visual-story-card {
+
   position: relative;
 
-  padding: 22px;
+  overflow: hidden;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border);
 
   background:
     linear-gradient(
-      145deg,
-      rgba(12, 42, 30, 0.65),
-      rgba(3, 7, 5, 0.95)
+      150deg,
+      rgba(11, 27, 19, 0.72),
+      rgba(4, 7, 5, 0.95)
     );
 
+  box-shadow:
+    0 30px 80px
+    rgba(0, 0, 0, 0.25);
+
   transition:
-    transform 0.35s ease,
-    border-color 0.35s ease;
+    transform 0.4s ease,
+    border-color 0.4s ease;
+
 }
 
-.comparison-card:hover {
-  transform: translateY(-7px);
 
-  border-color: var(--border-strong);
+.visual-story-card:hover {
+
+  transform:
+    translateY(-8px);
+
+  border-color:
+    rgba(214, 170, 82, 0.40);
+
 }
 
-.comparison-label {
-  position: absolute;
 
-  top: 22px;
-  left: 22px;
+.visual-card-top {
 
-  z-index: 3;
+  display: flex;
 
-  padding: 8px 12px;
+  align-items: center;
+  justify-content: space-between;
 
-  border: 1px solid var(--border);
+  min-height: 58px;
 
-  color: var(--gold-light);
+  padding:
+    0 22px;
 
-  background:
-    rgba(2, 6, 4, 0.85);
+  border-bottom:
+    1px solid
+    var(--border);
 
-  font-size: 0.65rem;
+}
+
+
+.visual-card-top span {
+
+  color: var(--gold);
+
+  font-size: 0.58rem;
+
   font-weight: 800;
 
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
+
 }
 
-.comparison-image {
+
+.visual-card-top strong {
+
+  color:
+    rgba(255, 255, 255, 0.25);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.35rem;
+
+}
+
+
+/* ============================================================
+   51. VISUAL STORY IMAGE
+============================================================ */
+
+.visual-story-image {
+
+  position: relative;
+
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  min-height: 400px;
+  min-height: 510px;
 
-  margin-bottom: 23px;
+  padding: 25px;
 
   overflow: hidden;
 
   background:
     radial-gradient(
-      circle,
-      rgba(220, 174, 79, 0.07),
-      transparent 65%
+      circle at 50% 50%,
+      rgba(24, 91, 61, 0.17),
+      transparent 60%
     );
+
 }
 
-.comparison-image img {
-  width: 100%;
 
-  max-height: 390px;
+.visual-story-image::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 25px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.07);
+
+}
+
+
+.visual-image-glow {
+
+  position: absolute;
+
+  width: 390px;
+  height: 390px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.12),
+      transparent 68%
+    );
+
+}
+
+
+.visual-story-image img {
+
+  position: relative;
+
+  z-index: 3;
+
+  width: 100%;
+  height: 455px;
 
   object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 30px 40px
+      rgba(0, 0, 0, 0.55)
+    );
+
 }
 
-.comparison-card h3 {
-  font-size: 2rem;
+
+.visual-side-label {
+
+  position: absolute;
+
+  z-index: 5;
+
+  right: 14px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
 }
 
-.comparison-card p {
+
+.visual-side-label span {
+
+  color:
+    rgba(214, 170, 82, 0.34);
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.25em;
+
+  writing-mode: vertical-rl;
+
+}
+
+
+/* ============================================================
+   52. VISUAL STORY COPY
+============================================================ */
+
+.visual-story-copy {
+
+  padding:
+    30px 32px 35px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+}
+
+
+.visual-small-title {
+
+  color: var(--gold);
+
+  font-size: 0.57rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.visual-story-copy h3 {
+
   margin-top: 10px;
 
-  font-size: 0.9rem;
+  font-family: var(--font-hindi);
+
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      3rem
+    );
+
 }
 
-.metaphor-note {
-  max-width: 800px;
 
-  margin: 28px auto 0;
+.visual-story-copy h3 em {
+
+  color: var(--gold-light);
+
+}
+
+
+.visual-story-copy p {
+
+  max-width: 500px;
+
+  margin-top: 16px;
+
+  font-size: 0.88rem;
+
+}
+
+
+/* ============================================================
+   53. VISUAL METAPHOR NOTE
+============================================================ */
+
+.visual-metaphor-note {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  max-width: 900px;
+
+  margin:
+    35px auto 0;
+
+  padding:
+    17px 20px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.12);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+
+}
+
+
+.visual-metaphor-note span {
+
+  color: var(--gold);
+
+  font-size: 1rem;
+
+}
+
+
+.visual-metaphor-note p {
+
+  font-size: 0.7rem;
+
+  line-height: 1.7;
+
+}
+
+
+/* ============================================================
+   54. BENEFITS PREMIUM SECTION
+============================================================ */
+
+.benefits-premium-section {
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      180deg,
+      #030403,
+      #07110c,
+      #030403
+    );
+
+}
+
+
+.benefits-bg-text {
+
+  position: absolute;
+
+  z-index: -1;
+
+  top: 5%;
+  left: 50%;
+
+  width: 100%;
+
+  color:
+    rgba(214, 170, 82, 0.025);
+
+  font-family: var(--font-luxury);
+
+  font-size:
+    clamp(
+      7rem,
+      17vw,
+      17rem
+    );
+
+  font-weight: 700;
+
+  line-height: 1;
 
   text-align: center;
 
-  font-size: 0.72rem;
+  white-space: nowrap;
 
-  opacity: 0.68;
+  transform:
+    translateX(-50%);
+
+  pointer-events: none;
+
 }
 
 
-/* =========================================================
-   INGREDIENTS
-========================================================= */
+.benefits-heading-layout {
 
-.ingredients {
-  background:
-    radial-gradient(
-      circle at 25% 50%,
-      rgba(31, 100, 68, 0.20),
-      transparent 35%
-    ),
-    #030504;
-}
-
-.ingredient-layout {
   display: grid;
 
   grid-template-columns:
-    1fr 1fr;
+    1.1fr 0.7fr;
 
-  gap:
-    clamp(50px, 7vw, 95px);
+  align-items: end;
 
-  align-items: center;
+  gap: 70px;
+
+  margin-bottom: 65px;
+
 }
 
-.ingredient-image {
+
+.benefits-heading-layout h2 {
+
+  font-family: var(--font-hindi);
+
+}
+
+
+.benefits-heading-layout h2 span {
+
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--gold-light);
+
+}
+
+
+.benefits-intro {
+
+  padding-left: 25px;
+
+  border-left:
+    1px solid
+    var(--gold);
+
+}
+
+
+/* ============================================================
+   55. PREMIUM BENEFIT GRID
+============================================================ */
+
+.premium-benefit-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-left:
+    1px solid
+    var(--border);
+
+}
+
+
+.premium-benefit-card {
+
   position: relative;
+
+  min-height: 360px;
+
+  padding:
+    30px 27px;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
+
+}
+
+
+.premium-benefit-card:hover {
+
+  z-index: 2;
+
+  transform:
+    translateY(-7px);
+
+  background:
+    linear-gradient(
+      160deg,
+      rgba(214, 170, 82, 0.08),
+      rgba(10, 38, 26, 0.14)
+    );
+
+}
+
+
+.benefit-big-number {
+
+  position: absolute;
+
+  top: 16px;
+  right: 20px;
+
+  color:
+    rgba(214, 170, 82, 0.10);
+
+  font-family: var(--font-luxury);
+
+  font-size: 4rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+}
+
+
+.benefit-icon {
 
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  min-height: 540px;
+  width: 52px;
+  height: 52px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  color: var(--gold-light);
+
+  background:
+    rgba(214, 170, 82, 0.04);
+
+  font-size: 1rem;
+
 }
 
-.ingredient-aura {
+
+.premium-benefit-card h3 {
+
+  margin-top: 65px;
+
+  font-size: 1.7rem;
+
+}
+
+
+.premium-benefit-card p {
+
+  margin-top: 17px;
+
+  font-size: 0.84rem;
+
+}
+
+
+.card-bottom-line {
+
   position: absolute;
+
+  left: 27px;
+  bottom: 27px;
+
+  width: 45px;
+  height: 1px;
+
+  background: var(--gold);
+
+  transition:
+    width 0.35s ease;
+
+}
+
+
+.premium-benefit-card:hover
+.card-bottom-line {
+
+  width: 90px;
+
+}
+
+
+/* ============================================================
+   56. POWER QUOTE SECTION
+============================================================ */
+
+.power-quote-section {
+
+  position: relative;
+
+  min-height: 680px;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background: #020302;
+
+}
+
+
+.power-quote-background {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(27, 97, 66, 0.20),
+      transparent 36%
+    ),
+    linear-gradient(
+      100deg,
+      #06100b,
+      #020302 65%
+    );
+
+}
+
+
+.power-quote-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    0.95fr 1.05fr;
+
+  align-items: center;
+
+  gap: 70px;
+
+  min-height: 680px;
+
+}
+
+
+.power-quote-image {
+
+  position: relative;
+
+  align-self: stretch;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+}
+
+
+.power-quote-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  bottom: 5%;
 
   width: 450px;
   height: 450px;
@@ -1222,88 +7602,970 @@ p {
   background:
     radial-gradient(
       circle,
-      rgba(220, 174, 79, 0.12),
-      rgba(15, 70, 48, 0.08) 40%,
-      transparent 70%
+      rgba(214, 170, 82, 0.11),
+      transparent 68%
     );
+
 }
 
-.ingredient-image img {
+
+.power-quote-image img {
+
+  position: relative;
+
+  z-index: 3;
+
+  width:
+    min(
+      100%,
+      630px
+    );
+
+  max-height: 650px;
+
+  object-fit: contain;
+
+  object-position: bottom;
+
+  filter:
+    drop-shadow(
+      0 40px 60px
+      rgba(0, 0, 0, 0.72)
+    );
+
+}
+
+
+.power-quote-copy {
+
+  position: relative;
+
+  max-width: 650px;
+
+}
+
+
+.quote-large-mark {
+
+  position: absolute;
+
+  top: -75px;
+  left: -15px;
+
+  color:
+    rgba(214, 170, 82, 0.20);
+
+  font-family: var(--font-luxury);
+
+  font-size: 9rem;
+
+  line-height: 1;
+
+}
+
+
+.power-quote-copy blockquote {
+
   position: relative;
 
   z-index: 2;
 
-  width: min(100%, 590px);
+  font-family: var(--font-hindi);
 
-  max-height: 570px;
+  font-size:
+    clamp(
+      3rem,
+      5vw,
+      5.4rem
+    );
+
+  font-weight: 600;
+
+  line-height: 1.08;
+
+}
+
+
+.power-quote-copy blockquote span {
+
+  display: block;
+
+  margin: 7px 0;
+
+  color: var(--gold-light);
+
+}
+
+
+.quote-signature {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+}
+
+
+.quote-signature span {
+
+  width: 50px;
+  height: 1px;
+
+  background: var(--gold);
+
+}
+
+
+.quote-signature strong {
+
+  color: var(--muted-light);
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+}
+
+
+/* ============================================================
+   57. PREMIUM OFFER SECTION
+============================================================ */
+
+.premium-offer-section {
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      #020403,
+      #0a1a12 52%,
+      #030504
+    );
+
+}
+
+
+.offer-radial-glow {
+
+  position: absolute;
+
+  z-index: -2;
+
+  left: 18%;
+  top: 50%;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.15),
+      rgba(23, 86, 59, 0.10) 40%,
+      transparent 70%
+    );
+
+  transform:
+    translateY(-50%);
+
+}
+
+
+.offer-grid-pattern {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  opacity: 0.18;
+
+  background-image:
+    linear-gradient(
+      rgba(214, 170, 82, 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(214, 170, 82, 0.05) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    70px 70px;
+
+  mask-image:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,0.8),
+      transparent 75%
+    );
+
+}
+
+
+.offer-top-label {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  margin-bottom: 55px;
+
+  color: var(--gold-light);
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.19em;
+
+  text-align: center;
+
+}
+
+
+.offer-top-label span {
+
+  width: 65px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold)
+    );
+
+}
+
+
+.offer-top-label span:last-child {
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--gold),
+      transparent
+    );
+
+}
+
+
+/* ============================================================
+   58. OFFER LAYOUT
+============================================================ */
+
+.premium-offer-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    0.95fr 1.05fr;
+
+  align-items: center;
+
+  gap:
+    clamp(
+      60px,
+      8vw,
+      115px
+    );
+
+}
+
+
+/* ============================================================
+   59. OFFER PRODUCT VISUAL
+============================================================ */
+
+.offer-product-visual {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 680px;
+
+}
+
+
+.offer-product-circle {
+
+  position: absolute;
+
+  width: 540px;
+  height: 540px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.16),
+      rgba(24, 87, 60, 0.08) 45%,
+      transparent 69%
+    );
+
+}
+
+
+.offer-product-ring {
+
+  position: absolute;
+
+  width: 505px;
+  height: 505px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.18);
+
+  border-radius: 50%;
+
+}
+
+
+.offer-product-ring::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 40px;
+
+  border:
+    1px dashed
+    rgba(214, 170, 82, 0.15);
+
+  border-radius: 50%;
+
+}
+
+
+.offer-product-visual img {
+
+  position: relative;
+
+  z-index: 4;
+
+  width:
+    min(
+      100%,
+      610px
+    );
+
+  max-height: 650px;
 
   object-fit: contain;
 
   filter:
     drop-shadow(
-      0 35px 50px
-      rgba(0, 0, 0, 0.65)
+      0 50px 70px
+      rgba(0, 0, 0, 0.75)
     );
+
 }
 
-.ingredient-copy > p {
-  margin-top: 24px;
+
+.discount-badge {
+
+  position: absolute;
+
+  z-index: 7;
+
+  top: 8%;
+  right: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 125px;
+  height: 125px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  border-radius: 50%;
+
+  background:
+    rgba(4, 10, 7, 0.90);
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 20px 50px
+    rgba(0, 0, 0, 0.45);
+
 }
 
-.ingredient-list {
+
+.discount-badge span {
+
+  color: var(--muted);
+
+  font-size: 0.52rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.discount-badge strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.6rem;
+
+}
+
+
+.offer-product-caption {
+
+  position: absolute;
+
+  z-index: 7;
+
+  left: 0;
+  bottom: 10%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding:
+    15px 20px;
+
+  border-left:
+    2px solid
+    var(--gold);
+
+  background:
+    rgba(3, 8, 5, 0.72);
+
+  backdrop-filter: blur(12px);
+
+}
+
+
+.offer-product-caption span {
+
+  color: var(--muted);
+
+  font-size: 0.54rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+}
+
+
+.offer-product-caption strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.25rem;
+
+}
+
+
+/* ============================================================
+   60. OFFER COPY
+============================================================ */
+
+.premium-offer-copy h2 {
+
+  font-family: var(--font-hindi);
+
+}
+
+
+.premium-offer-copy h2 span {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--gold-light);
+
+}
+
+
+.offer-intro {
+
+  max-width: 600px;
+
+  margin-top: 25px;
+
+  font-size: 1rem;
+
+}
+
+
+/* ============================================================
+   61. PRICE BLOCK
+============================================================ */
+
+.luxury-price-block {
+
+  margin-top: 32px;
+
+  padding:
+    25px 0;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+}
+
+
+.regular-price {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+}
+
+
+.regular-price span {
+
+  color: var(--muted);
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.13em;
+
+}
+
+
+.regular-price del {
+
+  color:
+    rgba(255, 255, 255, 0.48);
+
+  font-size: 1rem;
+
+}
+
+
+.offer-price-row {
+
+  display: flex;
+
+  align-items: flex-start;
+
+  margin-top: 5px;
+
+}
+
+
+.offer-price-row .currency {
+
+  margin-top: 14px;
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 2.3rem;
+
+}
+
+
+.offer-price-row strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size:
+    clamp(
+      5rem,
+      8vw,
+      7.5rem
+    );
+
+  font-weight: 600;
+
+  line-height: 0.95;
+
+  letter-spacing: -0.05em;
+
+}
+
+
+.offer-price-caption {
+
+  margin-top: 8px;
+
+  color: var(--muted);
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+/* ============================================================
+   62. OFFER FEATURES
+============================================================ */
+
+.offer-feature-list {
+
   display: grid;
 
   grid-template-columns:
     repeat(2, 1fr);
 
-  margin-top: 32px;
+  gap:
+    11px 25px;
 
-  border-top: 1px solid var(--border);
-  border-left: 1px solid var(--border);
+  margin-top: 30px;
+
 }
 
-.ingredient-list div {
-  min-height: 110px;
 
-  padding: 21px;
+.offer-feature-list div {
 
-  border-right: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
 }
 
-.ingredient-list strong {
-  display: block;
 
-  margin-bottom: 6px;
+.offer-feature-list span {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 22px;
+
+  width: 22px;
+  height: 22px;
+
+  margin-top: 2px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  border-radius: 50%;
 
   color: var(--gold-light);
 
-  font-family: var(--heading);
+  font-size: 0.6rem;
 
-  font-size: 1.25rem;
 }
 
-.ingredient-list span {
-  color: var(--muted);
+
+.offer-feature-list p {
+
+  color:
+    rgba(255, 255, 255, 0.75);
 
   font-size: 0.78rem;
-  font-weight: 500;
-}
 
-.small-note {
-  margin-top: 20px !important;
+  line-height: 1.55;
 
-  font-size: 0.74rem !important;
-
-  opacity: 0.72;
 }
 
 
-/* =========================================================
-   COUPLE / EXPERIENCE
-========================================================= */
+/* ============================================================
+   63. MEGA ORDER BUTTON
+============================================================ */
 
-.intimacy-section {
+.mega-order-button {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr auto auto;
+
+  align-items: center;
+
+  gap: 20px;
+
+  width: 100%;
+  max-width: 620px;
+
+  min-height: 92px;
+
+  margin-top: 35px;
+
+  padding:
+    12px 14px 12px 25px;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(255, 226, 157, 0.55);
+
+  color: #151006;
+
+  background:
+    linear-gradient(
+      115deg,
+      #9d6e27,
+      #d8ae56 30%,
+      #f1d486 52%,
+      #c18c34 78%,
+      #9c6b27
+    );
+
+  box-shadow:
+    0 22px 60px
+    rgba(214, 170, 82, 0.20);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+}
+
+
+.mega-order-button::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+  left: -30%;
+
+  width: 20%;
+  height: 300%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,0.45),
+      transparent
+    );
+
+  transform: rotate(24deg);
+
+  transition:
+    left 0.7s ease;
+
+}
+
+
+.mega-order-button:hover {
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    0 30px 80px
+    rgba(214, 170, 82, 0.34);
+
+}
+
+
+.mega-order-button:hover::before {
+
+  left: 120%;
+
+}
+
+
+.mega-order-button > div {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.mega-order-button small {
+
+  font-size: 0.55rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
+}
+
+
+.mega-order-button > div strong {
+
+  font-family: var(--font-hindi);
+
+  font-size: 1.25rem;
+
+}
+
+
+.mega-button-price {
+
+  position: relative;
+
+  z-index: 2;
+
+  padding-left: 20px;
+
+  border-left:
+    1px solid
+    rgba(25, 17, 5, 0.25);
+
+  font-family: var(--font-luxury);
+
+  font-size: 2rem;
+
+  font-weight: 700;
+
+}
+
+
+.mega-button-arrow {
+
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 60px;
+  height: 60px;
+
+  color: var(--gold-light);
+
+  background: #11140f;
+
+  font-size: 1.25rem;
+
+}
+
+
+/* ============================================================
+   64. ORDER TRUST ROW
+============================================================ */
+
+.order-trust-row {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  margin-top: 23px;
+
+}
+
+
+.order-trust-row div {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+
+.order-trust-row span {
+
+  color: var(--gold);
+
+  font-size: 0.55rem;
+
+}
+
+
+.order-trust-row small {
+
+  color: var(--muted);
+
+  font-size: 0.54rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+}
+
+
+.offer-small-note {
+
+  max-width: 600px;
+
+  margin-top: 17px;
+
+  color:
+    rgba(255, 255, 255, 0.40);
+
+  font-size: 0.65rem;
+
+}
+
+
+/* ============================================================
+   65. FINAL EMOTIONAL CTA
+============================================================ */
+
+.final-emotional-cta {
+
   position: relative;
 
   min-height: 720px;
@@ -1312,12 +8574,17 @@ p {
 
   align-items: center;
 
+  overflow: hidden;
+
   isolation: isolate;
 
-  background: #040706;
+  background: #020302;
+
 }
 
-.intimacy-bg {
+
+.final-cta-background {
+
   position: absolute;
 
   inset: 0;
@@ -1331,10 +8598,11 @@ p {
 
   background-position: center;
 
-  opacity: 0.22;
 }
 
-.intimacy-overlay {
+
+.final-cta-overlay {
+
   position: absolute;
 
   inset: 0;
@@ -1344,172 +8612,1376 @@ p {
   background:
     linear-gradient(
       90deg,
-      rgba(2, 7, 5, 0.98) 0%,
-      rgba(3, 12, 8, 0.91) 45%,
-      rgba(3, 8, 6, 0.62) 72%,
-      rgba(2, 4, 3, 0.90) 100%
+      rgba(2, 4, 3, 0.96) 0%,
+      rgba(2, 5, 3, 0.84) 45%,
+      rgba(2, 4, 3, 0.40) 75%,
+      rgba(2, 3, 2, 0.60) 100%
     );
+
 }
 
-.intimacy-content {
-  display: grid;
 
-  grid-template-columns:
-    0.9fr 1.1fr;
+.final-emotional-cta::after {
 
-  align-items: center;
+  content: "";
 
-  min-height: 600px;
-}
+  position: absolute;
 
-.intimacy-copy {
-  position: relative;
+  z-index: -2;
 
-  z-index: 4;
+  left: 15%;
+  top: 50%;
 
-  max-width: 590px;
-}
+  width: 650px;
+  height: 650px;
 
-.intimacy-copy p {
-  max-width: 550px;
+  border-radius: 50%;
 
-  margin:
-    26px 0 32px;
-}
-
-.couple-cutout {
-  align-self: end;
-
-  display: flex;
-
-  align-items: flex-end;
-  justify-content: center;
-
-  height: 630px;
-}
-
-.couple-cutout img {
-  width: min(100%, 580px);
-
-  max-height: 620px;
-
-  object-fit: contain;
-
-  object-position: bottom;
-
-  filter:
-    drop-shadow(
-      0 35px 50px
-      rgba(0, 0, 0, 0.72)
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.11),
+      transparent 68%
     );
+
+  transform:
+    translateY(-50%);
+
 }
 
 
-/* =========================================================
-   STALLION
-========================================================= */
+.final-cta-content {
 
-.stallion-section {
+  max-width: 760px;
+
+  padding:
+    110px 0;
+
+}
+
+
+.final-cta-content h2 {
+
+  font-family: var(--font-hindi);
+
+}
+
+
+.final-cta-content h2 span {
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--gold-light);
+
+}
+
+
+.final-cta-content > p {
+
+  max-width: 610px;
+
+  margin-top: 26px;
+
+  color:
+    rgba(255, 255, 255, 0.77);
+
+  font-size: 1.03rem;
+
+}
+
+
+.final-cta-button {
+
+  margin-top: 34px;
+
+  min-width: 310px;
+
+}
+
+
+/* ============================================================
+   66. PART 2 RESPONSIVE — TABLET
+============================================================ */
+
+@media
+(max-width: 1080px) {
+
+  .ingredients-main-layout {
+
+    grid-template-columns:
+      0.8fr 1.2fr;
+
+    gap: 40px;
+
+  }
+
+
+  .ingredient-card {
+
+    min-height: 235px;
+
+    padding:
+      24px 18px;
+
+  }
+
+
+  .premium-benefit-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .premium-benefit-card {
+
+    min-height: 320px;
+
+  }
+
+}
+
+
+/* ============================================================
+   67. PART 2 RESPONSIVE — 980PX
+============================================================ */
+
+@media
+(max-width: 980px) {
+
+  .ingredients-main-layout,
+  .intimacy-luxury-layout,
+  .power-quote-layout,
+  .premium-offer-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .ingredients-visual {
+
+    min-height: 560px;
+
+  }
+
+
+  .ingredients-image-wrap {
+
+    min-height: 540px;
+
+  }
+
+
+  .ingredient-cards {
+
+    max-width: 800px;
+
+    margin-inline: auto;
+
+  }
+
+
+  .intimacy-luxury-layout {
+
+    min-height: auto;
+
+    padding:
+      100px 0;
+
+  }
+
+
+  .intimacy-luxury-copy {
+
+    max-width: 720px;
+
+  }
+
+
+  .intimacy-couple {
+
+    min-height: 590px;
+
+  }
+
+
+  .visual-story-image {
+
+    min-height: 450px;
+
+  }
+
+
+  .visual-story-image img {
+
+    height: 400px;
+
+  }
+
+
+  .benefits-heading-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+  }
+
+
+  .benefits-intro {
+
+    max-width: 650px;
+
+  }
+
+
+  .power-quote-image {
+
+    min-height: 570px;
+
+  }
+
+
+  .power-quote-copy {
+
+    padding-bottom: 100px;
+
+  }
+
+
+  .offer-product-visual {
+
+    min-height: 580px;
+
+  }
+
+
+  .premium-offer-copy {
+
+    max-width: 760px;
+
+    margin-inline: auto;
+
+  }
+
+}
+
+
+/* ============================================================
+   68. PART 2 MOBILE
+============================================================ */
+
+@media
+(max-width: 768px) {
+
+  /* INGREDIENTS */
+
+  .ingredients-main-layout {
+
+    gap: 35px;
+
+  }
+
+
+  .ingredients-visual {
+
+    min-height: 440px;
+
+  }
+
+
+  .ingredients-image-wrap {
+
+    min-height: 420px;
+
+  }
+
+
+  .ingredients-image-wrap img {
+
+    max-height: 430px;
+
+  }
+
+
+  .ingredients-circle.circle-one {
+
+    width: 350px;
+    height: 350px;
+
+  }
+
+
+  .ingredients-circle.circle-two {
+
+    width: 290px;
+    height: 290px;
+
+  }
+
+
+  .botanical-badge {
+
+    right: 2%;
+    bottom: 5%;
+
+    width: 110px;
+    height: 110px;
+
+  }
+
+
+  .botanical-badge strong {
+
+    font-size: 1.3rem;
+
+  }
+
+
+  .ingredient-cards {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .ingredient-card {
+
+    min-height: auto;
+
+    padding:
+      24px 20px;
+
+  }
+
+
+  .ingredient-card h3 {
+
+    font-size: 1.55rem;
+
+  }
+
+
+  .ingredient-disclaimer {
+
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 35px;
+
+    padding: 17px;
+
+  }
+
+
+  .ingredient-disclaimer span {
+
+    width: max-content;
+
+  }
+
+
+  /* INTIMACY */
+
+  .intimacy-luxury-section {
+
+    min-height: auto;
+
+  }
+
+
+  .intimacy-background {
+
+    background-position: 65% top;
+
+  }
+
+
+  .intimacy-dark-layer {
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 4, 3, 0.25) 0%,
+        rgba(2, 5, 3, 0.50) 28%,
+        rgba(2, 5, 3, 0.94) 60%,
+        #020302 100%
+      );
+
+  }
+
+
+  .intimacy-luxury-layout {
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding:
+      52vh 0 80px;
+
+  }
+
+
+  .intimacy-luxury-copy {
+
+    order: 1;
+
+  }
+
+
+  .intimacy-couple {
+
+    display: none;
+
+  }
+
+
+  .intimacy-luxury-copy > p {
+
+    margin-top: 19px;
+
+  }
+
+
+  .intimacy-statement {
+
+    margin:
+      27px 0;
+
+  }
+
+
+  /* MOVING STRIP */
+
+  .bold-statement-section {
+
+    padding:
+      19px 0;
+
+  }
+
+
+  .statement-track {
+
+    justify-content: flex-start;
+
+    gap: 22px;
+
+    overflow: hidden;
+
+  }
+
+
+  .statement-track span {
+
+    font-size: 1.15rem;
+
+  }
+
+
+  /* VISUAL STORY */
+
+  .visual-story-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+  }
+
+
+  .visual-story-image {
+
+    min-height: 390px;
+
+    padding: 18px;
+
+  }
+
+
+  .visual-story-image img {
+
+    height: 350px;
+
+  }
+
+
+  .visual-story-copy {
+
+    padding:
+      25px 22px 28px;
+
+  }
+
+
+  .visual-story-copy h3 {
+
+    font-size:
+      clamp(
+        2rem,
+        9vw,
+        3rem
+      );
+
+  }
+
+
+  .visual-metaphor-note {
+
+    margin-top: 25px;
+
+  }
+
+
+  /* BENEFITS */
+
+  .benefits-heading-layout {
+
+    margin-bottom: 42px;
+
+  }
+
+
+  .benefits-intro {
+
+    padding-left: 17px;
+
+  }
+
+
+  .premium-benefit-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .premium-benefit-card {
+
+    min-height: 275px;
+
+    padding:
+      25px 22px;
+
+  }
+
+
+  .premium-benefit-card h3 {
+
+    margin-top: 50px;
+
+  }
+
+
+  /* QUOTE */
+
+  .power-quote-section {
+
+    min-height: auto;
+
+  }
+
+
+  .power-quote-layout {
+
+    gap: 25px;
+
+    min-height: auto;
+
+  }
+
+
+  .power-quote-image {
+
+    min-height: 430px;
+
+  }
+
+
+  .power-quote-image img {
+
+    max-height: 450px;
+
+  }
+
+
+  .power-quote-copy {
+
+    padding:
+      15px 0 80px;
+
+  }
+
+
+  .quote-large-mark {
+
+    top: -55px;
+
+    font-size: 7rem;
+
+  }
+
+
+  .power-quote-copy blockquote {
+
+    font-size:
+      clamp(
+        2.7rem,
+        11vw,
+        4.2rem
+      );
+
+  }
+
+
+  /* OFFER */
+
+  .offer-top-label {
+
+    gap: 10px;
+
+    margin-bottom: 30px;
+
+    font-size: 0.56rem;
+
+    letter-spacing: 0.11em;
+
+  }
+
+
+  .offer-top-label span {
+
+    width: 30px;
+
+  }
+
+
+  .premium-offer-layout {
+
+    gap: 30px;
+
+  }
+
+
+  .offer-product-visual {
+
+    min-height: 450px;
+
+  }
+
+
+  .offer-product-visual img {
+
+    max-height: 460px;
+
+  }
+
+
+  .offer-product-circle {
+
+    width: 370px;
+    height: 370px;
+
+  }
+
+
+  .offer-product-ring {
+
+    width: 350px;
+    height: 350px;
+
+  }
+
+
+  .discount-badge {
+
+    top: 3%;
+    right: 1%;
+
+    width: 105px;
+    height: 105px;
+
+  }
+
+
+  .discount-badge strong {
+
+    font-size: 1.35rem;
+
+  }
+
+
+  .offer-product-caption {
+
+    bottom: 5%;
+
+  }
+
+
+  .offer-price-row strong {
+
+    font-size:
+      clamp(
+        4.8rem,
+        20vw,
+        6.5rem
+      );
+
+  }
+
+
+  .offer-feature-list {
+
+    grid-template-columns: 1fr;
+
+    gap: 11px;
+
+  }
+
+
+  .mega-order-button {
+
+    grid-template-columns:
+      1fr auto;
+
+    min-height: 84px;
+
+    padding:
+      10px 11px 10px 18px;
+
+  }
+
+
+  .mega-button-price {
+
+    display: none;
+
+  }
+
+
+  .mega-button-arrow {
+
+    width: 56px;
+    height: 56px;
+
+  }
+
+
+  .order-trust-row {
+
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 12px;
+
+  }
+
+
+  /* FINAL CTA */
+
+  .final-emotional-cta {
+
+    min-height: 720px;
+
+    align-items: flex-end;
+
+  }
+
+
+  .final-cta-background {
+
+    background-position: 65% top;
+
+  }
+
+
+  .final-cta-overlay {
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(2, 4, 3, 0.22) 0%,
+        rgba(2, 5, 3, 0.48) 30%,
+        rgba(2, 4, 3, 0.92) 60%,
+        #020302 100%
+      );
+
+  }
+
+
+  .final-cta-content {
+
+    padding:
+      330px 0 75px;
+
+  }
+
+
+  .final-cta-content > p {
+
+    margin-top: 20px;
+
+    font-size: 0.94rem;
+
+  }
+
+
+  .final-cta-button {
+
+    min-width: 0;
+
+    margin-top: 27px;
+
+  }
+
+}
+
+
+/* ============================================================
+   69. SMALL MOBILE — PART 2
+============================================================ */
+
+@media
+(max-width: 480px) {
+
+  .ingredients-visual {
+
+    min-height: 370px;
+
+  }
+
+
+  .ingredients-image-wrap {
+
+    min-height: 360px;
+
+  }
+
+
+  .ingredients-image-wrap img {
+
+    max-height: 370px;
+
+  }
+
+
+  .ingredients-circle.circle-one {
+
+    width: 300px;
+    height: 300px;
+
+  }
+
+
+  .ingredients-circle.circle-two {
+
+    width: 250px;
+    height: 250px;
+
+  }
+
+
+  .botanical-badge {
+
+    width: 92px;
+    height: 92px;
+
+  }
+
+
+  .botanical-badge strong {
+
+    font-size: 1.1rem;
+
+  }
+
+
+  .botanical-badge small {
+
+    display: none;
+
+  }
+
+
+  .ingredient-card {
+
+    grid-template-columns:
+      30px 1fr;
+
+    gap: 10px;
+
+  }
+
+
+  .visual-story-image {
+
+    min-height: 330px;
+
+  }
+
+
+  .visual-story-image img {
+
+    height: 300px;
+
+  }
+
+
+  .visual-story-image::before {
+
+    inset: 14px;
+
+  }
+
+
+  .visual-story-copy {
+
+    padding:
+      22px 18px 25px;
+
+  }
+
+
+  .power-quote-image {
+
+    min-height: 370px;
+
+  }
+
+
+  .power-quote-image img {
+
+    max-height: 390px;
+
+  }
+
+
+  .offer-product-visual {
+
+    min-height: 390px;
+
+  }
+
+
+  .offer-product-visual img {
+
+    max-height: 400px;
+
+  }
+
+
+  .offer-product-circle {
+
+    width: 310px;
+    height: 310px;
+
+  }
+
+
+  .offer-product-ring {
+
+    width: 295px;
+    height: 295px;
+
+  }
+
+
+  .discount-badge {
+
+    width: 90px;
+    height: 90px;
+
+  }
+
+
+  .discount-badge strong {
+
+    font-size: 1.15rem;
+
+  }
+
+
+  .offer-product-caption {
+
+    padding:
+      11px 14px;
+
+  }
+
+
+  .offer-product-caption strong {
+
+    font-size: 1rem;
+
+  }
+
+
+  .regular-price {
+
+    flex-wrap: wrap;
+
+  }
+
+
+  .offer-price-row .currency {
+
+    margin-top: 10px;
+
+    font-size: 1.8rem;
+
+  }
+
+
+  .mega-order-button > div strong {
+
+    font-size: 1rem;
+
+  }
+
+
+  .order-trust-row {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .final-cta-content {
+
+    padding-top: 300px;
+
+  }
+
+}
+
+
+/* ============================================================
+   STYLE.CSS PART 2 ENDS HERE
+
+   PART 3 CONTINUES DIRECTLY BELOW:
+   - Why More Power / Trust cards
+   - Short Power Banner
+   - FAQ accordion
+   - Final Product CTA
+   - Disclaimer
+   - Footer
+   - Mobile Sticky Order Bar
+   - Order Modal
+   - Back To Top
+   - Final mobile polish
+============================================================ *//* ============================================================
+   MORE POWER — WEBSITE V3
+   STYLE.CSS — PART 3 FINAL
+   CONTINUE DIRECTLY AFTER PART 2
+============================================================ */
+
+
+/* ============================================================
+   70. WHY MORE POWER / TRUST SECTION
+============================================================ */
+
+.why-more-power-section {
+
   position: relative;
-
-  padding: 85px 0;
 
   overflow: hidden;
 
+  isolation: isolate;
+
   background:
     radial-gradient(
-      circle at 20% 50%,
-      rgba(22, 85, 57, 0.23),
+      circle at 50% 0%,
+      rgba(30, 105, 71, 0.14),
       transparent 35%
     ),
-    #050907;
+    linear-gradient(
+      180deg,
+      #030403 0%,
+      #07100c 50%,
+      #030403 100%
+    );
+
 }
 
-.stallion-layout {
+
+.why-more-power-section::before {
+
+  content: "";
+
+  position: absolute;
+
+  z-index: -1;
+
+  top: 10%;
+  right: -250px;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.10),
+      transparent 68%
+    );
+
+}
+
+
+.trust-heading {
+
+  max-width: 880px;
+
+  margin:
+    0 auto 65px;
+
+  text-align: center;
+
+}
+
+
+.trust-heading .premium-label {
+
+  margin-inline: auto;
+
+}
+
+
+.trust-heading h2 {
+
+  font-family:
+    var(--font-hindi);
+
+}
+
+
+.trust-heading h2 span {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--gold-light);
+
+}
+
+
+.trust-heading > p {
+
+  max-width: 680px;
+
+  margin:
+    25px auto 0;
+
+}
+
+
+/* ============================================================
+   71. TRUST GRID
+============================================================ */
+
+.trust-grid {
+
   display: grid;
 
   grid-template-columns:
-    0.9fr 1.1fr;
+    repeat(4, 1fr);
 
-  gap: 55px;
+  border-top:
+    1px solid
+    var(--border);
 
-  align-items: center;
+  border-left:
+    1px solid
+    var(--border);
+
 }
 
-.stallion-image {
+
+.trust-card {
+
+  position: relative;
+
+  min-height: 330px;
+
+  padding:
+    30px 25px;
+
+  overflow: hidden;
+
+  border-right:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(255, 255, 255, 0.012);
+
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease;
+
+}
+
+
+.trust-card:hover {
+
+  z-index: 3;
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    rgba(214, 170, 82, 0.34);
+
+  background:
+    linear-gradient(
+      155deg,
+      rgba(214, 170, 82, 0.07),
+      rgba(15, 52, 35, 0.12)
+    );
+
+}
+
+
+.trust-card-number {
+
+  display: block;
+
+  color:
+    rgba(214, 170, 82, 0.38);
+
+  font-family: var(--font-luxury);
+
+  font-size: 3.7rem;
+
+  line-height: 1;
+
+}
+
+
+.trust-icon {
+
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  min-height: 500px;
-}
+  width: 50px;
+  height: 50px;
 
-.stallion-image img {
-  width: min(100%, 500px);
+  margin-top: 35px;
 
-  max-height: 520px;
+  border:
+    1px solid
+    var(--border-medium);
 
-  object-fit: contain;
+  color: var(--gold-light);
 
-  filter:
-    drop-shadow(
-      0 35px 45px
-      rgba(0, 0, 0, 0.70)
-    );
-}
-
-.stallion-copy blockquote {
-  max-width: 700px;
-
-  font-family:
-    "Noto Sans Devanagari",
-    var(--heading);
-
-  font-size:
-    clamp(2.7rem, 4.8vw, 5rem);
-
-  font-weight: 700;
-
-  line-height: 1.25;
-
-  letter-spacing: -0.025em;
-}
-
-.stallion-copy blockquote span {
-  display: block;
-}
-
-.stallion-copy p {
-  max-width: 500px;
-
-  margin-top: 25px;
-}
-
-
-/* =========================================================
-   OFFER
-========================================================= */
-
-.offer {
   background:
-    radial-gradient(
-      circle at 28% 50%,
-      rgba(32, 108, 72, 0.23),
-      transparent 35%
-    ),
-    linear-gradient(
-      145deg,
-      #020403,
-      #07130d
-    );
+    rgba(214, 170, 82, 0.04);
+
 }
 
-.offer-glow {
+
+.trust-card h3 {
+
+  margin-top: 22px;
+
+  font-size: 1.55rem;
+
+}
+
+
+.trust-card p {
+
+  margin-top: 13px;
+
+  font-size: 0.81rem;
+
+}
+
+
+.trust-card-line {
+
   position: absolute;
 
-  left: 10%;
-  top: 50%;
+  left: 25px;
+  bottom: 25px;
+
+  width: 42px;
+  height: 1px;
+
+  background: var(--gold);
+
+  transition:
+    width 0.35s ease;
+
+}
+
+
+.trust-card:hover
+.trust-card-line {
+
+  width: 90px;
+
+}
+
+
+/* ============================================================
+   72. POWER BANNER
+============================================================ */
+
+.power-banner {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    55px 0;
+
+  border-top:
+    1px solid
+    var(--border-medium);
+
+  border-bottom:
+    1px solid
+    var(--border-medium);
+
+  background:
+    linear-gradient(
+      120deg,
+      #09130d,
+      #11180e 50%,
+      #07100b
+    );
+
+}
+
+
+.power-banner::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: -180px;
+  left: 50%;
 
   width: 500px;
   height: 500px;
@@ -1519,253 +9991,266 @@ p {
   background:
     radial-gradient(
       circle,
-      rgba(220, 174, 79, 0.11),
+      rgba(214, 170, 82, 0.13),
       transparent 68%
     );
 
-  transform: translateY(-50%);
+  transform:
+    translateX(-50%);
+
 }
 
-.offer-layout {
-  display: grid;
 
-  grid-template-columns:
-    1fr 0.9fr;
+.power-banner-inner {
 
-  gap:
-    clamp(50px, 7vw, 100px);
-
-  align-items: center;
-}
-
-.offer-product {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 570px;
-}
-
-.offer-product img {
   position: relative;
 
   z-index: 2;
 
-  width: min(100%, 640px);
+  display: grid;
 
-  max-height: 620px;
+  grid-template-columns:
+    1fr auto;
 
-  object-fit: contain;
+  align-items: center;
 
-  filter:
-    drop-shadow(
-      0 40px 55px
-      rgba(0, 0, 0, 0.72)
+  gap: 50px;
+
+}
+
+
+.power-banner-copy small {
+
+  color: var(--gold);
+
+  font-size: 0.6rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.17em;
+
+}
+
+
+.power-banner-copy h3 {
+
+  margin-top: 8px;
+
+  font-family:
+    var(--font-hindi);
+
+  font-size:
+    clamp(
+      2.2rem,
+      4vw,
+      4rem
     );
+
 }
 
-.offer-copy {
-  position: relative;
-  z-index: 3;
-}
 
-.price-box {
-  margin-top: 32px;
-
-  padding: 24px 0;
-
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.old-price {
-  color: var(--muted);
-
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.old-price del {
-  margin-left: 8px;
-
-  color:
-    rgba(255, 255, 255, 0.62);
-
-  font-size: 1.2rem;
-}
-
-.current-price {
-  margin-top: 3px;
+.power-banner-copy h3 span {
 
   color: var(--gold-light);
 
-  font-family: var(--heading);
-
-  font-size:
-    clamp(4rem, 6vw, 6rem);
-
-  font-weight: 700;
-
-  line-height: 1.05;
 }
 
-.saving {
-  display: inline-block;
+
+.power-banner-copy p {
+
+  max-width: 650px;
 
   margin-top: 10px;
 
-  padding: 7px 12px;
+  font-size: 0.88rem;
 
-  border: 1px solid var(--border-strong);
-
-  color: var(--gold-light);
-
-  background:
-    rgba(220, 174, 79, 0.07);
-
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.1em;
-}
-
-.offer-list {
-  display: grid;
-
-  gap: 12px;
-
-  margin:
-    25px 0 30px;
-
-  list-style: none;
-
-  color:
-    rgba(255, 255, 255, 0.80);
-
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.secure-note {
-  margin-top: 14px;
-
-  font-size: 0.73rem;
 }
 
 
-/* =========================================================
-   FINAL ENERGY CTA
-========================================================= */
+.power-banner-button {
 
-.energy-cta {
+  min-width: 235px;
+
+}
+
+
+/* ============================================================
+   73. FAQ SECTION
+============================================================ */
+
+.faq-section {
+
   position: relative;
 
   overflow: hidden;
 
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-
   background:
     linear-gradient(
-      110deg,
-      #071b13,
-      #040706 55%,
-      #0b1e16
+      180deg,
+      #030403,
+      #07100c,
+      #030403
     );
+
 }
 
-.energy-layout {
+
+.faq-layout {
+
   display: grid;
 
   grid-template-columns:
-    1fr 0.8fr;
+    0.7fr 1.3fr;
 
-  align-items: center;
-
-  min-height: 480px;
-}
-
-.energy-copy {
-  padding: 65px 0;
-}
-
-.energy-copy p {
-  margin-top: 20px;
-
-  font-size: 1.05rem;
-}
-
-.energy-copy .btn {
-  margin-top: 28px;
-}
-
-.energy-image {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  min-height: 430px;
-}
-
-.energy-image img {
-  width: min(100%, 510px);
-
-  max-height: 450px;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(
-      0 30px 50px
-      rgba(0, 0, 0, 0.65)
+  gap:
+    clamp(
+      55px,
+      8vw,
+      110px
     );
+
+  align-items: start;
+
 }
 
 
-/* =========================================================
-   FAQ — FIXED BLANK SPACE
-========================================================= */
+/* ============================================================
+   74. FAQ INTRO
+============================================================ */
 
-.faq {
-  min-height: 0 !important;
+.faq-intro {
+
+  position: sticky;
+
+  top:
+    calc(
+      var(--header-height) + 40px
+    );
+
+}
+
+
+.faq-intro h2 {
+
+  font-family:
+    var(--font-hindi);
+
+}
+
+
+.faq-intro h2 span {
+
+  display: block;
+
+  margin-top: 6px;
+
+  color: var(--gold-light);
+
+}
+
+
+.faq-intro > p {
+
+  margin-top: 22px;
+
+}
+
+
+.faq-help-box {
+
+  margin-top: 35px;
 
   padding:
-    90px 0 100px !important;
+    24px;
 
-  background: #030504;
+  border:
+    1px solid
+    var(--border);
+
+  background:
+    rgba(255, 255, 255, 0.018);
+
 }
 
-.faq-container {
-  max-width: 900px;
+
+.faq-help-box small {
+
+  display: block;
+
+  color: var(--gold);
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.14em;
+
 }
 
-.faq .section-heading {
-  margin-bottom: 45px;
+
+.faq-help-box strong {
+
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--white);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.35rem;
+
 }
+
+
+.faq-help-box p {
+
+  margin-top: 8px;
+
+  font-size: 0.76rem;
+
+}
+
+
+/* ============================================================
+   75. FAQ ACCORDION
+============================================================ */
 
 .faq-list {
-  width: 100%;
 
-  border-top: 1px solid var(--border);
+  border-top:
+    1px solid
+    var(--border);
+
 }
+
 
 .faq-item {
-  border-bottom: 1px solid var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
 }
 
+
 .faq-question {
-  display: flex;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr auto;
 
   align-items: center;
-  justify-content: space-between;
 
-  gap: 25px;
+  gap: 20px;
 
   width: 100%;
 
-  padding: 25px 5px;
+  min-height: 92px;
+
+  padding:
+    18px 0;
 
   border: 0;
 
@@ -1775,943 +10260,1450 @@ p {
 
   text-align: left;
 
-  font-family:
-    "Noto Sans Devanagari",
-    var(--heading);
+}
 
-  font-size: 1.18rem;
+
+.faq-number {
+
+  color: var(--gold);
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+.faq-question-text {
+
+  font-family:
+    var(--font-hindi);
+
+  font-size: 1.12rem;
+
   font-weight: 700;
 
   line-height: 1.5;
+
 }
 
-.faq-question span {
+
+.faq-plus {
+
+  position: relative;
+
   display: flex;
 
   align-items: center;
   justify-content: center;
 
-  flex: 0 0 36px;
+  flex: 0 0 42px;
 
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border-medium);
 
-  border-radius: 50%;
+  color: var(--gold-light);
 
-  color: var(--gold);
+  font-size: 1.3rem;
 
-  font-family: var(--body);
+  font-weight: 300;
 
-  font-size: 1.15rem;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease;
 
-  transition: transform 0.3s ease;
 }
+
 
 .faq-item.active
-.faq-question span {
-  transform: rotate(45deg);
+.faq-plus {
+
+  transform:
+    rotate(45deg);
+
+  background:
+    rgba(214, 170, 82, 0.08);
+
 }
 
+
 .faq-answer {
-  max-height: 0;
+
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows
+    0.4s ease;
+
+}
+
+
+.faq-answer-inner {
 
   overflow: hidden;
 
-  opacity: 0;
-
-  transition:
-    max-height 0.4s ease,
-    opacity 0.3s ease,
-    padding 0.3s ease;
 }
+
+
+.faq-answer-inner p {
+
+  padding:
+    0 60px 28px 42px;
+
+  font-size: 0.88rem;
+
+  line-height: 1.85;
+
+}
+
 
 .faq-item.active
 .faq-answer {
-  max-height: 400px;
 
-  padding:
-    0 5px 25px;
+  grid-template-rows: 1fr;
 
-  opacity: 1;
-}
-
-.faq-answer p {
-  max-width: 760px;
-
-  font-size: 0.92rem;
-
-  line-height: 1.85;
 }
 
 
-/* =========================================================
-   DISCLAIMER
-========================================================= */
+/* ============================================================
+   76. FINAL PRODUCT CTA SECTION
+============================================================ */
 
-.disclaimer-strip {
-  padding: 27px 0;
+.final-product-section {
 
-  border-top:
-    1px solid
-    rgba(255, 255, 255, 0.06);
+  position: relative;
 
-  border-bottom:
-    1px solid
-    rgba(255, 255, 255, 0.06);
+  overflow: hidden;
 
-  background: #070908;
-}
+  isolation: isolate;
 
-.disclaimer-strip p {
-  max-width: 1080px;
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(26, 99, 66, 0.17),
+      transparent 40%
+    ),
+    linear-gradient(
+      180deg,
+      #020403,
+      #07100c 55%,
+      #020302
+    );
 
-  margin-inline: auto;
-
-  text-align: center;
-
-  font-size: 0.72rem;
-
-  line-height: 1.85;
-
-  opacity: 0.76;
-}
-
-.disclaimer-strip strong {
-  color: var(--gold-light);
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+.final-product-section::before {
 
-.footer {
-  padding:
-    52px 0 20px;
+  content: "MORE POWER";
 
-  background: #020302;
+  position: absolute;
+
+  z-index: -2;
+
+  top: 8%;
+  left: 50%;
+
+  color:
+    rgba(214, 170, 82, 0.035);
+
+  font-family: var(--font-luxury);
+
+  font-size:
+    clamp(
+      7rem,
+      17vw,
+      17rem
+    );
+
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  transform:
+    translateX(-50%);
+
 }
 
-.footer-grid {
+
+.final-product-layout {
+
   display: grid;
 
   grid-template-columns:
-    1.5fr 0.7fr 0.7fr;
+    1fr 1fr;
 
-  gap: 45px;
+  align-items: center;
 
-  padding-bottom: 38px;
+  gap:
+    clamp(
+      50px,
+      7vw,
+      100px
+    );
+
 }
 
-.footer-brand {
-  margin-bottom: 16px;
+
+/* ============================================================
+   77. FINAL PRODUCT IMAGE
+============================================================ */
+
+.final-product-visual {
+
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 650px;
+
 }
 
-.footer-grid > div:first-child p {
-  max-width: 330px;
 
-  font-size: 0.82rem;
+.final-product-halo {
+
+  position: absolute;
+
+  width: 540px;
+  height: 540px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(214, 170, 82, 0.16),
+      rgba(26, 97, 66, 0.08) 45%,
+      transparent 70%
+    );
+
 }
 
-.footer-links {
+
+.final-product-ring {
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.17);
+
+  border-radius: 50%;
+
+}
+
+
+.final-product-ring::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 45px;
+
+  border:
+    1px dashed
+    rgba(214, 170, 82, 0.14);
+
+  border-radius: 50%;
+
+}
+
+
+.final-product-visual img {
+
+  position: relative;
+
+  z-index: 4;
+
+  width:
+    min(
+      100%,
+      590px
+    );
+
+  max-height: 620px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 50px 70px
+      rgba(0, 0, 0, 0.72)
+    );
+
+}
+
+
+.final-product-seal {
+
+  position: absolute;
+
+  z-index: 6;
+
+  right: 1%;
+  top: 12%;
+
   display: flex;
 
   flex-direction: column;
 
-  gap: 11px;
+  align-items: center;
+  justify-content: center;
+
+  width: 120px;
+  height: 120px;
+
+  border:
+    1px solid
+    var(--border-strong);
+
+  border-radius: 50%;
+
+  background:
+    rgba(4, 10, 7, 0.88);
+
+  backdrop-filter: blur(12px);
+
 }
 
-.footer-links a {
+
+.final-product-seal small {
+
   color: var(--muted);
 
-  font-size: 0.78rem;
-  font-weight: 600;
+  font-size: 0.48rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+}
+
+
+.final-product-seal strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.4rem;
+
+}
+
+
+/* ============================================================
+   78. FINAL PRODUCT COPY
+============================================================ */
+
+.final-product-copy h2 {
+
+  font-family:
+    var(--font-hindi);
+
+}
+
+
+.final-product-copy h2 span {
+
+  display: block;
+
+  margin-top: 7px;
+
+  color: var(--gold-light);
+
+}
+
+
+.final-product-copy > p {
+
+  max-width: 600px;
+
+  margin-top: 24px;
+
+}
+
+
+.final-mini-benefits {
+
+  display: grid;
+
+  gap: 0;
+
+  margin-top: 32px;
+
+  border-top:
+    1px solid
+    var(--border);
+
+}
+
+
+.final-mini-benefit {
+
+  display: grid;
+
+  grid-template-columns:
+    45px 1fr;
+
+  gap: 15px;
+
+  align-items: center;
+
+  min-height: 68px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+}
+
+
+.final-mini-benefit span {
+
+  color: var(--gold);
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+}
+
+
+.final-mini-benefit strong {
+
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+}
+
+
+.final-price-line {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  margin-top: 30px;
+
+}
+
+
+.final-price-line del {
+
+  color:
+    rgba(255, 255, 255, 0.40);
+
+  font-size: 1rem;
+
+}
+
+
+.final-price-line strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 3rem;
+
+}
+
+
+.final-product-order {
+
+  margin-top: 25px;
+
+}
+
+
+/* ============================================================
+   79. DISCLAIMER SECTION
+============================================================ */
+
+.disclaimer-section {
+
+  position: relative;
+
+  padding:
+    55px 0;
+
+  border-top:
+    1px solid
+    var(--border);
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  background: #040604;
+
+}
+
+
+.disclaimer-layout {
+
+  display: grid;
+
+  grid-template-columns:
+    180px 1fr;
+
+  gap: 40px;
+
+  align-items: start;
+
+}
+
+
+.disclaimer-title {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+
+}
+
+
+.disclaimer-title span {
+
+  color: var(--gold);
+
+  font-size: 0.57rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+}
+
+
+.disclaimer-title strong {
+
+  color: var(--white);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.45rem;
+
+}
+
+
+.disclaimer-copy {
+
+  display: grid;
+
+  gap: 12px;
+
+}
+
+
+.disclaimer-copy p {
+
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 0.68rem;
+
+  line-height: 1.75;
+
+}
+
+
+/* ============================================================
+   80. FOOTER
+============================================================ */
+
+.site-footer {
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #050805,
+      #020302
+    );
+
+}
+
+
+.footer-main {
+
+  padding:
+    75px 0 55px;
+
+}
+
+
+.footer-grid {
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr 0.7fr 0.7fr 1fr;
+
+  gap:
+    clamp(
+      35px,
+      6vw,
+      80px
+    );
+
+}
+
+
+.footer-brand {
+
+  max-width: 390px;
+
+}
+
+
+.footer-brand .brand-name {
+
+  font-size: 2rem;
+
+}
+
+
+.footer-brand p {
+
+  margin-top: 20px;
+
+  font-size: 0.8rem;
+
+}
+
+
+.footer-social {
+
+  display: flex;
+
+  gap: 9px;
+
+  margin-top: 25px;
+
+}
+
+
+.footer-social a {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border:
+    1px solid
+    var(--border);
+
+  color: var(--gold-light);
+
+  font-size: 0.68rem;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+
+.footer-social a:hover {
+
+  transform:
+    translateY(-3px);
+
+  border-color:
+    var(--border-strong);
+
+  background:
+    rgba(214, 170, 82, 0.07);
+
+}
+
+
+.footer-column h4 {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-body);
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+
+}
+
+
+.footer-column nav {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  margin-top: 22px;
+
+}
+
+
+.footer-column nav a {
+
+  width: max-content;
+
+  color:
+    rgba(255, 255, 255, 0.58);
+
+  font-size: 0.77rem;
 
   transition:
     color 0.3s ease,
     transform 0.3s ease;
+
 }
 
-.footer-links a:hover {
+
+.footer-column nav a:hover {
+
+  color: var(--gold-light);
+
+  transform:
+    translateX(4px);
+
+}
+
+
+.footer-contact {
+
+  display: grid;
+
+  gap: 17px;
+
+  margin-top: 22px;
+
+}
+
+
+.footer-contact div {
+
+  display: flex;
+
+  gap: 12px;
+
+  align-items: flex-start;
+
+}
+
+
+.footer-contact span {
+
   color: var(--gold);
 
-  transform: translateX(3px);
+  font-size: 0.7rem;
+
 }
 
+
+.footer-contact p {
+
+  font-size: 0.75rem;
+
+  line-height: 1.55;
+
+}
+
+
+/* ============================================================
+   81. FOOTER BOTTOM
+============================================================ */
+
 .footer-bottom {
-  padding-top: 19px;
 
   border-top:
     1px solid
-    rgba(255, 255, 255, 0.07);
+    var(--border);
 
-  text-align: center;
-}
-
-.footer-bottom p {
-  font-size: 0.68rem;
 }
 
 
-/* =========================================================
-   MOBILE STICKY CTA
-========================================================= */
+.footer-bottom-inner {
 
-.mobile-sticky {
-  position: fixed;
-
-  left: 0;
-  bottom: 0;
-
-  z-index: 900;
-
-  display: none;
+  display: flex;
 
   align-items: center;
   justify-content: space-between;
 
-  width: 100%;
+  gap: 25px;
 
-  padding:
-    9px 15px;
+  min-height: 75px;
 
-  border-top: 1px solid var(--border-strong);
-
-  background:
-    rgba(3, 8, 6, 0.97);
-
-  backdrop-filter: blur(15px);
 }
 
-.mobile-sticky div {
+
+.footer-bottom p {
+
+  color:
+    rgba(255, 255, 255, 0.34);
+
+  font-size: 0.64rem;
+
+}
+
+
+.footer-bottom-links {
+
   display: flex;
-  flex-direction: column;
-}
 
-.mobile-sticky del {
-  color: var(--muted);
+  align-items: center;
 
-  font-size: 0.66rem;
-}
+  gap: 20px;
 
-.mobile-sticky strong {
-  color: var(--gold-light);
-
-  font-family: var(--heading);
-
-  font-size: 1.45rem;
-
-  line-height: 1;
-}
-
-.mobile-sticky a {
-  padding: 12px 19px;
-
-  color: #111;
-
-  background: var(--gold);
-
-  font-size: 0.78rem;
-  font-weight: 800;
 }
 
 
-/* =========================================================
-   REVEAL
-========================================================= */
+.footer-bottom-links a {
 
-.reveal {
-  opacity: 1;
+  color:
+    rgba(255, 255, 255, 0.42);
 
-  transform: none;
-}
-
-/*
- JS available hone par animation.
- Content kabhi permanently invisible nahi hoga.
-*/
-
-.js-ready .reveal {
-  opacity: 0;
-
-  transform: translateY(25px);
+  font-size: 0.62rem;
 
   transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+    color 0.3s ease;
+
 }
 
-.js-ready .reveal.visible {
+
+.footer-bottom-links a:hover {
+
+  color: var(--gold-light);
+
+}
+
+
+/* ============================================================
+   82. MOBILE STICKY ORDER BAR
+============================================================ */
+
+.mobile-sticky-order {
+
+  position: fixed;
+
+  z-index: 900;
+
+  left: 50%;
+  bottom: 12px;
+
+  display: none;
+
+  grid-template-columns:
+    1fr auto;
+
+  align-items: center;
+
+  gap: 15px;
+
+  width:
+    calc(
+      100% - 24px
+    );
+
+  max-width: 500px;
+
+  min-height: 68px;
+
+  padding:
+    8px 8px 8px 17px;
+
+  border:
+    1px solid
+    rgba(214, 170, 82, 0.38);
+
+  background:
+    rgba(4, 9, 6, 0.94);
+
+  backdrop-filter:
+    blur(16px);
+
+  -webkit-backdrop-filter:
+    blur(16px);
+
+  box-shadow:
+    0 15px 45px
+    rgba(0, 0, 0, 0.55);
+
+  transform:
+    translateX(-50%);
+
+}
+
+
+.sticky-price {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.sticky-price small {
+
+  color: var(--muted);
+
+  font-size: 0.48rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.1em;
+
+}
+
+
+.sticky-price strong {
+
+  margin-top: 1px;
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 1.55rem;
+
+  line-height: 1;
+
+}
+
+
+.sticky-order-btn {
+
+  min-width: 150px;
+
+  min-height: 50px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid
+    rgba(255, 226, 157, 0.55);
+
+  color: #151006;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ad7c2d,
+      #e7c46e,
+      #bd8730
+    );
+
+  font-size: 0.68rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.07em;
+
+}
+
+
+/* ============================================================
+   83. ORDER MODAL
+============================================================ */
+
+.order-modal {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 2000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  padding: 20px;
+
+  background:
+    rgba(0, 0, 0, 0.78);
+
+  backdrop-filter:
+    blur(12px);
+
+  -webkit-backdrop-filter:
+    blur(12px);
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+
+}
+
+
+.order-modal.active {
+
+  visibility: visible;
+
   opacity: 1;
 
-  transform: translateY(0);
 }
 
 
-/* =========================================================
-   TABLET
-========================================================= */
+.order-modal-card {
 
-@media (max-width: 1050px) {
+  position: relative;
 
-  .desktop-nav {
-    display: none;
-  }
+  width:
+    min(
+      100%,
+      760px
+    );
 
-  .header {
-    grid-template-columns:
-      1fr auto auto;
+  max-height:
+    calc(
+      100dvh - 40px
+    );
 
-    gap: 15px;
-  }
+  overflow-y: auto;
 
-  .menu-toggle {
-    display: block;
-  }
+  border:
+    1px solid
+    var(--border-strong);
 
-  .hero-content {
-    width: min(650px, 65vw);
-  }
+  background:
+    linear-gradient(
+      145deg,
+      #0a1710,
+      #030504 70%
+    );
 
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
+  box-shadow:
+    0 40px 120px
+    rgba(0, 0, 0, 0.72);
 
-  .feature-card {
-    min-height: auto;
-  }
+  transform:
+    translateY(25px)
+    scale(0.98);
 
-  .feature-card > span {
-    margin-bottom: 13px;
-  }
-
-  .benefit-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-  }
-
-  .power-stats {
-    grid-template-columns: 1fr;
-  }
+  transition:
+    transform 0.35s ease;
 
 }
 
 
-/* =========================================================
-   MOBILE — CUSTOM DESIGN
-========================================================= */
+.order-modal.active
+.order-modal-card {
 
-@media (max-width: 768px) {
+  transform:
+    translateY(0)
+    scale(1);
 
-  body {
-    padding-bottom: 68px;
+}
 
-    font-size: 16px;
-  }
+
+.modal-gold-line {
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--gold),
+      var(--gold-light),
+      var(--gold),
+      transparent
+    );
+
+}
+
+
+.modal-close {
+
+  position: absolute;
+
+  z-index: 5;
+
+  top: 18px;
+  right: 18px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  color: var(--gold-light);
+
+  background:
+    rgba(255, 255, 255, 0.02);
+
+  font-size: 1.5rem;
+
+}
+
+
+.modal-content {
+
+  display: grid;
+
+  grid-template-columns:
+    0.75fr 1.25fr;
+
+  gap: 35px;
+
+  padding:
+    55px 45px 45px;
+
+}
+
+
+.modal-product {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.modal-product img {
+
+  width: 100%;
+
+  max-height: 370px;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 30px 45px
+      rgba(0, 0, 0, 0.65)
+    );
+
+}
+
+
+.modal-copy small {
+
+  color: var(--gold);
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.15em;
+
+}
+
+
+.modal-copy h3 {
+
+  margin-top: 10px;
+
+  font-family:
+    var(--font-hindi);
+
+  font-size:
+    clamp(
+      2.2rem,
+      4vw,
+      3.5rem
+    );
+
+}
+
+
+.modal-copy > p {
+
+  margin-top: 14px;
+
+  font-size: 0.82rem;
+
+}
+
+
+.modal-price {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 22px;
+
+}
+
+
+.modal-price del {
+
+  color:
+    rgba(255, 255, 255, 0.40);
+
+}
+
+
+.modal-price strong {
+
+  color: var(--gold-light);
+
+  font-family: var(--font-luxury);
+
+  font-size: 2.8rem;
+
+}
+
+
+.modal-order-actions {
+
+  display: grid;
+
+  gap: 11px;
+
+  margin-top: 25px;
+
+}
+
+
+.modal-action-btn {
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 58px;
+
+  padding:
+    0 18px;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  color: var(--white);
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+
+}
+
+
+.modal-action-btn:hover {
+
+  border-color:
+    var(--border-strong);
+
+  background:
+    rgba(214, 170, 82, 0.06);
+
+}
+
+
+.modal-action-btn.primary {
+
+  border-color:
+    rgba(255, 226, 157, 0.50);
+
+  color: #151006;
+
+  background:
+    linear-gradient(
+      120deg,
+      #ad7c2d,
+      #e5c16a,
+      #bd8730
+    );
+
+}
+
+
+/* ============================================================
+   84. BACK TO TOP
+============================================================ */
+
+.back-to-top {
+
+  position: fixed;
+
+  z-index: 850;
+
+  right: 22px;
+  bottom: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  border:
+    1px solid
+    var(--border-medium);
+
+  color: var(--gold-light);
+
+  background:
+    rgba(4, 9, 6, 0.88);
+
+  backdrop-filter:
+    blur(10px);
+
+  transform:
+    translateY(15px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0.3s ease,
+    border-color 0.3s ease;
+
+}
+
+
+.back-to-top.visible {
+
+  visibility: visible;
+
+  opacity: 1;
+
+  transform:
+    translateY(0);
+
+}
+
+
+.back-to-top:hover {
+
+  border-color:
+    var(--gold);
+
+}
+
+
+/* ============================================================
+   85. LOADING / IMAGE SAFETY
+============================================================ */
+
+img {
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+
+}
+
+
+img:not([src]),
+img[src=""] {
+
+  visibility: hidden;
+
+}
+
+
+/* ============================================================
+   86. FOCUS ACCESSIBILITY
+============================================================ */
+
+a:focus-visible,
+button:focus-visible {
+
+  outline:
+    2px solid
+    var(--gold-light);
+
+  outline-offset:
+    4px;
+
+}
+
+
+/* ============================================================
+   87. REDUCED MOTION
+============================================================ */
+
+@media
+(prefers-reduced-motion: reduce) {
 
   html {
-    scroll-padding-top: 68px;
-  }
 
-  section[id] {
-    scroll-margin-top: 68px;
-  }
-
-  .container {
-    width:
-      min(
-        calc(100% - 32px),
-        var(--container)
-      );
-  }
-
-  .section {
-    padding:
-      72px 0;
-  }
-
-  h2 {
-    font-family:
-      "Noto Sans Devanagari",
-      var(--heading);
-
-    font-size:
-      clamp(2.15rem, 9vw, 3.15rem);
-
-    line-height: 1.28;
-
-    letter-spacing: -0.02em;
-  }
-
-  p {
-    font-size: 0.98rem;
-
-    line-height: 1.8;
-  }
-
-  .eyebrow {
-    margin-bottom: 14px;
-
-    font-size: 0.68rem;
-
-    letter-spacing: 0.12em;
-  }
-
-  .section-heading {
-    margin-bottom: 40px;
-  }
-
-
-  /* HEADER */
-
-  .header {
-    min-height: 66px;
-
-    padding: 0 17px;
-  }
-
-  .header.scrolled {
-    min-height: 62px;
-  }
-
-  .brand-main {
-    font-size: 1.1rem;
-  }
-
-  .brand-sub {
-    font-size: 0.4rem;
-  }
-
-  .nav-cta {
-    display: none;
-  }
-
-
-  /* HERO */
-
-  .hero {
-    min-height: 100svh;
-
-    align-items: flex-end;
-
-    padding:
-      105px 18px
-      70px;
-  }
-
-  .hero-bg {
-    background-position:
-      64% center;
-  }
-
-  .hero-overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(1, 4, 3, 0.12) 0%,
-        rgba(2, 6, 4, 0.30) 30%,
-        rgba(2, 7, 5, 0.76) 58%,
-        rgba(2, 5, 4, 0.98) 82%,
-        #020504 100%
-      );
-  }
-
-  .hero-content {
-    width: 100%;
-  }
-
-  .hero h1 {
-    max-width: 520px;
-
-    font-size:
-      clamp(3rem, 14vw, 4.6rem);
-
-    line-height: 1.12;
-
-    letter-spacing: -0.035em;
-  }
-
-  .hero h1 span {
-    margin: 0;
-  }
-
-  .hero-copy {
-    max-width: 520px;
-
-    margin-top: 19px;
-
-    font-size: 0.96rem;
-
-    line-height: 1.75;
-  }
-
-  .hero-points {
-    display: grid;
-
-    gap: 6px;
-
-    margin-top: 18px;
-
-    font-size: 0.72rem;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 15px;
-
-    margin-top: 24px;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .text-link {
-    width: max-content;
-  }
-
-
-  /* ALL TWO COLUMN SECTIONS */
-
-  .split-layout,
-  .power-layout,
-  .ingredient-layout,
-  .intimacy-content,
-  .stallion-layout,
-  .offer-layout,
-  .energy-layout {
-    grid-template-columns: 1fr;
-  }
-
-
-  /* PRODUCT */
-
-  .section-copy {
-    order: 1;
-  }
-
-  .product-visual {
-    order: 2;
-
-    min-height: 370px;
-
-    margin-top: 10px;
-  }
-
-  .product-visual img {
-    max-height: 390px;
-  }
-
-  .gold-orbit {
-    width: 300px;
-    height: 300px;
-  }
-
-  .feature-grid {
-    margin-top: 30px;
-  }
-
-  .feature-card {
-    padding: 22px;
-
-    border-left:
-      2px solid
-      rgba(220, 174, 79, 0.55);
-  }
-
-  .feature-card h3 {
-    font-size: 1.45rem;
-  }
-
-
-  /* BENEFITS */
-
-  .benefit-grid {
-    grid-template-columns: 1fr;
-
-    gap: 13px;
-  }
-
-  .benefit-card {
-    min-height: auto;
-
-    padding: 28px 24px;
-  }
-
-  .benefit-card .icon {
-    margin-bottom: 27px;
-  }
-
-
-  /* HORSE */
-
-  .power-copy {
-    order: 1;
-  }
-
-  .horse-visual {
-    order: 2;
-
-    min-height: 430px;
-
-    margin-top: 10px;
-  }
-
-  .horse-product {
-    max-height: 460px;
-  }
-
-  .power-stats {
-    grid-template-columns:
-      repeat(3, 1fr);
-
-    gap: 6px;
-  }
-
-  .power-stats div {
-    padding: 15px 8px;
-  }
-
-  .power-stats strong {
-    font-size: 0.66rem;
-  }
-
-  .power-stats span {
-    font-size: 0.63rem;
-  }
-
-
-  /* COMPARISON */
-
-  .comparison-grid {
-    grid-template-columns: 1fr;
-
-    gap: 18px;
-  }
-
-  .comparison-card {
-    padding: 15px;
-  }
-
-  .comparison-label {
-    top: 15px;
-    left: 15px;
-  }
-
-  .comparison-image {
-    min-height: 300px;
-
-    margin-bottom: 18px;
-  }
-
-  .comparison-image img {
-    max-height: 300px;
-  }
-
-  .comparison-card h3 {
-    font-size: 1.65rem;
-  }
-
-
-  /* INGREDIENTS */
-
-  .ingredient-copy {
-    order: 1;
-  }
-
-  .ingredient-image {
-    order: 2;
-
-    min-height: 390px;
-
-    margin-top: 10px;
-  }
-
-  .ingredient-image img {
-    max-height: 410px;
-  }
-
-  .ingredient-aura {
-    width: 300px;
-    height: 300px;
-  }
-
-  .ingredient-list {
-    grid-template-columns: 1fr;
-  }
-
-  .ingredient-list div {
-    min-height: auto;
-
-    padding: 18px;
-  }
-
-
-  /* COUPLE */
-
-  .intimacy-section {
-    min-height: auto;
-
-    padding:
-      75px 0 0;
-  }
-
-  .intimacy-content {
-    min-height: auto;
-  }
-
-  .intimacy-copy {
-    padding-bottom: 25px;
-  }
-
-  .couple-cutout {
-    height: 470px;
-  }
-
-  .couple-cutout img {
-    max-height: 470px;
-  }
-
-
-  /* STALLION */
-
-  .stallion-section {
-    padding:
-      70px 0;
-  }
-
-  .stallion-copy {
-    order: 1;
-  }
-
-  .stallion-image {
-    order: 2;
-
-    min-height: 390px;
-  }
-
-  .stallion-image img {
-    max-height: 400px;
-  }
-
-  .stallion-copy blockquote {
-    font-size:
-      clamp(2.2rem, 9vw, 3.2rem);
-
-    line-height: 1.35;
-  }
-
-
-  /* OFFER */
-
-  .offer-copy {
-    order: 1;
-
-    text-align: center;
-  }
-
-  .offer-product {
-    order: 2;
-
-    min-height: 400px;
-
-    margin-top: 15px;
-  }
-
-  .offer-product img {
-    max-height: 430px;
-  }
-
-  .current-price {
-    font-size: 4.4rem;
-  }
-
-  .offer-list {
-    width: max-content;
-
-    max-width: 100%;
-
-    margin:
-      25px auto;
-
-    text-align: left;
-  }
-
-  .btn-large {
-    width: 100%;
-
-    padding-inline: 12px;
-  }
-
-
-  /* ENERGY */
-
-  .energy-layout {
-    padding-top: 60px;
-  }
-
-  .energy-copy {
-    padding: 0;
-
-    text-align: center;
-  }
-
-  .energy-copy p {
-    font-size: 0.95rem;
-  }
-
-  .energy-image {
-    min-height: 320px;
-  }
-
-  .energy-image img {
-    max-height: 330px;
-  }
-
-
-  /* FAQ */
-
-  .faq {
-    padding:
-      70px 0 75px !important;
-  }
-
-  .faq-question {
-    padding:
-      21px 2px;
-
-    font-size: 1rem;
-
-    line-height: 1.55;
-  }
-
-  .faq-answer p {
-    font-size: 0.88rem;
-  }
-
-
-  /* DISCLAIMER */
-
-  .disclaimer-strip {
-    padding:
-      24px 0;
-  }
-
-  .disclaimer-strip p {
-    text-align: left;
-
-    font-size: 0.69rem;
-  }
-
-
-  /* FOOTER */
-
-  .footer {
-    padding-top: 42px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 27px;
-
-    padding-bottom: 30px;
-  }
-
-  .mobile-sticky {
-    display: flex;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .container {
-    width:
-      calc(100% - 28px);
-  }
-
-  .hero {
-    padding-inline: 15px;
-  }
-
-  .hero h1 {
-    font-size:
-      clamp(2.8rem, 13vw, 3.8rem);
-  }
-
-  .hero-copy {
-    font-size: 0.92rem;
-  }
-
-  .btn {
-    min-height: 54px;
-
-    font-size: 0.76rem;
-  }
-
-  .comparison-image {
-    min-height: 260px;
-  }
-
-  .comparison-image img {
-    max-height: 260px;
-  }
-
-  .power-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .power-stats div {
-    padding: 14px;
-  }
-
-  .ingredient-list strong {
-    font-size: 1.15rem;
-  }
-
-  .couple-cutout {
-    height: 410px;
-  }
-
-  .couple-cutout img {
-    max-height: 410px;
-  }
-
-  .current-price {
-    font-size: 3.9rem;
-  }
-
-  .mobile-menu {
-    width: 100%;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
     scroll-behavior: auto;
+
   }
+
 
   *,
   *::before,
   *::after {
+
     animation-duration:
       0.01ms !important;
 
@@ -2720,6 +11712,915 @@ p {
 
     transition-duration:
       0.01ms !important;
+
   }
 
 }
+
+
+/* ============================================================
+   88. TABLET — PART 3
+============================================================ */
+
+@media
+(max-width: 1080px) {
+
+  .trust-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+  }
+
+
+  .trust-card {
+
+    min-height: 290px;
+
+  }
+
+
+  .footer-grid {
+
+    grid-template-columns:
+      1.2fr 0.8fr 0.8fr;
+
+  }
+
+
+  .footer-brand {
+
+    grid-column:
+      1 / -1;
+
+    max-width: 600px;
+
+  }
+
+}
+
+
+/* ============================================================
+   89. 980PX — PART 3
+============================================================ */
+
+@media
+(max-width: 980px) {
+
+  .faq-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+  }
+
+
+  .faq-intro {
+
+    position: relative;
+
+    top: auto;
+
+    max-width: 720px;
+
+  }
+
+
+  .final-product-layout {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .final-product-visual {
+
+    min-height: 560px;
+
+  }
+
+
+  .final-product-copy {
+
+    max-width: 720px;
+
+    margin-inline: auto;
+
+  }
+
+
+  .disclaimer-layout {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+
+  }
+
+}
+
+
+/* ============================================================
+   90. MOBILE — FINAL
+============================================================ */
+
+@media
+(max-width: 768px) {
+
+  /* TRUST */
+
+  .trust-heading {
+
+    margin-bottom: 42px;
+
+  }
+
+
+  .trust-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .trust-card {
+
+    min-height: 250px;
+
+    padding:
+      24px 22px;
+
+  }
+
+
+  .trust-card-number {
+
+    font-size: 3rem;
+
+  }
+
+
+  .trust-icon {
+
+    margin-top: 22px;
+
+  }
+
+
+  .trust-card h3 {
+
+    margin-top: 17px;
+
+  }
+
+
+  /* POWER BANNER */
+
+  .power-banner {
+
+    padding:
+      42px 0;
+
+  }
+
+
+  .power-banner-inner {
+
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+
+  }
+
+
+  .power-banner-button {
+
+    width: 100%;
+
+  }
+
+
+  /* FAQ */
+
+  .faq-layout {
+
+    gap: 35px;
+
+  }
+
+
+  .faq-question {
+
+    grid-template-columns:
+      28px 1fr 38px;
+
+    gap: 10px;
+
+    min-height: 80px;
+
+  }
+
+
+  .faq-question-text {
+
+    font-size: 0.98rem;
+
+  }
+
+
+  .faq-plus {
+
+    width: 38px;
+    height: 38px;
+
+  }
+
+
+  .faq-answer-inner p {
+
+    padding:
+      0 48px 23px 38px;
+
+    font-size: 0.82rem;
+
+  }
+
+
+  /* FINAL PRODUCT */
+
+  .final-product-layout {
+
+    gap: 25px;
+
+  }
+
+
+  .final-product-visual {
+
+    min-height: 440px;
+
+  }
+
+
+  .final-product-visual img {
+
+    max-height: 460px;
+
+  }
+
+
+  .final-product-halo {
+
+    width: 370px;
+    height: 370px;
+
+  }
+
+
+  .final-product-ring {
+
+    width: 350px;
+    height: 350px;
+
+  }
+
+
+  .final-product-seal {
+
+    top: 4%;
+    right: 1%;
+
+    width: 100px;
+    height: 100px;
+
+  }
+
+
+  .final-price-line strong {
+
+    font-size: 2.5rem;
+
+  }
+
+
+  .final-product-order {
+
+    width: 100%;
+
+  }
+
+
+  /* DISCLAIMER */
+
+  .disclaimer-section {
+
+    padding:
+      42px 0;
+
+  }
+
+
+  .disclaimer-copy p {
+
+    font-size: 0.64rem;
+
+  }
+
+
+  /* FOOTER */
+
+  .footer-main {
+
+    padding:
+      60px 0 110px;
+
+  }
+
+
+  .footer-grid {
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap:
+      40px 25px;
+
+  }
+
+
+  .footer-brand {
+
+    grid-column:
+      1 / -1;
+
+  }
+
+
+  .footer-bottom-inner {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    padding:
+      22px 0 105px;
+
+  }
+
+
+  .footer-bottom-links {
+
+    flex-wrap: wrap;
+
+  }
+
+
+  /* STICKY ORDER */
+
+  .mobile-sticky-order {
+
+    display: grid;
+
+  }
+
+
+  .back-to-top {
+
+    right: 16px;
+    bottom: 95px;
+
+  }
+
+
+  /* MODAL */
+
+  .modal-content {
+
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    padding:
+      55px 24px 30px;
+
+  }
+
+
+  .modal-product {
+
+    min-height: 220px;
+
+  }
+
+
+  .modal-product img {
+
+    max-height: 240px;
+
+  }
+
+
+  .modal-copy h3 {
+
+    font-size:
+      clamp(
+        2rem,
+        9vw,
+        3rem
+      );
+
+  }
+
+}
+
+
+/* ============================================================
+   91. SMALL MOBILE — FINAL
+============================================================ */
+
+@media
+(max-width: 480px) {
+
+  .power-banner-copy h3 {
+
+    font-size:
+      clamp(
+        2rem,
+        9vw,
+        3rem
+      );
+
+  }
+
+
+  .faq-question {
+
+    grid-template-columns:
+      22px 1fr 36px;
+
+  }
+
+
+  .faq-number {
+
+    font-size: 0.5rem;
+
+  }
+
+
+  .faq-question-text {
+
+    font-size: 0.9rem;
+
+  }
+
+
+  .faq-answer-inner p {
+
+    padding:
+      0 42px 22px 31px;
+
+  }
+
+
+  .final-product-visual {
+
+    min-height: 380px;
+
+  }
+
+
+  .final-product-visual img {
+
+    max-height: 400px;
+
+  }
+
+
+  .final-product-halo {
+
+    width: 310px;
+    height: 310px;
+
+  }
+
+
+  .final-product-ring {
+
+    width: 295px;
+    height: 295px;
+
+  }
+
+
+  .final-product-seal {
+
+    width: 88px;
+    height: 88px;
+
+  }
+
+
+  .final-product-seal strong {
+
+    font-size: 1.1rem;
+
+  }
+
+
+  .footer-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  .footer-brand {
+
+    grid-column: auto;
+
+  }
+
+
+  .mobile-sticky-order {
+
+    bottom: 8px;
+
+    width:
+      calc(
+        100% - 16px
+      );
+
+    min-height: 64px;
+
+    padding:
+      7px 7px 7px 14px;
+
+  }
+
+
+  .sticky-price strong {
+
+    font-size: 1.35rem;
+
+  }
+
+
+  .sticky-order-btn {
+
+    min-width: 135px;
+
+    min-height: 48px;
+
+    padding:
+      0 13px;
+
+    font-size: 0.63rem;
+
+  }
+
+
+  .back-to-top {
+
+    width: 43px;
+    height: 43px;
+
+    bottom: 88px;
+
+  }
+
+
+  .order-modal {
+
+    padding: 10px;
+
+  }
+
+
+  .order-modal-card {
+
+    max-height:
+      calc(
+        100dvh - 20px
+      );
+
+  }
+
+
+  .modal-close {
+
+    top: 12px;
+    right: 12px;
+
+    width: 40px;
+    height: 40px;
+
+  }
+
+
+  .modal-content {
+
+    padding:
+      50px 18px 25px;
+
+  }
+
+
+  .modal-product {
+
+    min-height: 190px;
+
+  }
+
+
+  .modal-product img {
+
+    max-height: 210px;
+
+  }
+
+
+  .modal-price strong {
+
+    font-size: 2.35rem;
+
+  }
+
+}
+
+
+/* ============================================================
+   92. EXTRA MOBILE TYPOGRAPHY POLISH
+============================================================ */
+
+@media
+(max-width: 768px) {
+
+  body {
+
+    letter-spacing: 0;
+
+  }
+
+
+  h1,
+  h2,
+  h3 {
+
+    overflow-wrap: normal;
+
+    word-break: normal;
+
+  }
+
+
+  .hero-copy h1,
+  .confidence-content h3,
+  .african-copy h2,
+  .stallion-content h2,
+  .intimacy-luxury-copy h2,
+  .premium-offer-copy h2,
+  .final-cta-content h2,
+  .final-product-copy h2 {
+
+    text-wrap: balance;
+
+  }
+
+
+  .hero-description,
+  .african-copy > p,
+  .stallion-content > p,
+  .intimacy-luxury-copy > p,
+  .premium-offer-copy > p,
+  .final-cta-content > p {
+
+    max-width: 100%;
+
+  }
+
+}
+
+
+/* ============================================================
+   93. VERY SMALL DEVICES
+============================================================ */
+
+@media
+(max-width: 370px) {
+
+  .header-inner {
+
+    width:
+      calc(
+        100% - 18px
+      );
+
+  }
+
+
+  .brand-name {
+
+    font-size: 1.02rem;
+
+  }
+
+
+  .brand-tagline {
+
+    display: none;
+
+  }
+
+
+  .header-order-btn {
+
+    min-width: 96px;
+
+    min-height: 42px;
+
+    font-size: 0.57rem;
+
+  }
+
+
+  .mobile-menu-btn {
+
+    width: 40px;
+    height: 40px;
+
+  }
+
+
+  .luxury-container {
+
+    width:
+      calc(
+        100% - 24px
+      );
+
+  }
+
+
+  .hero-container {
+
+    width:
+      calc(
+        100% - 24px
+      );
+
+  }
+
+
+  .hero-bottom-strip {
+
+    width:
+      calc(
+        100% - 24px
+      );
+
+  }
+
+
+  .hero-bottom-strip div {
+
+    padding:
+      0 8px;
+
+  }
+
+
+  .hero-bottom-strip strong {
+
+    font-size: 0.49rem;
+
+  }
+
+
+  .sticky-order-btn {
+
+    min-width: 120px;
+
+    font-size: 0.58rem;
+
+  }
+
+}
+
+
+/* ============================================================
+   94. DESKTOP HOVER ONLY
+============================================================ */
+
+@media
+(hover: hover)
+and
+(pointer: fine) {
+
+  .ingredient-card,
+  .visual-story-card,
+  .premium-benefit-card,
+  .trust-card {
+
+    will-change: transform;
+
+  }
+
+}
+
+
+/* ============================================================
+   95. PRINT SAFETY
+============================================================ */
+
+@media print {
+
+  .site-header,
+  .mobile-navigation,
+  .menu-backdrop,
+  .mobile-sticky-order,
+  .back-to-top,
+  .order-modal {
+
+    display: none !important;
+
+  }
+
+
+  body {
+
+    background: #fff;
+
+    color: #000;
+
+  }
+
+}
+
+
+/* ============================================================
+   96. FINAL OVERRIDES
+============================================================ */
+
+/* Prevent horizontal overflow from decorative circles */
+
+.hero-section,
+.confidence-section,
+.african-formula-section,
+.stallion-power-section,
+.ingredients-section,
+.intimacy-luxury-section,
+.visual-power-section,
+.benefits-premium-section,
+.power-quote-section,
+.premium-offer-section,
+.final-emotional-cta,
+.why-more-power-section,
+.faq-section,
+.final-product-section {
+
+  overflow-x: hidden;
+
+}
+
+
+/* Buttons should never inherit browser blue */
+
+.primary-gold-btn,
+.header-order-btn,
+.mega-order-button,
+.sticky-order-btn,
+.modal-action-btn,
+.mobile-nav-order,
+.final-cta-button,
+.final-product-order,
+.power-banner-button {
+
+  -webkit-tap-highlight-color:
+    transparent;
+
+}
+
+
+/* Better mobile tap targets */
+
+@media
+(max-width: 768px) {
+
+  a,
+  button {
+
+    -webkit-tap-highlight-color:
+      rgba(214, 170, 82, 0.10);
+
+  }
+
+}
+
+
+/* ============================================================
+   END OF MORE POWER V3 — COMPLETE STYLE.CSS
+============================================================ */

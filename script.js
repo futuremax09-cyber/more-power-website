@@ -1,141 +1,57 @@
-/* =========================================================
-   MORE POWER — COMPLETE SCRIPT.JS
-   ========================================================= */
+/* ============================================================
+   MORE POWER — WEBSITE V3
+   COMPLETE SCRIPT.JS
+============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =======================================================
-     1. ELEMENTS
-  ======================================================= */
+  "use strict";
+
+
+  /* ============================================================
+     1. ELEMENT HELPERS
+  ============================================================ */
+
+  const $ = (selector, scope = document) =>
+    scope.querySelector(selector);
+
+  const $$ = (selector, scope = document) =>
+    [...scope.querySelectorAll(selector)];
+
 
   const body = document.body;
 
-  const header = document.getElementById("header");
+  const header =
+    $(".site-header");
 
-  const ageGate = document.getElementById("ageGate");
-  const ageYes = document.getElementById("ageYes");
-  const ageNo = document.getElementById("ageNo");
+  const mobileMenuButton =
+    $(".mobile-menu-btn");
 
-  const menuToggle = document.getElementById("menuToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileNavigation =
+    $(".mobile-navigation");
 
-  const faqItems = document.querySelectorAll(".faq-item");
+  const menuBackdrop =
+    $(".menu-backdrop");
 
-  const revealElements = document.querySelectorAll(".reveal");
+  const backToTop =
+    $(".back-to-top");
 
-  const yearElement = document.getElementById("year");
+  const orderModal =
+    $(".order-modal");
 
-  const orderButton = document.getElementById("orderButton");
-
-
-  /* =======================================================
-     2. CURRENT YEAR
-  ======================================================= */
-
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
+  const modalClose =
+    $(".modal-close");
 
 
-  /* =======================================================
-     3. 18+ AGE GATE
-  ======================================================= */
+  /* ============================================================
+     2. HEADER SCROLL EFFECT
+  ============================================================ */
 
-  /*
-    sessionStorage means:
-    - User confirms once per browser tab/session.
-    - Closing the browser/session may show the gate again.
-
-    This is better than permanently hiding it.
-  */
-
-  const ageVerified =
-    sessionStorage.getItem("morePowerAgeVerified");
-
-  if (ageGate) {
-
-    if (ageVerified === "true") {
-
-      ageGate.classList.add("hidden");
-
-    } else {
-
-      ageGate.classList.remove("hidden");
-
-      body.style.overflow = "hidden";
-
-    }
-
-  }
-
-
-  if (ageYes) {
-
-    ageYes.addEventListener("click", () => {
-
-      sessionStorage.setItem(
-        "morePowerAgeVerified",
-        "true"
-      );
-
-      if (ageGate) {
-        ageGate.classList.add("hidden");
-      }
-
-      body.style.overflow = "";
-
-    });
-
-  }
-
-
-  if (ageNo) {
-
-    ageNo.addEventListener("click", () => {
-
-      /*
-        Avoid forcing navigation to a third-party website.
-        Instead, replace the age card with a simple message.
-      */
-
-      const ageCard =
-        ageGate
-          ? ageGate.querySelector(".age-card")
-          : null;
-
-      if (ageCard) {
-
-        ageCard.innerHTML = `
-          <span class="mini-label">
-            ACCESS RESTRICTED
-          </span>
-
-          <h2>
-            Adults Only
-          </h2>
-
-          <p>
-            This website is intended for visitors
-            aged 18 and above.
-          </p>
-        `;
-
-      }
-
-    });
-
-  }
-
-
-  /* =======================================================
-     4. HEADER SCROLL EFFECT
-  ======================================================= */
-
-  function updateHeader() {
+  function handleHeaderScroll() {
 
     if (!header) return;
 
-    if (window.scrollY > 40) {
+    if (window.scrollY > 30) {
 
       header.classList.add("scrolled");
 
@@ -148,181 +64,180 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  updateHeader();
+  handleHeaderScroll();
 
   window.addEventListener(
     "scroll",
-    updateHeader,
+    handleHeaderScroll,
     { passive: true }
   );
 
 
-  /* =======================================================
-     5. MOBILE MENU
-  ======================================================= */
+  /* ============================================================
+     3. MOBILE MENU
+  ============================================================ */
 
   function openMobileMenu() {
 
-    if (!mobileMenu || !menuToggle) return;
+    if (!mobileNavigation) return;
 
-    mobileMenu.classList.add("active");
+    mobileNavigation.classList.add("active");
 
-    menuToggle.classList.add("active");
+    if (mobileMenuButton) {
+      mobileMenuButton.classList.add("active");
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+    }
+
+    if (menuBackdrop) {
+      menuBackdrop.classList.add("active");
+    }
 
     body.classList.add("menu-open");
-
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "true"
-    );
 
   }
 
 
   function closeMobileMenu() {
 
-    if (!mobileMenu || !menuToggle) return;
+    if (mobileNavigation) {
+      mobileNavigation.classList.remove("active");
+    }
 
-    mobileMenu.classList.remove("active");
+    if (mobileMenuButton) {
 
-    menuToggle.classList.remove("active");
+      mobileMenuButton.classList.remove("active");
+
+      mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+    if (menuBackdrop) {
+      menuBackdrop.classList.remove("active");
+    }
 
     body.classList.remove("menu-open");
 
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
+  }
+
+
+  function toggleMobileMenu() {
+
+    if (!mobileNavigation) return;
+
+    const isOpen =
+      mobileNavigation.classList.contains("active");
+
+    if (isOpen) {
+
+      closeMobileMenu();
+
+    } else {
+
+      openMobileMenu();
+
+    }
+
+  }
+
+
+  if (mobileMenuButton) {
+
+    mobileMenuButton.addEventListener(
+      "click",
+      toggleMobileMenu
     );
 
   }
 
 
-  if (menuToggle) {
+  if (menuBackdrop) {
 
-    menuToggle.setAttribute(
-      "aria-expanded",
-      "false"
+    menuBackdrop.addEventListener(
+      "click",
+      closeMobileMenu
     );
 
-    menuToggle.addEventListener("click", () => {
-
-      const menuIsOpen =
-        mobileMenu &&
-        mobileMenu.classList.contains("active");
-
-      if (menuIsOpen) {
-
-        closeMobileMenu();
-
-      } else {
-
-        openMobileMenu();
-
-      }
-
-    });
-
   }
 
 
-  /*
-    Close menu when clicking any mobile menu link.
-  */
+  /* ============================================================
+     4. CLOSE MOBILE MENU AFTER LINK CLICK
+  ============================================================ */
 
-  if (mobileMenu) {
+  const mobileNavLinks =
+    $$(".mobile-navigation a");
 
-    const mobileLinks =
-      mobileMenu.querySelectorAll("a");
 
-    mobileLinks.forEach((link) => {
+  mobileNavLinks.forEach(link => {
 
-      link.addEventListener(
-        "click",
-        closeMobileMenu
-      );
+    link.addEventListener("click", () => {
+
+      closeMobileMenu();
 
     });
 
-  }
+  });
 
 
-  /*
-    Close mobile menu with Escape key.
-  */
+  /* ============================================================
+     5. ESC KEY — CLOSE MENU / MODAL
+  ============================================================ */
 
   document.addEventListener(
     "keydown",
-    (event) => {
+    event => {
 
-      if (event.key === "Escape") {
+      if (event.key !== "Escape") return;
 
-        closeMobileMenu();
+      closeMobileMenu();
 
-      }
-
-    }
-  );
-
-
-  /*
-    Automatically close menu if desktop size
-    is restored.
-  */
-
-  window.addEventListener(
-    "resize",
-    () => {
-
-      if (window.innerWidth > 1050) {
-
-        closeMobileMenu();
-
-      }
+      closeOrderModal();
 
     }
   );
 
 
-  /* =======================================================
-     6. SMOOTH INTERNAL LINKS
-  ======================================================= */
+  /* ============================================================
+     6. SMOOTH ANCHOR SCROLL
+  ============================================================ */
 
-  const internalLinks =
-    document.querySelectorAll(
-      'a[href^="#"]'
-    );
+  const anchorLinks =
+    $$('a[href^="#"]');
 
 
-  internalLinks.forEach((link) => {
+  anchorLinks.forEach(link => {
 
     link.addEventListener(
       "click",
-      (event) => {
+      event => {
 
-        const targetId =
+        const href =
           link.getAttribute("href");
 
-        /*
-          Ignore empty # links.
-        */
-
         if (
-          !targetId ||
-          targetId === "#"
+          !href ||
+          href === "#" ||
+          href.length < 2
         ) {
 
           return;
 
         }
 
-
         const target =
-          document.querySelector(targetId);
+          document.querySelector(href);
 
         if (!target) return;
 
-
         event.preventDefault();
+
+        closeMobileMenu();
 
         const headerHeight =
           header
@@ -332,8 +247,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetPosition =
           target.getBoundingClientRect().top +
           window.scrollY -
-          headerHeight;
-
+          headerHeight -
+          15;
 
         window.scrollTo({
 
@@ -349,9 +264,496 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =======================================================
-     7. SCROLL REVEAL ANIMATIONS
-  ======================================================= */
+  /* ============================================================
+     7. FAQ ACCORDION
+  ============================================================ */
+
+  const faqItems =
+    $$(".faq-item");
+
+
+  faqItems.forEach(item => {
+
+    const question =
+      $(".faq-question", item);
+
+    if (!question) return;
+
+
+    question.addEventListener(
+      "click",
+      () => {
+
+        const alreadyOpen =
+          item.classList.contains("active");
+
+
+        /*
+          Close other FAQs first.
+          This keeps only one answer open.
+        */
+
+        faqItems.forEach(otherItem => {
+
+          if (otherItem !== item) {
+
+            otherItem.classList.remove(
+              "active"
+            );
+
+            const otherButton =
+              $(".faq-question", otherItem);
+
+            if (otherButton) {
+
+              otherButton.setAttribute(
+                "aria-expanded",
+                "false"
+              );
+
+            }
+
+          }
+
+        });
+
+
+        /*
+          Toggle selected FAQ
+        */
+
+        item.classList.toggle(
+          "active",
+          !alreadyOpen
+        );
+
+        question.setAttribute(
+          "aria-expanded",
+          String(!alreadyOpen)
+        );
+
+      }
+    );
+
+  });
+
+
+  /* ============================================================
+     8. ORDER BUTTON SELECTORS
+  ============================================================ */
+
+  /*
+     Any button/link using these classes
+     will open the order modal.
+
+     You can also add:
+
+     data-order-button
+
+     to any future button.
+  */
+
+  const orderButtonSelectors = [
+
+    ".header-order-btn",
+
+    ".hero-order-btn",
+
+    ".primary-gold-btn",
+
+    ".mobile-nav-order",
+
+    ".mega-order-button",
+
+    ".sticky-order-btn",
+
+    ".final-cta-button",
+
+    ".final-product-order",
+
+    ".power-banner-button",
+
+    "[data-order-button]"
+
+  ];
+
+
+  const orderButtons =
+    $$(
+      orderButtonSelectors.join(",")
+    );
+
+
+  /* ============================================================
+     9. OPEN ORDER MODAL
+  ============================================================ */
+
+  function openOrderModal() {
+
+    /*
+      If modal exists:
+      open modal.
+
+      If modal does not exist:
+      scroll user to offer section.
+    */
+
+    if (orderModal) {
+
+      orderModal.classList.add("active");
+
+      orderModal.setAttribute(
+        "aria-hidden",
+        "false"
+      );
+
+      body.classList.add("modal-open");
+
+      closeMobileMenu();
+
+
+      /*
+        Focus close button for accessibility
+      */
+
+      setTimeout(() => {
+
+        if (modalClose) {
+
+          modalClose.focus();
+
+        }
+
+      }, 100);
+
+
+      return;
+
+    }
+
+
+    /*
+      Fallback:
+      scroll to offer section
+    */
+
+    const offerSection =
+
+      $("#order") ||
+
+      $("#offer") ||
+
+      $(".premium-offer-section") ||
+
+      $(".final-product-section");
+
+
+    if (offerSection) {
+
+      const headerHeight =
+        header
+          ? header.offsetHeight
+          : 0;
+
+      const position =
+        offerSection
+          .getBoundingClientRect()
+          .top +
+        window.scrollY -
+        headerHeight -
+        15;
+
+
+      window.scrollTo({
+
+        top: position,
+
+        behavior: "smooth"
+
+      });
+
+    }
+
+  }
+
+
+  /* ============================================================
+     10. CLOSE ORDER MODAL
+  ============================================================ */
+
+  function closeOrderModal() {
+
+    if (!orderModal) return;
+
+    orderModal.classList.remove("active");
+
+    orderModal.setAttribute(
+      "aria-hidden",
+      "true"
+    );
+
+    body.classList.remove("modal-open");
+
+  }
+
+
+  /* ============================================================
+     11. CONNECT ALL ORDER BUTTONS
+  ============================================================ */
+
+  orderButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      event => {
+
+        /*
+          Do not block a real external checkout link.
+
+          Example:
+
+          <a href="https://checkout..."
+             class="header-order-btn">
+
+          This will continue to checkout normally.
+        */
+
+        const href =
+          button.getAttribute("href");
+
+
+        const isRealExternalLink =
+
+          href &&
+
+          !href.startsWith("#") &&
+
+          href !== "javascript:void(0)";
+
+
+        if (isRealExternalLink) {
+
+          return;
+
+        }
+
+
+        event.preventDefault();
+
+        openOrderModal();
+
+      }
+    );
+
+  });
+
+
+  /* ============================================================
+     12. MODAL CLOSE BUTTON
+  ============================================================ */
+
+  if (modalClose) {
+
+    modalClose.addEventListener(
+      "click",
+      closeOrderModal
+    );
+
+  }
+
+
+  /* ============================================================
+     13. CLOSE MODAL BY CLICKING BACKDROP
+  ============================================================ */
+
+  if (orderModal) {
+
+    orderModal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target === orderModal
+        ) {
+
+          closeOrderModal();
+
+        }
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     14. MODAL ACTION BUTTONS
+  ============================================================ */
+
+  const modalActionButtons =
+    $$(".modal-action-btn");
+
+
+  modalActionButtons.forEach(button => {
+
+    button.addEventListener(
+      "click",
+      event => {
+
+        const href =
+          button.getAttribute("href");
+
+
+        /*
+          If button already has a valid
+          WhatsApp / checkout / phone URL,
+          browser will handle it normally.
+        */
+
+        if (
+          href &&
+          href !== "#" &&
+          !href.startsWith("#")
+        ) {
+
+          return;
+
+        }
+
+
+        /*
+          Placeholder buttons should not
+          jump to top of page.
+        */
+
+        if (
+          !href ||
+          href === "#"
+        ) {
+
+          event.preventDefault();
+
+        }
+
+      }
+    );
+
+  });
+
+
+  /* ============================================================
+     15. BACK TO TOP
+  ============================================================ */
+
+  function handleBackToTopVisibility() {
+
+    if (!backToTop) return;
+
+    if (window.scrollY > 650) {
+
+      backToTop.classList.add(
+        "visible"
+      );
+
+    } else {
+
+      backToTop.classList.remove(
+        "visible"
+      );
+
+    }
+
+  }
+
+
+  handleBackToTopVisibility();
+
+
+  window.addEventListener(
+    "scroll",
+    handleBackToTopVisibility,
+    { passive: true }
+  );
+
+
+  if (backToTop) {
+
+    backToTop.addEventListener(
+      "click",
+      event => {
+
+        event.preventDefault();
+
+        window.scrollTo({
+
+          top: 0,
+
+          behavior: "smooth"
+
+        });
+
+      }
+    );
+
+  }
+
+
+  /* ============================================================
+     16. SCROLL REVEAL
+  ============================================================ */
+
+  /*
+     Add reveal animation automatically
+     to important content blocks.
+  */
+
+  const revealSelectors = [
+
+    ".section-heading",
+
+    ".confidence-content",
+
+    ".african-copy",
+
+    ".ingredient-card",
+
+    ".intimacy-luxury-copy",
+
+    ".visual-story-card",
+
+    ".premium-benefit-card",
+
+    ".power-quote-copy",
+
+    ".premium-offer-copy",
+
+    ".trust-card",
+
+    ".faq-item",
+
+    ".final-product-copy"
+
+  ];
+
+
+  const revealElements =
+    $$(
+      revealSelectors.join(",")
+    );
+
+
+  revealElements.forEach(element => {
+
+    element.classList.add(
+      "scroll-reveal"
+    );
+
+  });
+
+
+  /*
+     Intersection Observer
+  */
 
   if (
     "IntersectionObserver" in window
@@ -360,17 +762,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealObserver =
       new IntersectionObserver(
 
-        (entries, observer) => {
+        entries => {
 
-          entries.forEach((entry) => {
+          entries.forEach(entry => {
 
-            if (entry.isIntersecting) {
+            if (
+              entry.isIntersecting
+            ) {
 
               entry.target.classList.add(
-                "visible"
+                "revealed"
               );
 
-              observer.unobserve(
+              revealObserver.unobserve(
                 entry.target
               );
 
@@ -382,10 +786,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         {
 
-          threshold: 0.12,
+          threshold: 0.08,
 
           rootMargin:
-            "0px 0px -45px 0px"
+            "0px 0px -40px 0px"
 
         }
 
@@ -393,19 +797,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     revealElements.forEach(
-      (element, index) => {
+      element => {
 
-        /*
-          Small staggered animation effect.
-        */
-
-        element.style.transitionDelay =
-          `${Math.min(
-            (index % 4) * 80,
-            240
-          )}ms`;
-
-        revealObserver.observe(element);
+        revealObserver.observe(
+          element
+        );
 
       }
     );
@@ -413,13 +809,15 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
 
     /*
-      Fallback for older browsers.
+      Older browser fallback
     */
 
     revealElements.forEach(
-      (element) => {
+      element => {
 
-        element.classList.add("visible");
+        element.classList.add(
+          "revealed"
+        );
 
       }
     );
@@ -427,126 +825,105 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =======================================================
-     8. FAQ ACCORDION
-  ======================================================= */
+  /* ============================================================
+     17. STAGGER ANIMATIONS
+  ============================================================ */
 
-  faqItems.forEach((item) => {
+  const staggerGroups = [
 
-    const question =
-      item.querySelector(
-        ".faq-question"
-      );
+    ".ingredient-cards",
 
-    if (!question) return;
+    ".premium-benefit-grid",
+
+    ".trust-grid",
+
+    ".visual-story-grid"
+
+  ];
 
 
-    question.addEventListener(
-      "click",
-      () => {
+  staggerGroups.forEach(
+    groupSelector => {
 
-        const isActive =
-          item.classList.contains(
-            "active"
+      const group =
+        $(groupSelector);
+
+      if (!group) return;
+
+
+      const children =
+        [...group.children];
+
+
+      children.forEach(
+        (child, index) => {
+
+          child.style.setProperty(
+
+            "--reveal-delay",
+
+            `${index * 80}ms`
+
           );
 
-
-        /*
-          Close all FAQs first.
-        */
-
-        faqItems.forEach(
-          (otherItem) => {
-
-            otherItem.classList.remove(
-              "active"
-            );
-
-          }
-        );
-
-
-        /*
-          Open clicked FAQ if it wasn't
-          already open.
-        */
-
-        if (!isActive) {
-
-          item.classList.add("active");
-
         }
+      );
 
-      }
+    }
+  );
+
+
+  /* ============================================================
+     18. ACTIVE NAVIGATION LINK ON SCROLL
+  ============================================================ */
+
+  const navigationLinks =
+    $$(
+      '.desktop-nav a[href^="#"], ' +
+      '.mobile-navigation a[href^="#"]'
     );
+
+
+  const navigationSections = [];
+
+
+  navigationLinks.forEach(link => {
+
+    const href =
+      link.getAttribute("href");
+
+    if (
+      !href ||
+      href === "#"
+    ) {
+
+      return;
+
+    }
+
+    const section =
+      document.querySelector(href);
+
+    if (section) {
+
+      navigationSections.push({
+
+        section,
+
+        href
+
+      });
+
+    }
 
   });
 
 
-  /* =======================================================
-     9. ORDER BUTTON
-  ======================================================= */
+  function updateActiveNavigation() {
 
-  if (orderButton) {
-
-    orderButton.addEventListener(
-      "click",
-      (event) => {
-
-        const href =
-          orderButton.getAttribute(
-            "href"
-          );
-
-
-        /*
-          Current HTML uses href="#"
-          until a real checkout or WhatsApp
-          link is added.
-
-          Prevent page jumping while there
-          is no real order URL.
-        */
-
-        if (
-          !href ||
-          href.trim() === "#"
-        ) {
-
-          event.preventDefault();
-
-          alert(
-            "Ordering will be available here soon."
-          );
-
-        }
-
-      }
-    );
-
-  }
-
-
-  /* =======================================================
-     10. HERO SUBTLE PARALLAX
-  ======================================================= */
-
-  const heroBg =
-    document.querySelector(".hero-bg");
-
-
-  function heroParallax() {
-
-    if (!heroBg) return;
-
-    /*
-      Disable heavier parallax on mobile.
-    */
-
-    if (window.innerWidth <= 768) {
-
-      heroBg.style.transform =
-        "scale(1.02)";
+    if (
+      navigationSections.length === 0
+    ) {
 
       return;
 
@@ -554,23 +931,220 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     const scrollPosition =
-      window.scrollY;
+      window.scrollY +
+      window.innerHeight * 0.32;
+
+
+    let activeHref = "";
+
+
+    navigationSections.forEach(
+      item => {
+
+        if (
+          scrollPosition >=
+          item.section.offsetTop
+        ) {
+
+          activeHref =
+            item.href;
+
+        }
+
+      }
+    );
+
+
+    navigationLinks.forEach(link => {
+
+      const isActive =
+        link.getAttribute("href") ===
+        activeHref;
+
+
+      link.classList.toggle(
+        "active",
+        isActive
+      );
+
+    });
+
+  }
+
+
+  updateActiveNavigation();
+
+
+  window.addEventListener(
+    "scroll",
+    updateActiveNavigation,
+    { passive: true }
+  );
+
+
+  /* ============================================================
+     19. IMAGE LOADING
+  ============================================================ */
+
+  const allImages =
+    $$("img");
+
+
+  allImages.forEach(image => {
 
     /*
-      Only animate while near hero section.
+      Lazy load all images except hero/priority
     */
 
     if (
-      scrollPosition <
-      window.innerHeight * 1.2
+      !image.hasAttribute(
+        "loading"
+      )
     ) {
 
-      const movement =
-        scrollPosition * 0.08;
+      const isHeroImage =
 
-      heroBg.style.transform =
-        `scale(1.04)
-         translateY(${movement}px)`;
+        image.closest(
+          ".hero-section"
+        ) ||
+
+        image.classList.contains(
+          "hero-product-image"
+        );
+
+
+      if (!isHeroImage) {
+
+        image.setAttribute(
+          "loading",
+          "lazy"
+        );
+
+      }
+
+    }
+
+
+    /*
+      Fade image in when loaded
+    */
+
+    const markLoaded = () => {
+
+      image.classList.add(
+        "image-loaded"
+      );
+
+    };
+
+
+    if (image.complete) {
+
+      markLoaded();
+
+    } else {
+
+      image.addEventListener(
+        "load",
+        markLoaded,
+        { once: true }
+      );
+
+    }
+
+
+    /*
+      Prevent broken image icon
+    */
+
+    image.addEventListener(
+      "error",
+      () => {
+
+        image.classList.add(
+          "image-error"
+        );
+
+      }
+    );
+
+  });
+
+
+  /* ============================================================
+     20. HERO PARALLAX — DESKTOP ONLY
+  ============================================================ */
+
+  const heroSection =
+    $(".hero-section");
+
+  const heroProduct =
+    $(".hero-product-image");
+
+
+  let ticking = false;
+
+
+  function updateHeroParallax() {
+
+    if (
+      !heroSection ||
+      !heroProduct ||
+      window.innerWidth <= 980
+    ) {
+
+      return;
+
+    }
+
+
+    const rect =
+      heroSection.getBoundingClientRect();
+
+
+    if (
+      rect.bottom < 0 ||
+      rect.top >
+      window.innerHeight
+    ) {
+
+      return;
+
+    }
+
+
+    const scrollAmount =
+      window.scrollY;
+
+
+    const movement =
+      Math.min(
+        scrollAmount * 0.035,
+        28
+      );
+
+
+    heroProduct.style.transform =
+      `translateY(${movement}px)`;
+
+  }
+
+
+  function requestHeroParallax() {
+
+    if (!ticking) {
+
+      window.requestAnimationFrame(
+        () => {
+
+          updateHeroParallax();
+
+          ticking = false;
+
+        }
+      );
+
+      ticking = true;
 
     }
 
@@ -579,269 +1153,321 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener(
     "scroll",
-    heroParallax,
+    requestHeroParallax,
     { passive: true }
   );
 
 
-  /* =======================================================
-     11. PRODUCT IMAGE FLOAT / POINTER EFFECT
-  ======================================================= */
+  /* ============================================================
+     21. RESET PARALLAX ON MOBILE
+  ============================================================ */
 
-  const floatingImages =
-    document.querySelectorAll(
-      ".product-visual img, " +
-      ".offer-product img, " +
-      ".energy-image img"
-    );
+  window.addEventListener(
+    "resize",
+    () => {
 
+      if (
+        heroProduct &&
+        window.innerWidth <= 980
+      ) {
 
-  floatingImages.forEach((image) => {
-
-    const parent =
-      image.parentElement;
-
-    if (!parent) return;
-
-
-    parent.addEventListener(
-      "mousemove",
-      (event) => {
-
-        /*
-          Disable mouse tilt on touch/mobile.
-        */
-
-        if (
-          window.innerWidth <= 768
-        ) {
-
-          return;
-
-        }
-
-
-        const rect =
-          parent.getBoundingClientRect();
-
-        const x =
-          event.clientX -
-          rect.left;
-
-        const y =
-          event.clientY -
-          rect.top;
-
-
-        const centerX =
-          rect.width / 2;
-
-        const centerY =
-          rect.height / 2;
-
-
-        const rotateY =
-          ((x - centerX) /
-            centerX) * 2.2;
-
-        const rotateX =
-          ((centerY - y) /
-            centerY) * 1.8;
-
-
-        image.style.transform =
-          `
-            perspective(900px)
-            rotateX(${rotateX}deg)
-            rotateY(${rotateY}deg)
-            translateY(-5px)
-          `;
+        heroProduct.style.transform = "";
 
       }
-    );
 
+      /*
+        Close mobile menu when switching
+        back to desktop.
+      */
 
-    parent.addEventListener(
-      "mouseleave",
-      () => {
+      if (
+        window.innerWidth > 980
+      ) {
 
-        image.style.transform = "";
+        closeMobileMenu();
 
       }
+
+    }
+  );
+
+
+  /* ============================================================
+     22. PREVENT BODY SCROLL WHEN MODAL/MENU OPEN
+  ============================================================ */
+
+  const style =
+    document.createElement(
+      "style"
     );
+
+
+  style.textContent = `
+
+    body.menu-open,
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition:
+        opacity 0.75s ease var(--reveal-delay, 0ms),
+        transform 0.75s ease var(--reveal-delay, 0ms);
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    img {
+      transition:
+        opacity 0.45s ease;
+    }
+
+    img:not(.image-loaded) {
+      opacity: 0;
+    }
+
+    img.image-loaded {
+      opacity: 1;
+    }
+
+    img.image-error {
+      display: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .scroll-reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+    }
+
+  `;
+
+
+  document.head.appendChild(
+    style
+  );
+
+
+  /* ============================================================
+     23. CURRENT YEAR
+  ============================================================ */
+
+  const yearElements =
+    $$(
+      "[data-current-year]"
+    );
+
+
+  const currentYear =
+    new Date().getFullYear();
+
+
+  yearElements.forEach(element => {
+
+    element.textContent =
+      currentYear;
 
   });
 
 
-  /* =======================================================
-     12. ACTIVE NAV SECTION
-  ======================================================= */
-
-  const sections =
-    document.querySelectorAll(
-      "main section[id]"
-    );
-
-  const desktopNavLinks =
-    document.querySelectorAll(
-      '.desktop-nav a[href^="#"]'
-    );
-
-
-  if (
-    sections.length &&
-    desktopNavLinks.length &&
-    "IntersectionObserver" in window
-  ) {
-
-    const sectionObserver =
-      new IntersectionObserver(
-
-        (entries) => {
-
-          entries.forEach((entry) => {
-
-            if (
-              !entry.isIntersecting
-            ) {
-
-              return;
-
-            }
-
-
-            const id =
-              entry.target.id;
-
-
-            desktopNavLinks.forEach(
-              (link) => {
-
-                const matches =
-                  link.getAttribute(
-                    "href"
-                  ) === `#${id}`;
-
-
-                if (matches) {
-
-                  link.style.color =
-                    "var(--gold-light)";
-
-                } else {
-
-                  link.style.color = "";
-
-                }
-
-              }
-            );
-
-          });
-
-        },
-
-        {
-
-          threshold: 0.35
-
-        }
-
-      );
-
-
-    sections.forEach(
-      (section) => {
-
-        sectionObserver.observe(section);
-
-      }
-    );
-
-  }
-
-
-  /* =======================================================
-     13. IMAGE LOAD HANDLING
-  ======================================================= */
-
-  const allImages =
-    document.querySelectorAll("img");
-
-
-  allImages.forEach((image) => {
-
-    /*
-      Prevent broken images from displaying
-      the browser's broken-image icon.
-    */
-
-    image.addEventListener(
-      "error",
-      () => {
-
-        console.warn(
-          `Image could not load: ${image.src}`
-        );
-
-        image.style.opacity = "0";
-
-      }
-    );
-
-
-    image.addEventListener(
-      "load",
-      () => {
-
-        image.style.opacity = "1";
-
-      }
-    );
-
-  });
-
-
-  /* =======================================================
-     14. INITIAL REVEAL FIX
-  ======================================================= */
+  /* ============================================================
+     24. INITIAL FAQ
+  ============================================================ */
 
   /*
-    Ensure elements already visible on first load
-    don't remain hidden due to browser timing.
+     If HTML already marks an FAQ
+     with class="faq-item active",
+     set accessibility state correctly.
   */
 
-  setTimeout(() => {
+  faqItems.forEach(item => {
 
-    revealElements.forEach(
-      (element) => {
+    const question =
+      $(".faq-question", item);
+
+    if (!question) return;
+
+    question.setAttribute(
+
+      "aria-expanded",
+
+      item.classList.contains(
+        "active"
+      )
+        ? "true"
+        : "false"
+
+    );
+
+  });
+
+
+  /* ============================================================
+     25. BUTTON RIPPLE EFFECT
+  ============================================================ */
+
+  const rippleButtons =
+    $$(
+      ".primary-gold-btn, " +
+      ".header-order-btn, " +
+      ".sticky-order-btn, " +
+      ".mega-order-button"
+    );
+
+
+  rippleButtons.forEach(button => {
+
+    button.addEventListener(
+      "pointerdown",
+      event => {
+
+        /*
+          Only visual effect.
+        */
 
         const rect =
-          element.getBoundingClientRect();
+          button.getBoundingClientRect();
 
-        if (
-          rect.top <
-          window.innerHeight * 0.95
-        ) {
 
-          element.classList.add(
-            "visible"
+        const ripple =
+          document.createElement(
+            "span"
           );
 
-        }
+
+        ripple.className =
+          "button-ripple";
+
+
+        ripple.style.left =
+          `${
+            event.clientX -
+            rect.left
+          }px`;
+
+
+        ripple.style.top =
+          `${
+            event.clientY -
+            rect.top
+          }px`;
+
+
+        button.appendChild(
+          ripple
+        );
+
+
+        setTimeout(() => {
+
+          ripple.remove();
+
+        }, 650);
 
       }
     );
 
-  }, 150);
+  });
 
 
-  /* =======================================================
-     15. PAGE READY
-  ======================================================= */
+  /*
+     Ripple CSS
+  */
 
-  document.documentElement.classList.add(
-    "js-ready"
+  const rippleStyle =
+    document.createElement(
+      "style"
+    );
+
+
+  rippleStyle.textContent = `
+
+    .primary-gold-btn,
+    .header-order-btn,
+    .sticky-order-btn,
+    .mega-order-button {
+
+      position: relative;
+      overflow: hidden;
+
+    }
+
+    .button-ripple {
+
+      position: absolute;
+
+      z-index: 20;
+
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,0.45);
+
+      pointer-events: none;
+
+      transform:
+        translate(-50%, -50%)
+        scale(0);
+
+      animation:
+        morePowerRipple
+        0.65s ease-out;
+
+    }
+
+    @keyframes morePowerRipple {
+
+      to {
+
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(22);
+
+      }
+
+    }
+
+  `;
+
+
+  document.head.appendChild(
+    rippleStyle
+  );
+
+
+  /* ============================================================
+     26. PAGE READY
+  ============================================================ */
+
+  requestAnimationFrame(() => {
+
+    body.classList.add(
+      "page-ready"
+    );
+
+  });
+
+
+  console.log(
+    "MORE POWER V3 — Website Ready"
   );
 
 });
+
+
+/* ============================================================
+   END OF MORE POWER V3 — SCRIPT.JS
+============================================================ */

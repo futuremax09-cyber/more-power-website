@@ -10,68 +10,259 @@
 
   <meta
     name="description"
-    content="MORE POWER — पुरुषों के लिए premium herbal wellness formula. Confidence, vitality और active lifestyle के लिए thoughtfully crafted botanical blend."
+    content="MORE POWER — Premium men's herbal wellness formula inspired by traditional botanical wellness."
+  >
+
+  <meta
+    name="theme-color"
+    content="#050706"
   >
 
   <title>
-    MORE POWER | Premium Herbal Wellness for Men
+    MORE POWER | Premium Men's Herbal Wellness
   </title>
 
-  <!-- Fonts -->
+  <!-- ==========================================
+       PREMIUM FONTS
+  =========================================== -->
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600;1,700&family=Manrope:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="style.css">
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
 </head>
 
 
 <body>
 
 
-<!-- =====================================================
+<!-- =========================================================
+     DECORATIVE BACKGROUND
+========================================================= -->
+
+<div class="page-noise"></div>
+
+<div class="ambient-light ambient-light-one"></div>
+
+<div class="ambient-light ambient-light-two"></div>
+
+
+
+<!-- =========================================================
      HEADER
-===================================================== -->
+========================================================= -->
 
-<header class="header" id="header">
+<header
+  class="site-header"
+  id="header"
+>
 
-  <a href="#home" class="brand">
+  <div class="header-inner">
 
-    <span class="brand-main">
-      MORE POWER
+
+    <!-- LOGO -->
+
+    <a
+      href="#home"
+      class="brand-logo"
+      aria-label="MORE POWER Home"
+    >
+
+      <span class="brand-name">
+        MORE POWER
+      </span>
+
+      <span class="brand-tagline">
+        PREMIUM MEN'S WELLNESS
+      </span>
+
+    </a>
+
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav
+      class="desktop-navigation"
+      aria-label="Main Navigation"
+    >
+
+      <a href="#home">
+        Home
+      </a>
+
+      <a href="#benefits">
+        Benefits
+      </a>
+
+      <a href="#formula">
+        African Formula
+      </a>
+
+      <a href="#ingredients">
+        Ingredients
+      </a>
+
+      <a href="#offer">
+        Offer
+      </a>
+
+      <a href="#faq">
+        FAQ
+      </a>
+
+    </nav>
+
+
+
+    <!-- HEADER ORDER BUTTON -->
+
+    <a
+      href="#offer"
+      class="header-order-btn"
+    >
+
+      <span>
+        ORDER NOW
+      </span>
+
+      <span class="btn-arrow">
+        ↗
+      </span>
+
+    </a>
+
+
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+      class="mobile-menu-btn"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+
+      <span></span>
+
+      <span></span>
+
+      <span></span>
+
+    </button>
+
+  </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MOBILE NAVIGATION
+========================================================= -->
+
+<div
+  class="mobile-navigation"
+  id="mobileMenu"
+>
+
+  <div class="mobile-nav-top">
+
+    <span>
+      MENU
     </span>
 
-    <span class="brand-sub">
-      PREMIUM HERBAL FORMULA
-    </span>
+    <button
+      type="button"
+      id="mobileMenuClose"
+      aria-label="Close navigation"
+    >
+      ×
+    </button>
 
-  </a>
+  </div>
 
 
-  <nav class="desktop-nav">
+  <nav>
+
+    <a href="#home">
+
+      <span>
+        01
+      </span>
+
+      Home
+
+    </a>
+
 
     <a href="#benefits">
-      फायदे
+
+      <span>
+        02
+      </span>
+
+      Benefits
+
     </a>
+
+
+    <a href="#formula">
+
+      <span>
+        03
+      </span>
+
+      African Formula
+
+    </a>
+
 
     <a href="#ingredients">
+
+      <span>
+        04
+      </span>
+
       Ingredients
+
     </a>
 
-    <a href="#experience">
-      Experience
-    </a>
 
     <a href="#offer">
-      Offer
+
+      <span>
+        05
+      </span>
+
+      Special Offer
+
     </a>
 
+
     <a href="#faq">
+
+      <span>
+        06
+      </span>
+
       FAQ
+
     </a>
 
   </nav>
@@ -79,641 +270,1083 @@
 
   <a
     href="#offer"
-    class="nav-cta"
+    class="mobile-nav-order"
   >
+
     अभी ऑर्डर करें
-  </a>
 
+    <strong>
+      ₹2,999
+    </strong>
 
-  <button
-    class="menu-toggle"
-    id="menuToggle"
-    aria-label="Open menu"
-  >
-    <span></span>
-    <span></span>
-  </button>
-
-</header>
-
-
-<!-- MOBILE MENU -->
-
-<div
-  class="mobile-menu"
-  id="mobileMenu"
->
-
-  <a href="#home">
-    Home
-  </a>
-
-  <a href="#benefits">
-    फायदे
-  </a>
-
-  <a href="#ingredients">
-    Ingredients
-  </a>
-
-  <a href="#experience">
-    Experience
-  </a>
-
-  <a href="#offer">
-    Special Offer
-  </a>
-
-  <a href="#faq">
-    FAQ
-  </a>
-
-  <a
-    href="#offer"
-    class="btn btn-gold"
-  >
-    अभी ऑर्डर करें
   </a>
 
 </div>
 
 
 
+<!-- MOBILE MENU BACKDROP -->
+
+<div
+  class="menu-backdrop"
+  id="menuBackdrop"
+></div>
+
+
+
 <main>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
 
 <section
-  class="hero"
+  class="hero-section"
   id="home"
 >
 
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+
+  <!-- BACKGROUND IMAGE -->
+
+  <div class="hero-background"></div>
 
 
-  <div class="hero-content">
+  <!-- OVERLAYS -->
 
-    <span class="eyebrow">
-      PREMIUM HERBAL WELLNESS • FOR MEN
-    </span>
+  <div class="hero-dark-overlay"></div>
 
-
-    <h1>
-
-      अपनी असली
-
-      <span>
-        POWER
-      </span>
-
-      महसूस करें।
-
-    </h1>
+  <div class="hero-gold-glow"></div>
 
 
-    <p class="hero-copy">
 
-      पुरुषों के लिए तैयार किया गया एक
-      <strong>premium herbal wellness formula</strong>
-      — confidence, vitality और एक बेहतर,
-      active lifestyle को support करने के लिए।
+  <!-- HERO CONTENT -->
 
-    </p>
+  <div class="hero-container">
 
 
-    <div class="hero-points">
+    <div class="hero-copy">
 
-      <span>
-        ✦ Premium Herbal Blend
-      </span>
 
-      <span>
-        ✦ Crafted for Men
-      </span>
+      <!-- PREMIUM LABEL -->
 
-      <span>
-        ✦ Premium Quality
-      </span>
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          PREMIUM MEN'S HERBAL WELLNESS
+        </span>
+
+      </div>
+
+
+
+      <!-- HERO HEADING -->
+
+      <h1>
+
+        अपने अंदर की
+
+        <span class="hero-gold-text">
+          असली POWER
+        </span>
+
+        को महसूस करें।
+
+      </h1>
+
+
+
+      <!-- HERO DESCRIPTION -->
+
+      <p class="hero-description">
+
+        Traditional botanical wellness और
+        <strong>
+          African herbal traditions
+        </strong>
+        से inspired एक premium men's formula —
+        उन पुरुषों के लिए जो अपनी
+        <strong>
+          energy, vitality, confidence
+        </strong>
+        और intimate wellness को ordinary नहीं
+        रहने देना चाहते।
+
+      </p>
+
+
+
+      <!-- HERO BENEFIT CHIPS -->
+
+      <div class="hero-benefits">
+
+
+        <div class="hero-benefit">
+
+          <span class="benefit-symbol">
+            ✦
+          </span>
+
+          <span>
+            Premium Botanical Blend
+          </span>
+
+        </div>
+
+
+        <div class="hero-benefit">
+
+          <span class="benefit-symbol">
+            ✦
+          </span>
+
+          <span>
+            Men's Vitality Support
+          </span>
+
+        </div>
+
+
+        <div class="hero-benefit">
+
+          <span class="benefit-symbol">
+            ✦
+          </span>
+
+          <span>
+            Confidence & Wellness
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- HERO BUTTONS -->
+
+      <div class="hero-actions">
+
+
+        <a
+          href="#offer"
+          class="primary-gold-btn"
+        >
+
+          <span>
+            अभी पाएं — ₹2,999
+          </span>
+
+          <span class="button-circle">
+            ↗
+          </span>
+
+        </a>
+
+
+        <a
+          href="#formula"
+          class="secondary-luxury-btn"
+        >
+
+          Formula जानें
+
+          <span>
+            ↓
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+
+      <!-- PRICE LINE -->
+
+      <div class="hero-price-note">
+
+        <span>
+          Regular Price
+        </span>
+
+        <del>
+          ₹6,999
+        </del>
+
+        <span class="gold-dot"></span>
+
+        <strong>
+          Limited Offer ₹2,999
+        </strong>
+
+      </div>
+
 
     </div>
 
 
-    <div class="hero-actions">
 
-      <a
-        href="#offer"
-        class="btn btn-gold"
-      >
-        अभी पाएं — ₹2,999
-      </a>
+    <!-- FLOATING PRODUCT -->
 
-      <a
-        href="#ingredients"
-        class="text-link"
-      >
-        Ingredients देखें
-      </a>
-
-    </div>
-
-  </div>
-
-</section>
+    <div class="hero-product-wrap">
 
 
-
-<!-- =====================================================
-     PRODUCT INTRO
-===================================================== -->
-
-<section
-  class="section product-intro"
-  id="benefits"
->
-
-  <div class="container split-layout">
+      <div class="product-halo"></div>
 
 
-    <div class="product-visual reveal">
+      <div class="hero-product-badge">
 
-      <div class="gold-orbit"></div>
+        <span>
+          PREMIUM
+        </span>
+
+        <strong>
+          HERBAL
+        </strong>
+
+      </div>
+
 
       <img
         src="hero-product.png"
-        alt="MORE POWER premium herbal formula"
+        alt="MORE POWER Premium Herbal Formula"
+        class="hero-product-image"
       >
 
-    </div>
 
-
-    <div class="section-copy reveal">
-
-      <span class="eyebrow">
-        MORE THAN A FORMULA
-      </span>
-
-
-      <h2>
-
-        सिर्फ एक Formula नहीं।
+      <div class="floating-card floating-card-one">
 
         <span>
-          Confidence का नया एहसास।
-        </span>
-
-      </h2>
-
-
-      <p>
-
-        MORE POWER एक premium men's wellness
-        experience के रूप में तैयार किया गया है,
-        जिसमें selected botanical ingredients और
-        sophisticated formulation का combination है।
-
-      </p>
-
-
-      <div class="feature-grid">
-
-
-        <article class="feature-card">
-
-          <span>01</span>
-
-          <h3>
-            Premium Blend
-          </h3>
-
-          <p>
-            Carefully selected botanical ingredients
-            के साथ refined herbal formulation.
-          </p>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span>02</span>
-
-          <h3>
-            खास पुरुषों के लिए
-          </h3>
-
-          <p>
-            Modern पुरुषों की wellness और active
-            lifestyle को ध्यान में रखकर बनाया गया।
-          </p>
-
-        </article>
-
-
-        <article class="feature-card">
-
-          <span>03</span>
-
-          <h3>
-            Daily Confidence
-          </h3>
-
-          <p>
-            अपनी daily routine में confidence,
-            balance और vitality को प्राथमिकता दें।
-          </p>
-
-        </article>
-
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     BENEFITS
-===================================================== -->
-
-<section class="section benefits">
-
-  <div class="container">
-
-
-    <div class="section-heading center reveal">
-
-      <span class="eyebrow">
-        BUILT FOR THE MODERN MAN
-      </span>
-
-      <h2>
-
-        हर दिन महसूस करें
-
-        <span>
-          बेहतर Confidence.
-        </span>
-
-      </h2>
-
-
-      <p>
-
-        Premium herbal wellness को अपनी
-        active lifestyle का हिस्सा बनाएं।
-
-      </p>
-
-    </div>
-
-
-    <div class="benefit-grid">
-
-
-      <article class="benefit-card reveal">
-
-        <div class="icon">
           ✦
-        </div>
-
-        <h3>
-          Vitality
-        </h3>
-
-        <p>
-          Active lifestyle और everyday wellness
-          को complement करने के लिए thoughtfully
-          designed formula.
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="icon">
-          ◆
-        </div>
-
-        <h3>
-          Confidence
-        </h3>
-
-        <p>
-          जब आप भीतर से बेहतर महसूस करते हैं,
-          तो वही confidence आपके personality
-          में दिखाई देता है।
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="icon">
-          ✧
-        </div>
-
-        <h3>
-          Wellness
-        </h3>
-
-        <p>
-          Traditional botanicals से inspired
-          premium men's wellness experience.
-        </p>
-
-      </article>
-
-
-      <article class="benefit-card reveal">
-
-        <div class="icon">
-          ◇
-        </div>
-
-        <h3>
-          Premium Quality
-        </h3>
-
-        <p>
-          Quality-focused presentation,
-          premium positioning और sophisticated
-          herbal concept.
-        </p>
-
-      </article>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     HORSE / POWER SECTION
-===================================================== -->
-
-<section class="section power-section">
-
-  <div class="power-glow"></div>
-
-
-  <div class="container power-layout">
-
-
-    <div class="power-copy reveal">
-
-      <span class="eyebrow">
-        STRENGTH • ENERGY • CONFIDENCE
-      </span>
-
-
-      <h2>
-
-        ताकत जो सिर्फ दिखे नहीं।
-
-        <span>
-          महसूस भी हो।
         </span>
 
-      </h2>
-
-
-      <p>
-
-        घोड़ा सदियों से strength, stamina और
-        powerful presence का प्रतीक रहा है।
-
-        MORE POWER उसी bold confidence और
-        masculine energy से inspired एक premium
-        wellness identity पेश करता है।
-
-      </p>
-
-
-      <div class="power-stats">
-
         <div>
 
-          <strong>
-            STRONG
-          </strong>
-
-          <span>
-            Powerful mindset
-          </span>
-
-        </div>
-
-
-        <div>
+          <small>
+            INSPIRED BY
+          </small>
 
           <strong>
-            ACTIVE
+            Traditional Botanicals
           </strong>
-
-          <span>
-            Everyday vitality
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong>
-            CONFIDENT
-          </strong>
-
-          <span>
-            Own your presence
-          </span>
 
         </div>
 
       </div>
 
-    </div>
 
-
-    <div class="horse-visual reveal">
-
-      <img
-        src="horse-product.png"
-        alt="MORE POWER with powerful black stallion"
-        class="horse-product"
-      >
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     VISUAL METAPHOR / COMPARISON
-===================================================== -->
-
-<section class="section visual-metaphor">
-
-  <div class="container">
-
-
-    <div class="section-heading center reveal">
-
-      <span class="eyebrow">
-        A SYMBOL OF CONFIDENCE
-      </span>
-
-
-      <h2>
-
-        जब Confidence बढ़े,
+      <div class="floating-card floating-card-two">
 
         <span>
-          फर्क महसूस होता है।
+          ◆
         </span>
 
-      </h2>
+        <div>
 
+          <small>
+            CREATED FOR
+          </small>
 
-      <p>
-
-        ये creative visuals केवल strength,
-        confidence और transformation के symbolic
-        representation के रूप में प्रस्तुत किए गए हैं।
-
-      </p>
-
-    </div>
-
-
-    <div class="comparison-grid">
-
-
-      <article class="comparison-card reveal">
-
-        <div class="comparison-label">
-          VISUAL METAPHOR 01
-        </div>
-
-        <div class="comparison-image">
-
-          <img
-            src="banana-comparison.png"
-            alt="Creative symbolic comparison visual"
-          >
+          <strong>
+            Modern Men
+          </strong>
 
         </div>
 
-
-        <h3>
-          Feel More Confident.
-        </h3>
-
-        <p>
-          Confidence का असर सिर्फ महसूस नहीं होता —
-          आपकी presence में भी दिखाई देता है।
-        </p>
-
-      </article>
-
-
-      <article class="comparison-card reveal">
-
-        <div class="comparison-label">
-          VISUAL METAPHOR 02
-        </div>
-
-        <div class="comparison-image">
-
-          <img
-            src="cucumber-comparison.png"
-            alt="Creative symbolic comparison visual"
-          >
-
-        </div>
-
-
-        <h3>
-          Own Your Power.
-        </h3>
-
-        <p>
-          अपनी wellness, confidence और active
-          lifestyle को priority दें।
-        </p>
-
-      </article>
+      </div>
 
 
     </div>
 
-
-    <p class="metaphor-note">
-
-      *Visuals are conceptual advertising metaphors only
-      and do not represent guaranteed physical or medical outcomes.
-
-    </p>
 
   </div>
+
+
+
+  <!-- HERO BOTTOM STRIP -->
+
+  <div class="hero-bottom-strip">
+
+
+    <div>
+
+      <span>
+        01
+      </span>
+
+      <strong>
+        PREMIUM FORMULA
+      </strong>
+
+    </div>
+
+
+    <div>
+
+      <span>
+        02
+      </span>
+
+      <strong>
+        MEN'S WELLNESS
+      </strong>
+
+    </div>
+
+
+    <div>
+
+      <span>
+        03
+      </span>
+
+      <strong>
+        BOLD CONFIDENCE
+      </strong>
+
+    </div>
+
+
+    <div>
+
+      <span>
+        04
+      </span>
+
+      <strong>
+        PREMIUM EXPERIENCE
+      </strong>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- SCROLL INDICATOR -->
+
+  <a
+    href="#benefits"
+    class="scroll-indicator"
+    aria-label="Scroll to next section"
+  >
+
+    <span>
+      SCROLL
+    </span>
+
+    <i></i>
+
+  </a>
+
 
 </section>
 
 
 
-<!-- =====================================================
-     INGREDIENTS
-===================================================== -->
+<!-- =========================================================
+     INTRO / CONFIDENCE SECTION
+========================================================= -->
 
 <section
-  class="section ingredients"
+  class="confidence-section section-padding"
+  id="benefits"
+>
+
+
+  <div class="luxury-container">
+
+
+    <!-- SECTION HEADER -->
+
+    <div class="section-intro centered reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          MORE THAN JUST A FORMULA
+        </span>
+
+        <span class="label-line"></span>
+
+      </div>
+
+
+      <h2>
+
+        हर Powerful Man की
+
+        <span>
+          एक Secret Strength
+        </span>
+
+        होती है।
+
+      </h2>
+
+
+      <p>
+
+        Confidence सिर्फ आपके कपड़ों,
+        personality या status से नहीं आता।
+
+        जब आप अंदर से energetic,
+        self-assured और अपने intimate moments
+        को लेकर confident महसूस करते हैं,
+        तो आपकी पूरी presence बदल जाती है।
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- CONFIDENCE CONTENT -->
+
+    <div class="confidence-layout">
+
+
+      <!-- IMAGE SIDE -->
+
+      <div class="confidence-visual reveal">
+
+
+        <div class="visual-frame">
+
+
+          <div class="frame-corner corner-one"></div>
+
+          <div class="frame-corner corner-two"></div>
+
+          <div class="frame-corner corner-three"></div>
+
+          <div class="frame-corner corner-four"></div>
+
+
+          <div class="visual-glow"></div>
+
+
+          <img
+            src="ouple-transparent.png"
+            alt="Elegant adult couple representing confidence and connection"
+          >
+
+
+          <div class="visual-caption">
+
+            <span>
+              POWER
+            </span>
+
+            <strong>
+              PASSION
+            </strong>
+
+            <span>
+              PRESENCE
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- TEXT SIDE -->
+
+      <div class="confidence-content reveal">
+
+
+        <span class="section-number">
+          01 / CONFIDENCE
+        </span>
+
+
+        <h3>
+
+          जब Confidence बढ़ता है,
+
+          <em>
+            Connection बदल जाता है।
+          </em>
+
+        </h3>
+
+
+        <p>
+
+          बेहतर wellness और self-confidence
+          आपको अपने खास पलों में अधिक present,
+          relaxed और assured महसूस करने में
+          मदद कर सकते हैं।
+
+      </p>
+
+
+        <p>
+
+          MORE POWER की philosophy simple है —
+          अपने शरीर, अपनी energy और अपनी
+          intimate wellness को वह attention दें
+          जिसकी वह हकदार है।
+
+        </p>
+
+
+
+        <!-- MINI FEATURES -->
+
+        <div class="confidence-features">
+
+
+          <div class="confidence-feature">
+
+            <span class="feature-number">
+              01
+            </span>
+
+            <div>
+
+              <strong>
+                Masculine Confidence
+              </strong>
+
+              <p>
+                अपनी presence को stronger महसूस करें।
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="confidence-feature">
+
+            <span class="feature-number">
+              02
+            </span>
+
+            <div>
+
+              <strong>
+                Intimate Wellness
+              </strong>
+
+              <p>
+                अपने खास पलों में confidence को priority दें।
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="confidence-feature">
+
+            <span class="feature-number">
+              03
+            </span>
+
+            <div>
+
+              <strong>
+                Active Vitality
+              </strong>
+
+              <p>
+                Modern lifestyle के लिए premium wellness support.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     AFRICAN FORMULA INTRO
+========================================================= -->
+
+<section
+  class="african-formula-section section-padding"
+  id="formula"
+>
+
+
+  <div class="african-pattern"></div>
+
+  <div class="african-gold-light"></div>
+
+
+
+  <div class="luxury-container">
+
+
+    <div class="african-formula-layout">
+
+
+
+      <!-- TEXT -->
+
+      <div class="african-copy reveal">
+
+
+        <div class="premium-label">
+
+          <span class="label-line"></span>
+
+          <span>
+            INSPIRED BY TRADITION
+          </span>
+
+        </div>
+
+
+        <span class="section-number">
+          02 / THE FORMULA
+        </span>
+
+
+        <h2>
+
+          African Herbal
+
+          <span>
+            Traditions से Inspired.
+          </span>
+
+        </h2>
+
+
+        <p class="african-lead">
+
+          अफ्रीका की traditional botanical wellness
+          practices लंबे समय से nature,
+          vitality और physical resilience से जुड़ी
+          रही हैं।
+
+        </p>
+
+
+        <p>
+
+          MORE POWER की premium identity
+          इसी raw, powerful philosophy से inspired है —
+          traditional botanicals और modern men's
+          wellness positioning का sophisticated blend।
+
+        </p>
+
+
+        <div class="african-quote">
+
+          <span class="quote-mark">
+            “
+          </span>
+
+          <p>
+
+            Raw Strength.
+
+            <strong>
+              Powerful Presence.
+            </strong>
+
+            Unshakable Confidence.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="formula-points">
+
+
+          <div>
+
+            <span>
+              ✦
+            </span>
+
+            <p>
+              Traditional botanical wellness inspired
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ✦
+            </span>
+
+            <p>
+              Premium men's vitality positioning
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ✦
+            </span>
+
+            <p>
+              Designed around confidence & active lifestyle
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="african-product reveal">
+
+
+        <div class="african-product-circle">
+
+          <span>
+            AFRICAN
+          </span>
+
+          <span>
+            BOTANICAL
+          </span>
+
+          <span>
+            INSPIRATION
+          </span>
+
+        </div>
+
+
+        <div class="african-product-glow"></div>
+
+
+        <img
+          src="hero-product.png"
+          alt="MORE POWER premium herbal wellness formula"
+        >
+
+
+        <div class="formula-seal">
+
+          <span>
+            PREMIUM
+          </span>
+
+          <strong>
+            MORE
+          </strong>
+
+          <strong>
+            POWER
+          </strong>
+
+          <span>
+            FOR MEN
+          </span>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     STALLION POWER SECTION
+========================================================= -->
+
+<section class="stallion-power-section">
+
+
+  <div class="stallion-bg-glow"></div>
+
+
+  <div class="luxury-container">
+
+
+    <div class="stallion-layout">
+
+
+      <!-- HORSE VISUAL -->
+
+      <div class="stallion-visual reveal">
+
+
+        <div class="stallion-ring ring-one"></div>
+
+        <div class="stallion-ring ring-two"></div>
+
+
+        <img
+          src="horse-product.png"
+          alt="MORE POWER with powerful black stallion"
+        >
+
+
+        <div class="stallion-word">
+
+          <span>
+            RAW
+          </span>
+
+          <strong>
+            POWER
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- CONTENT -->
+
+      <div class="stallion-content reveal">
+
+
+        <div class="premium-label">
+
+          <span class="label-line"></span>
+
+          <span>
+            SYMBOL OF POWER
+          </span>
+
+        </div>
+
+
+        <span class="section-number">
+          03 / STRENGTH
+        </span>
+
+
+        <h2>
+
+          Stallion जैसी
+
+          <span>
+            Powerful Presence.
+          </span>
+
+        </h2>
+
+
+        <p class="stallion-lead">
+
+          Black Stallion — raw strength,
+          stamina, freedom और fearless confidence
+          का timeless symbol।
+
+        </p>
+
+
+        <p>
+
+          MORE POWER इसी bold masculine energy
+          से inspired है।
+
+          यह कोई guaranteed physical transformation
+          का दावा नहीं — बल्कि उस mindset,
+          confidence और vitality का symbol है
+          जो एक पुरुष को अपनी strongest presence
+          महसूस करने के लिए inspire करता है।
+
+        </p>
+
+
+
+        <div class="stallion-stats">
+
+
+          <div>
+
+            <span>
+              01
+            </span>
+
+            <strong>
+              STRENGTH
+            </strong>
+
+            <small>
+              Stronger mindset
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              02
+            </span>
+
+            <strong>
+              VITALITY
+            </strong>
+
+            <small>
+              Active lifestyle
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              03
+            </span>
+
+            <strong>
+              CONFIDENCE
+            </strong>
+
+            <small>
+              Own your presence
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+
+        <a
+          href="#ingredients"
+          class="luxury-text-link"
+        >
+
+          DISCOVER THE FORMULA
+
+          <span>
+            →
+          </span>
+
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+<!-- =========================================================
+     PART 1 ENDS HERE
+
+     DO NOT ADD </main>, </body>, </html> YET.
+
+     PART 2 WILL CONTINUE DIRECTLY BELOW THIS LINE.
+========================================================= -->
+  <!-- =========================================================
+     PART 2 STARTS HERE
+========================================================= -->
+
+
+<!-- =========================================================
+     PREMIUM INGREDIENTS SECTION
+========================================================= -->
+
+<section
+  class="ingredients-section section-padding"
   id="ingredients"
 >
 
-  <div class="container ingredient-layout">
+  <div class="ingredients-ambient"></div>
 
 
-    <div class="ingredient-image reveal">
-
-      <div class="ingredient-aura"></div>
-
-      <img
-        src="herbal-ingredients.png"
-        alt="Premium herbal ingredients"
-      >
-
-    </div>
+  <div class="luxury-container">
 
 
-    <div class="ingredient-copy reveal">
+    <!-- SECTION INTRO -->
 
-      <span class="eyebrow">
-        INSPIRED BY NATURE
+    <div class="section-intro centered reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          BOTANICAL POWER
+        </span>
+
+        <span class="label-line"></span>
+
+      </div>
+
+
+      <span class="section-number">
+        04 / INGREDIENTS
       </span>
 
 
       <h2>
 
-        प्रकृति से मिले
+        Nature की Wisdom.
 
         <span>
-          Powerful Botanicals.
+          Modern Man की Power.
         </span>
 
       </h2>
@@ -722,88 +1355,55 @@
       <p>
 
         Traditional herbal wellness से inspired
-        selected botanicals का premium blend.
+        premium botanicals की एक sophisticated
+        identity — पुरुषों की vitality, confidence
+        और active lifestyle को ध्यान में रखकर।
 
       </p>
 
 
-      <div class="ingredient-list">
+    </div>
 
 
-        <div>
 
-          <strong>
-            Ashwagandha
-          </strong>
+    <!-- INGREDIENTS MAIN LAYOUT -->
 
-          <span>
-            Traditional adaptogenic botanical
-          </span>
-
-        </div>
+    <div class="ingredients-main-layout">
 
 
-        <div>
+      <!-- IMAGE -->
 
-          <strong>
-            Ginseng
-          </strong>
-
-          <span>
-            Traditionally associated with vitality
-          </span>
-
-        </div>
+      <div class="ingredients-visual reveal">
 
 
-        <div>
+        <div class="ingredients-circle circle-one"></div>
 
-          <strong>
-            Safed Musli
-          </strong>
+        <div class="ingredients-circle circle-two"></div>
 
-          <span>
-            Traditional herbal ingredient
-          </span>
+
+        <div class="ingredients-image-wrap">
+
+          <img
+            src="herbal-ingredients.png"
+            alt="Premium herbal botanical ingredients"
+          >
 
         </div>
 
 
-        <div>
-
-          <strong>
-            Shilajit
-          </strong>
+        <div class="botanical-badge">
 
           <span>
-            Traditional mineral-rich substance
+            INSPIRED BY
           </span>
-
-        </div>
-
-
-        <div>
 
           <strong>
-            Maca
+            NATURE
           </strong>
 
-          <span>
-            Traditional wellness botanical
-          </span>
-
-        </div>
-
-
-        <div>
-
-          <strong>
-            Saffron
-          </strong>
-
-          <span>
-            Premium traditional botanical
-          </span>
+          <small>
+            PREMIUM BOTANICAL WELLNESS
+          </small>
 
         </div>
 
@@ -811,15 +1411,217 @@
       </div>
 
 
-      <p class="small-note">
 
-        *Final ingredients और quantities हमेशा
-        actual approved product label के अनुसार
-        verify की जानी चाहिए।
+      <!-- INGREDIENT CARDS -->
+
+      <div class="ingredient-cards reveal">
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            01
+          </span>
+
+          <div>
+
+            <h3>
+              Ashwagandha
+            </h3>
+
+            <span class="ingredient-type">
+              TRADITIONAL ADAPTOGEN
+            </span>
+
+            <p>
+
+              Traditional wellness systems में
+              लंबे समय से उपयोग किया जाने वाला
+              प्रसिद्ध botanical ingredient।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            02
+          </span>
+
+          <div>
+
+            <h3>
+              Ginseng
+            </h3>
+
+            <span class="ingredient-type">
+              VITALITY BOTANICAL
+            </span>
+
+            <p>
+
+              Traditional herbal wellness में
+              vitality और active lifestyle से
+              जुड़ा एक well-known botanical।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            03
+          </span>
+
+          <div>
+
+            <h3>
+              Safed Musli
+            </h3>
+
+            <span class="ingredient-type">
+              TRADITIONAL HERB
+            </span>
+
+            <p>
+
+              भारतीय traditional wellness practices
+              में लंबे समय से पहचाना जाने वाला
+              premium herbal ingredient।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            04
+          </span>
+
+          <div>
+
+            <h3>
+              Shilajit
+            </h3>
+
+            <span class="ingredient-type">
+              MINERAL-RICH TRADITION
+            </span>
+
+            <p>
+
+              Traditional wellness में इस्तेमाल
+              होने वाला naturally occurring
+              mineral-rich substance।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            05
+          </span>
+
+          <div>
+
+            <h3>
+              Maca
+            </h3>
+
+            <span class="ingredient-type">
+              TRADITIONAL ROOT
+            </span>
+
+            <p>
+
+              Traditional botanical wellness
+              में उपयोग की जाने वाली एक
+              well-known root ingredient।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+
+        <article class="ingredient-card">
+
+          <span class="ingredient-index">
+            06
+          </span>
+
+          <div>
+
+            <h3>
+              Saffron
+            </h3>
+
+            <span class="ingredient-type">
+              PREMIUM BOTANICAL
+            </span>
+
+            <p>
+
+              अपनी premium heritage और traditional
+              wellness use के लिए प्रसिद्ध
+              botanical ingredient।
+
+            </p>
+
+          </div>
+
+        </article>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- IMPORTANT INGREDIENT NOTE -->
+
+    <div class="ingredient-disclaimer reveal">
+
+      <span>
+        IMPORTANT
+      </span>
+
+      <p>
+
+        ऊपर दिए गए ingredients website concept के लिए
+        botanical examples हैं। Final website publish करने से
+        पहले इन्हें actual MORE POWER product label,
+        formulation और approved ingredient list से match करना जरूरी है।
 
       </p>
 
     </div>
+
 
   </div>
 
@@ -827,264 +1629,258 @@
 
 
 
-<!-- =====================================================
-     EXPERIENCE / COUPLE
-===================================================== -->
+<!-- =========================================================
+     INTIMACY / COUPLE SECTION
+========================================================= -->
 
 <section
-  class="section intimacy-section"
+  class="intimacy-luxury-section"
   id="experience"
 >
 
-  <div class="intimacy-bg"></div>
-  <div class="intimacy-overlay"></div>
 
+  <!-- BACKGROUND -->
 
-  <div class="container intimacy-content">
+  <div class="intimacy-background"></div>
 
+  <div class="intimacy-dark-layer"></div>
 
-    <div class="intimacy-copy reveal">
-
-      <span class="eyebrow">
-        CONFIDENCE CHANGES EVERYTHING
-      </span>
-
-
-      <h2>
-
-        Confidence बढ़े तो
-
-        <span>
-          Connection भी बदलता है।
-        </span>
-
-      </h2>
-
-
-      <p>
-
-        बेहतर wellness और self-confidence
-        आपको अपने हर खास पल में अधिक present,
-        relaxed और assured महसूस करने में मदद
-        कर सकते हैं।
-
-      </p>
-
-
-      <a
-        href="#offer"
-        class="btn btn-outline-gold"
-      >
-        MORE POWER देखें
-      </a>
-
-    </div>
-
-
-    <div class="couple-cutout reveal">
-
-      <img
-        src="ouple-transparent.png"
-        alt="Elegant adult couple representing confidence and connection"
-      >
-
-    </div>
-
-  </div>
-
-</section>
+  <div class="intimacy-gold-light"></div>
 
 
 
-<!-- =====================================================
-     STALLION STATEMENT
-===================================================== -->
-
-<section class="stallion-section">
-
-  <div class="container stallion-layout">
+  <div class="luxury-container intimacy-luxury-layout">
 
 
-    <div class="stallion-image reveal">
+    <!-- TEXT -->
 
-      <img
-        src="black-stallion.png"
-        alt="Powerful black stallion"
-      >
-
-    </div>
+    <div class="intimacy-luxury-copy reveal">
 
 
-    <div class="stallion-copy reveal">
+      <div class="premium-label">
 
-      <span class="eyebrow">
-        UNLEASH YOUR PRESENCE
-      </span>
-
-
-      <blockquote>
-
-        “ताकत सिर्फ शरीर में नहीं।
+        <span class="label-line"></span>
 
         <span>
-          Confidence में भी होती है।”
+          POWER • PASSION • CONNECTION
         </span>
-
-      </blockquote>
-
-
-      <p>
-
-        Strong presence. Focused mindset.
-        Premium wellness.
-
-        यही है MORE POWER की philosophy.
-
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     OFFER
-===================================================== -->
-
-<section
-  class="section offer"
-  id="offer"
->
-
-  <div class="offer-glow"></div>
-
-
-  <div class="container offer-layout">
-
-
-    <div class="offer-product reveal">
-
-      <img
-        src="final-product.png"
-        alt="MORE POWER premium herbal formula"
-      >
-
-    </div>
-
-
-    <div class="offer-copy reveal">
-
-      <span class="eyebrow">
-        LIMITED SPECIAL OFFER
-      </span>
-
-
-      <h2>
-
-        अपने Confidence में
-
-        <span>
-          Invest करें।
-        </span>
-
-      </h2>
-
-
-      <div class="price-box">
-
-        <div class="old-price">
-
-          Regular Price
-
-          <del>
-            ₹6,999
-          </del>
-
-        </div>
-
-
-        <div class="current-price">
-          ₹2,999
-        </div>
-
-
-        <div class="saving">
-          SPECIAL OFFER
-        </div>
 
       </div>
 
 
-      <ul class="offer-list">
-
-        <li>
-          ✦ Premium Herbal Formula
-        </li>
-
-        <li>
-          ✦ Designed for Men's Wellness
-        </li>
-
-        <li>
-          ✦ Premium Quality Presentation
-        </li>
-
-        <li>
-          ✦ Limited Promotional Price
-        </li>
-
-      </ul>
-
-
-      <a
-        href="#"
-        class="btn btn-gold btn-large"
-        id="orderButton"
-      >
-        अभी ऑर्डर करें — ₹2,999
-      </a>
-
-
-      <p class="secure-note">
-
-        Order/payment details checkout setup के बाद
-        यहाँ connect किए जाएंगे।
-
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FINAL CTA
-===================================================== -->
-
-<section class="energy-cta">
-
-  <div class="container energy-layout">
-
-
-    <div class="energy-copy reveal">
-
-      <span class="eyebrow">
-        YOUR MOMENT. YOUR CONFIDENCE.
+      <span class="section-number">
+        05 / INTIMATE CONFIDENCE
       </span>
 
 
       <h2>
 
-        Ready to Feel
+        कुछ पल सिर्फ
 
         <span>
-          MORE POWER?
+          करीब आने के लिए
+        </span>
+
+        नहीं होते।
+
+      </h2>
+
+
+      <p class="intimacy-lead">
+
+        कुछ पल ऐसे होते हैं जहाँ
+        <strong>
+          confidence, desire और connection
+        </strong>
+        — तीनों एक साथ महसूस होते हैं।
+
+      </p>
+
+
+      <p>
+
+        अपनी intimate wellness को priority देना
+        सिर्फ performance की बात नहीं।
+
+        यह उस confidence की बात है जिसके साथ
+        आप अपने partner के करीब आते हैं,
+        उस presence की बात है जो बिना कुछ कहे
+        महसूस होती है।
+
+      </p>
+
+
+
+      <div class="intimacy-statement">
+
+        <span>
+          MORE CONFIDENCE.
+        </span>
+
+        <strong>
+          MORE CONNECTION.
+        </strong>
+
+        <span>
+          MORE POWER.
+        </span>
+
+      </div>
+
+
+
+      <a
+        href="#offer"
+        class="primary-gold-btn"
+      >
+
+        <span>
+          FEEL MORE POWER
+        </span>
+
+        <span class="button-circle">
+          ↗
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+
+    <!-- COUPLE CUTOUT -->
+
+    <div class="intimacy-couple reveal">
+
+
+      <div class="couple-halo"></div>
+
+
+      <img
+        src="ouple-transparent.png"
+        alt="Elegant adult couple representing intimacy and confidence"
+      >
+
+
+      <div class="intimacy-floating-text">
+
+        <small>
+          CONFIDENCE
+        </small>
+
+        <strong>
+          CHANGES
+        </strong>
+
+        <small>
+          EVERYTHING
+        </small>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     BOLD STATEMENT STRIP
+========================================================= -->
+
+<section class="bold-statement-section">
+
+
+  <div class="statement-track">
+
+
+    <span>
+      POWER
+    </span>
+
+    <i>✦</i>
+
+    <span>
+      PASSION
+    </span>
+
+    <i>✦</i>
+
+    <span>
+      CONFIDENCE
+    </span>
+
+    <i>✦</i>
+
+    <span>
+      VITALITY
+    </span>
+
+    <i>✦</i>
+
+    <span>
+      PRESENCE
+    </span>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     VISUAL METAPHOR SECTION
+========================================================= -->
+
+<section class="visual-power-section section-padding">
+
+
+  <div class="visual-power-glow visual-glow-left"></div>
+
+  <div class="visual-power-glow visual-glow-right"></div>
+
+
+
+  <div class="luxury-container">
+
+
+    <!-- HEADING -->
+
+    <div class="section-intro centered reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          THE POWER OF CONFIDENCE
+        </span>
+
+        <span class="label-line"></span>
+
+      </div>
+
+
+      <span class="section-number">
+        06 / VISUAL STORY
+      </span>
+
+
+      <h2>
+
+        Confidence जब बदलता है,
+
+        <span>
+          Presence खुद बोलती है।
         </span>
 
       </h2>
@@ -1092,28 +1888,1073 @@
 
       <p>
 
-        Premium wellness. Stronger presence.
-        Better confidence.
+        नीचे दिए गए creative visuals confidence,
+        strength और transformation की
+        symbolic advertising representation हैं।
+
+      </p>
+
+
+    </div>
+
+
+
+    <!-- VISUAL CARDS -->
+
+    <div class="visual-story-grid">
+
+
+      <!-- BANANA VISUAL -->
+
+      <article class="visual-story-card reveal">
+
+
+        <div class="visual-card-top">
+
+          <span>
+            SYMBOLIC VISUAL
+          </span>
+
+          <strong>
+            01
+          </strong>
+
+        </div>
+
+
+        <div class="visual-story-image">
+
+
+          <div class="visual-image-glow"></div>
+
+
+          <img
+            src="banana-comparison.png"
+            alt="Creative symbolic confidence comparison"
+          >
+
+
+          <div class="visual-side-label">
+
+            <span>
+              CONFIDENCE
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="visual-story-copy">
+
+          <span class="visual-small-title">
+            OWN YOUR CONFIDENCE
+          </span>
+
+
+          <h3>
+
+            Ordinary से
+
+            <em>
+              Powerful.
+            </em>
+
+          </h3>
+
+
+          <p>
+
+            जब आप खुद को बेहतर महसूस करते हैं,
+            तो आपकी body language,
+            confidence और presence में
+            naturally फर्क दिखाई देता है।
+
+          </p>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- CUCUMBER VISUAL -->
+
+      <article class="visual-story-card reveal">
+
+
+        <div class="visual-card-top">
+
+          <span>
+            SYMBOLIC VISUAL
+          </span>
+
+          <strong>
+            02
+          </strong>
+
+        </div>
+
+
+        <div class="visual-story-image">
+
+
+          <div class="visual-image-glow"></div>
+
+
+          <img
+            src="cucumber-comparison.png"
+            alt="Creative symbolic strength comparison"
+          >
+
+
+          <div class="visual-side-label">
+
+            <span>
+              PRESENCE
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="visual-story-copy">
+
+          <span class="visual-small-title">
+            FEEL THE DIFFERENCE
+          </span>
+
+
+          <h3>
+
+            Confidence जो
+
+            <em>
+              Notice हो।
+            </em>
+
+          </h3>
+
+
+          <p>
+
+            Strong confidence सिर्फ आपके अंदर
+            महसूस नहीं होता।
+
+            आपकी personality और presence
+            में भी उसका असर दिखाई देता है।
+
+          </p>
+
+
+        </div>
+
+
+      </article>
+
+
+    </div>
+
+
+
+    <!-- METAPHOR DISCLAIMER -->
+
+    <div class="visual-metaphor-note reveal">
+
+      <span>
+        *
+      </span>
+
+      <p>
+
+        Banana और cucumber imagery केवल creative
+        visual metaphors हैं। ये penis enlargement,
+        anatomical change या किसी guaranteed
+        physical result को represent नहीं करते।
+
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     BENEFITS / EXPERIENCE SECTION
+========================================================= -->
+
+<section class="benefits-premium-section section-padding">
+
+
+  <div class="benefits-bg-text">
+    MORE POWER
+  </div>
+
+
+  <div class="luxury-container">
+
+
+    <div class="benefits-heading-layout">
+
+
+      <div class="reveal">
+
+
+        <div class="premium-label">
+
+          <span class="label-line"></span>
+
+          <span>
+            DESIGNED FOR MEN
+          </span>
+
+        </div>
+
+
+        <span class="section-number">
+          07 / THE EXPERIENCE
+        </span>
+
+
+        <h2>
+
+          सिर्फ Product नहीं।
+
+          <span>
+            एक Powerful Ritual.
+          </span>
+
+        </h2>
+
+
+      </div>
+
+
+      <div class="benefits-intro reveal">
+
+        <p>
+
+          Modern lifestyle में confidence और
+          wellness कोई luxury नहीं।
+
+          अपनी energy, self-confidence और
+          intimate wellbeing को priority देना
+          self-care का हिस्सा हो सकता है।
+
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- BENEFIT CARDS -->
+
+    <div class="premium-benefit-grid">
+
+
+      <article class="premium-benefit-card reveal">
+
+
+        <span class="benefit-big-number">
+          01
+        </span>
+
+
+        <div class="benefit-icon">
+          ✦
+        </div>
+
+
+        <h3>
+          Masculine Vitality
+        </h3>
+
+
+        <p>
+
+          Active lifestyle और पुरुषों की
+          overall wellness positioning को
+          ध्यान में रखकर बनाया गया premium concept।
+
+        </p>
+
+
+        <span class="card-bottom-line"></span>
+
+
+      </article>
+
+
+
+      <article class="premium-benefit-card reveal">
+
+
+        <span class="benefit-big-number">
+          02
+        </span>
+
+
+        <div class="benefit-icon">
+          ◆
+        </div>
+
+
+        <h3>
+          Intimate Confidence
+        </h3>
+
+
+        <p>
+
+          अपने खास पलों में relaxed,
+          self-assured और emotionally present
+          महसूस करने की importance को celebrate करता है।
+
+        </p>
+
+
+        <span class="card-bottom-line"></span>
+
+
+      </article>
+
+
+
+      <article class="premium-benefit-card reveal">
+
+
+        <span class="benefit-big-number">
+          03
+        </span>
+
+
+        <div class="benefit-icon">
+          ◇
+        </div>
+
+
+        <h3>
+          Bold Presence
+        </h3>
+
+
+        <p>
+
+          Confidence सिर्फ महसूस नहीं होता —
+          आपकी personality, body language और
+          presence में भी reflect होता है।
+
+        </p>
+
+
+        <span class="card-bottom-line"></span>
+
+
+      </article>
+
+
+
+      <article class="premium-benefit-card reveal">
+
+
+        <span class="benefit-big-number">
+          04
+        </span>
+
+
+        <div class="benefit-icon">
+          ✧
+        </div>
+
+
+        <h3>
+          Premium Experience
+        </h3>
+
+
+        <p>
+
+          Luxury visual identity,
+          sophisticated positioning और
+          premium men's wellness experience।
+
+        </p>
+
+
+        <span class="card-bottom-line"></span>
+
+
+      </article>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     MID PAGE STALLION QUOTE
+========================================================= -->
+
+<section class="power-quote-section">
+
+
+  <div class="power-quote-background"></div>
+
+
+  <div class="luxury-container">
+
+
+    <div class="power-quote-layout">
+
+
+      <div class="power-quote-image reveal">
+
+        <img
+          src="black-stallion.png"
+          alt="Powerful black stallion symbolizing strength"
+        >
+
+      </div>
+
+
+
+      <div class="power-quote-copy reveal">
+
+
+        <span class="quote-large-mark">
+          “
+        </span>
+
+
+        <blockquote>
+
+          असली ताकत सिर्फ
+
+          <span>
+            शरीर में नहीं होती।
+          </span>
+
+          वो Confidence में दिखाई देती है।
+
+        </blockquote>
+
+
+        <div class="quote-signature">
+
+          <span></span>
+
+          <strong>
+            THE MORE POWER PHILOSOPHY
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     PREMIUM OFFER SECTION
+========================================================= -->
+
+<section
+  class="premium-offer-section section-padding"
+  id="offer"
+>
+
+
+  <div class="offer-radial-glow"></div>
+
+  <div class="offer-grid-pattern"></div>
+
+
+
+  <div class="luxury-container">
+
+
+    <!-- OFFER TOP LABEL -->
+
+    <div class="offer-top-label reveal">
+
+      <span></span>
+
+      LIMITED INTRODUCTORY OFFER
+
+      <span></span>
+
+    </div>
+
+
+
+    <div class="premium-offer-layout">
+
+
+      <!-- PRODUCT -->
+
+      <div class="offer-product-visual reveal">
+
+
+        <div class="offer-product-circle"></div>
+
+        <div class="offer-product-ring"></div>
+
+
+        <div class="discount-badge">
+
+          <span>
+            SAVE
+          </span>
+
+          <strong>
+            ₹4,000
+          </strong>
+
+        </div>
+
+
+        <img
+          src="final-product.png"
+          alt="MORE POWER premium herbal wellness product"
+        >
+
+
+        <div class="offer-product-caption">
+
+          <span>
+            PREMIUM
+          </span>
+
+          <strong>
+            MEN'S WELLNESS
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- OFFER COPY -->
+
+      <div class="premium-offer-copy reveal">
+
+
+        <span class="section-number">
+          08 / SPECIAL OFFER
+        </span>
+
+
+        <h2>
+
+          अपने Confidence को
+
+          <span>
+            Ordinary मत रहने दें।
+          </span>
+
+        </h2>
+
+
+        <p class="offer-intro">
+
+          MORE POWER premium men's herbal wellness
+          experience को अभी special promotional
+          offer पर explore करें।
+
+        </p>
+
+
+
+        <!-- PRICE -->
+
+        <div class="luxury-price-block">
+
+
+          <div class="regular-price">
+
+            <span>
+              REGULAR PRICE
+            </span>
+
+            <del>
+              ₹6,999
+            </del>
+
+          </div>
+
+
+          <div class="offer-price-row">
+
+            <span class="currency">
+              ₹
+            </span>
+
+            <strong>
+              2,999
+            </strong>
+
+          </div>
+
+
+          <div class="offer-price-caption">
+
+            SPECIAL PROMOTIONAL PRICE
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- OFFER FEATURES -->
+
+        <div class="offer-feature-list">
+
+
+          <div>
+
+            <span>
+              ✓
+            </span>
+
+            <p>
+              Premium Men's Herbal Wellness Formula
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ✓
+            </span>
+
+            <p>
+              Traditional Botanical Wellness Inspired
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ✓
+            </span>
+
+            <p>
+              Premium Luxury Product Experience
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ✓
+            </span>
+
+            <p>
+              Special Promotional Price ₹2,999
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- MAIN ORDER BUTTON -->
+
+        <a
+          href="#"
+          class="mega-order-button"
+          id="orderButton"
+        >
+
+          <div>
+
+            <small>
+              GET MORE POWER
+            </small>
+
+            <strong>
+              अभी ऑर्डर करें
+            </strong>
+
+          </div>
+
+
+          <span class="mega-button-price">
+            ₹2,999
+          </span>
+
+
+          <span class="mega-button-arrow">
+            ↗
+          </span>
+
+        </a>
+
+
+
+        <div class="order-trust-row">
+
+
+          <div>
+
+            <span>
+              ◆
+            </span>
+
+            <small>
+              SECURE ORDER
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ◆
+            </span>
+
+            <small>
+              PRIVATE PACKAGING
+            </small>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              ◆
+            </span>
+
+            <small>
+              SUPPORT AVAILABLE
+            </small>
+
+          </div>
+
+
+        </div>
+
+
+
+        <p class="offer-small-note">
+
+          Final payment method, shipping details और
+          order confirmation checkout setup के बाद
+          connect किए जाएंगे।
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     FINAL EMOTIONAL CTA
+========================================================= -->
+
+<section class="final-emotional-cta">
+
+
+  <div class="final-cta-background"></div>
+
+  <div class="final-cta-overlay"></div>
+
+
+  <div class="luxury-container">
+
+
+    <div class="final-cta-content reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          YOUR POWER. YOUR CONFIDENCE.
+        </span>
+
+        <span class="label-line"></span>
+
+      </div>
+
+
+      <h2>
+
+        अगला खास पल आए...
+
+        <span>
+          तो Confidence कम न पड़े।
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        अपने wellness, confidence और intimate
+        wellbeing को priority दें।
+
+        Because real power starts with
+        how you feel about yourself.
 
       </p>
 
 
       <a
         href="#offer"
-        class="btn btn-gold"
+        class="primary-gold-btn final-cta-button"
       >
-        OFFER पाएं
+
+        <span>
+          CLAIM THE ₹2,999 OFFER
+        </span>
+
+        <span class="button-circle">
+          ↗
+        </span>
+
       </a>
+
 
     </div>
 
 
-    <div class="energy-image reveal">
+  </div>
 
-      <img
-        src="energy-jar.png"
-        alt="MORE POWER premium product"
-      >
+
+</section>
+
+
+<!-- =========================================================
+     
+     - FAQ
+     - Disclaimer
+     - Footer
+     - Mobile Sticky Order Bar
+     - Closing HTML tags
+========================================================= -->
+  <!-- =========================================================
+     PART 3 STARTS HERE
+========================================================= -->
+
+
+<!-- =========================================================
+     TRUST / WHY MORE POWER
+========================================================= -->
+
+<section class="trust-section section-padding">
+
+  <div class="luxury-container">
+
+    <div class="trust-layout">
+
+
+      <!-- LEFT HEADING -->
+
+      <div class="trust-heading reveal">
+
+        <div class="premium-label">
+
+          <span class="label-line"></span>
+
+          <span>
+            THE MORE POWER EXPERIENCE
+          </span>
+
+        </div>
+
+
+        <span class="section-number">
+          09 / WHY MORE POWER
+        </span>
+
+
+        <h2>
+
+          क्योंकि Confidence
+
+          <span>
+            Compromise नहीं करता।
+          </span>
+
+        </h2>
+
+
+        <p>
+
+          MORE POWER की पूरी philosophy
+          premium men's wellness, confidence,
+          vitality और intimate wellbeing के
+          around बनाई गई है।
+
+        </p>
+
+      </div>
+
+
+
+      <!-- RIGHT TRUST CARDS -->
+
+      <div class="trust-cards">
+
+
+        <article class="trust-card reveal">
+
+          <span class="trust-number">
+            01
+          </span>
+
+          <div class="trust-icon">
+            ✦
+          </div>
+
+          <h3>
+            Premium Identity
+          </h3>
+
+          <p>
+
+            एक sophisticated men's wellness
+            experience जो ordinary supplement
+            presentation से अलग महसूस हो।
+
+          </p>
+
+        </article>
+
+
+
+        <article class="trust-card reveal">
+
+          <span class="trust-number">
+            02
+          </span>
+
+          <div class="trust-icon">
+            ◆
+          </div>
+
+          <h3>
+            Botanical Inspiration
+          </h3>
+
+          <p>
+
+            Traditional herbal wellness और
+            selected botanical traditions से
+            inspired premium positioning।
+
+          </p>
+
+        </article>
+
+
+
+        <article class="trust-card reveal">
+
+          <span class="trust-number">
+            03
+          </span>
+
+          <div class="trust-icon">
+            ◇
+          </div>
+
+          <h3>
+            Made for Men
+          </h3>
+
+          <p>
+
+            उन पुरुषों के लिए जो अपनी energy,
+            confidence और personal wellness को
+            seriously लेते हैं।
+
+          </p>
+
+        </article>
+
+
+
+        <article class="trust-card reveal">
+
+          <span class="trust-number">
+            04
+          </span>
+
+          <div class="trust-icon">
+            ✧
+          </div>
+
+          <h3>
+            Discreet Experience
+          </h3>
+
+          <p>
+
+            Men's wellness जैसे personal category
+            के लिए privacy और discreet customer
+            experience को priority दी जानी चाहिए।
+
+          </p>
+
+        </article>
+
+
+      </div>
 
     </div>
 
@@ -1123,22 +2964,94 @@
 
 
 
-<!-- =====================================================
-     FAQ
-===================================================== -->
+<!-- =========================================================
+     SHORT POWER STATEMENT
+========================================================= -->
+
+<section class="short-power-banner">
+
+  <div class="short-power-glow"></div>
+
+
+  <div class="luxury-container">
+
+    <div class="short-power-content reveal">
+
+
+      <span class="short-power-small">
+        MORE THAN WELLNESS
+      </span>
+
+
+      <h2>
+
+        Feel Stronger.
+
+        <span>
+          Feel More Confident.
+        </span>
+
+      </h2>
+
+
+      <div class="short-power-line">
+
+        <span></span>
+
+        <strong>
+          POWER • PASSION • PRESENCE
+        </strong>
+
+        <span></span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     FAQ SECTION
+========================================================= -->
 
 <section
-  class="section faq"
+  class="faq-section section-padding"
   id="faq"
 >
 
-  <div class="container faq-container">
+  <div class="faq-background-text">
+    FAQ
+  </div>
 
 
-    <div class="section-heading center reveal">
+  <div class="luxury-container faq-container">
 
-      <span class="eyebrow">
-        QUESTIONS & ANSWERS
+
+    <!-- FAQ HEADING -->
+
+    <div class="section-intro centered reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          QUESTIONS & ANSWERS
+        </span>
+
+        <span class="label-line"></span>
+
+      </div>
+
+
+      <span class="section-number">
+        10 / FAQ
       </span>
 
 
@@ -1147,123 +3060,410 @@
         आपके सवाल।
 
         <span>
-          आसान जवाब।
+          साफ जवाब।
         </span>
 
       </h2>
 
+
+      <p>
+
+        MORE POWER के बारे में कुछ जरूरी
+        सवालों के जवाब यहाँ दिए गए हैं।
+
+      </p>
+
+
     </div>
 
+
+
+    <!-- FAQ LIST -->
 
     <div class="faq-list">
 
 
-      <div class="faq-item reveal">
+      <!-- FAQ 1 -->
 
-        <button class="faq-question">
-
-          MORE POWER क्या है?
-
-          <span>+</span>
-
-        </button>
+      <article class="faq-item reveal">
 
 
-        <div class="faq-answer">
+        <button
+          class="faq-question"
+          type="button"
+        >
 
-          <p>
-
-            MORE POWER पुरुषों के लिए बनाया गया
-            एक premium herbal wellness formula है।
-            Final product information हमेशा actual
-            approved label के अनुसार पढ़ें।
-
-          </p>
-
-        </div>
-
-      </div>
+          <span class="faq-number">
+            01
+          </span>
 
 
-      <div class="faq-item reveal">
+          <span class="faq-question-text">
 
-        <button class="faq-question">
+            MORE POWER क्या है?
 
-          इसमें कौन से ingredients हैं?
+          </span>
 
-          <span>+</span>
+
+          <span class="faq-toggle">
+            +
+          </span>
 
         </button>
 
 
         <div class="faq-answer">
 
-          <p>
+          <div class="faq-answer-inner">
 
-            Website पर दिखाए गए botanicals
-            traditional wellness ingredients के उदाहरण हैं।
-            खरीदने से पहले final product label पर दी गई
-            complete ingredient list verify करें।
+            <p>
 
-          </p>
+              MORE POWER पुरुषों के लिए positioned
+              एक premium herbal wellness formula है,
+              जिसकी brand philosophy confidence,
+              vitality, active lifestyle और intimate
+              wellbeing के around बनाई गई है।
+
+              Final formulation और product details
+              हमेशा actual approved product label
+              के अनुसार verify की जानी चाहिए।
+
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
+
+      </article>
 
 
-      <div class="faq-item reveal">
 
-        <button class="faq-question">
+      <!-- FAQ 2 -->
 
-          क्या results guaranteed हैं?
+      <article class="faq-item reveal">
 
-          <span>+</span>
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            02
+          </span>
+
+
+          <span class="faq-question-text">
+
+            क्या यह African herbs से बना है?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
 
         </button>
 
 
         <div class="faq-answer">
 
-          <p>
+          <div class="faq-answer-inner">
 
-            नहीं। Individual experience अलग-अलग हो सकता है।
-            किसी भी visual या marketing statement को guaranteed
-            physical enlargement, disease treatment या guaranteed
-            medical outcome नहीं माना जाना चाहिए।
+            <p>
 
-          </p>
+              Website का African botanical theme
+              traditional herbal wellness traditions
+              से inspired branding concept है।
+
+              यदि actual MORE POWER formulation में
+              specific African-origin herbs मौजूद हैं,
+              तो final website पर केवल उन्हीं verified
+              ingredients के नाम और claims लिखे जाने चाहिए।
+
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
+
+      </article>
 
 
-      <div class="faq-item reveal">
 
-        <button class="faq-question">
+      <!-- FAQ 3 -->
 
-          Price क्या है?
+      <article class="faq-item reveal">
 
-          <span>+</span>
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            03
+          </span>
+
+
+          <span class="faq-question-text">
+
+            इसमें कौन-कौन से ingredients हैं?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
 
         </button>
 
 
         <div class="faq-answer">
 
-          <p>
+          <div class="faq-answer-inner">
 
-            वर्तमान promotional presentation में
-            regular price ₹6,999 और special offer
-            ₹2,999 दिखाया गया है। Final checkout price
-            order confirmation के समय verify करें।
+            <p>
 
-          </p>
+              Website concept में Ashwagandha,
+              Ginseng, Safed Musli, Shilajit,
+              Maca और Saffron जैसे botanicals
+              examples के रूप में दिखाए गए हैं।
+
+              इन्हें final product की actual
+              ingredient list से match करना जरूरी है।
+
+            </p>
+
+          </div>
 
         </div>
 
-      </div>
+
+      </article>
+
+
+
+      <!-- FAQ 4 -->
+
+      <article class="faq-item reveal">
+
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            04
+          </span>
+
+
+          <span class="faq-question-text">
+
+            क्या इससे guaranteed sexual performance मिलेगी?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
+
+        </button>
+
+
+        <div class="faq-answer">
+
+          <div class="faq-answer-inner">
+
+            <p>
+
+              नहीं। किसी herbal supplement के लिए
+              guaranteed sexual performance,
+              guaranteed erection, penis enlargement
+              या निश्चित medical result का दावा
+              नहीं किया जाना चाहिए।
+
+              Individual experience अलग हो सकता है
+              और product का उपयोग हमेशा approved
+              directions के अनुसार होना चाहिए।
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- FAQ 5 -->
+
+      <article class="faq-item reveal">
+
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            05
+          </span>
+
+
+          <span class="faq-question-text">
+
+            Banana और cucumber images क्या दिखाती हैं?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
+
+        </button>
+
+
+        <div class="faq-answer">
+
+          <div class="faq-answer-inner">
+
+            <p>
+
+              ये केवल creative advertising metaphors हैं,
+              जिनका इस्तेमाल confidence, strength और
+              transformation की visual storytelling
+              के लिए किया गया है।
+
+              ये anatomical enlargement या guaranteed
+              physical change का प्रमाण नहीं हैं।
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- FAQ 6 -->
+
+      <article class="faq-item reveal">
+
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            06
+          </span>
+
+
+          <span class="faq-question-text">
+
+            MORE POWER की कीमत कितनी है?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
+
+        </button>
+
+
+        <div class="faq-answer">
+
+          <div class="faq-answer-inner">
+
+            <p>
+
+              Website पर regular price ₹6,999
+              और promotional offer price ₹2,999
+              दिखाया गया है।
+
+              Final payable amount और shipping
+              details order confirmation के समय
+              verify की जानी चाहिए।
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- FAQ 7 -->
+
+      <article class="faq-item reveal">
+
+
+        <button
+          class="faq-question"
+          type="button"
+        >
+
+          <span class="faq-number">
+            07
+          </span>
+
+
+          <span class="faq-question-text">
+
+            Order कैसे करना है?
+
+          </span>
+
+
+          <span class="faq-toggle">
+            +
+          </span>
+
+        </button>
+
+
+        <div class="faq-answer">
+
+          <div class="faq-answer-inner">
+
+            <p>
+
+              “अभी ऑर्डर करें” button पर click करने
+              के बाद customer को configured order
+              channel पर भेजा जाएगा।
+
+              हम अगले step में WhatsApp order
+              system connect करेंगे ताकि customer
+              सीधे pre-filled message के साथ
+              order enquiry भेज सके।
+
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </article>
 
 
     </div>
@@ -1271,136 +3471,465 @@
   </div>
 
 </section>
+
+
+
+<!-- =========================================================
+     FINAL PRODUCT CTA
+========================================================= -->
+
+<section class="final-product-section">
+
+
+  <div class="final-product-glow"></div>
+
+
+  <div class="luxury-container final-product-layout">
+
+
+    <!-- TEXT -->
+
+    <div class="final-product-copy reveal">
+
+
+      <div class="premium-label">
+
+        <span class="label-line"></span>
+
+        <span>
+          THIS IS YOUR MOMENT
+        </span>
+
+      </div>
+
+
+      <h2>
+
+        Ordinary Feel करना
+
+        <span>
+          आपकी Choice नहीं होनी चाहिए।
+        </span>
+
+      </h2>
+
+
+      <p>
+
+        अपनी wellness, confidence और
+        intimate wellbeing को वह attention दें
+        जिसकी वह हकदार है।
+
+      </p>
+
+
+      <div class="final-price-mobile">
+
+        <del>
+          ₹6,999
+        </del>
+
+        <strong>
+          ₹2,999
+        </strong>
+
+      </div>
+
+
+      <a
+        href="#"
+        class="primary-gold-btn final-order-trigger"
+      >
+
+        <span>
+          अभी MORE POWER ऑर्डर करें
+        </span>
+
+        <span class="button-circle">
+          ↗
+        </span>
+
+      </a>
+
+
+      <small class="final-cta-small">
+
+        Special promotional price •
+        Final order confirmation required
+
+      </small>
+
+
+    </div>
+
+
+
+    <!-- PRODUCT -->
+
+    <div class="final-product-visual reveal">
+
+
+      <div class="final-product-circle"></div>
+
+
+      <div class="final-product-big-word">
+
+        <span>
+          MORE
+        </span>
+
+        <strong>
+          POWER
+        </strong>
+
+      </div>
+
+
+      <img
+        src="energy-jar.png"
+        alt="MORE POWER premium herbal wellness formula"
+      >
+
+
+      <div class="final-price-badge">
+
+        <span>
+          SPECIAL
+        </span>
+
+        <strong>
+          ₹2,999
+        </strong>
+
+        <small>
+          OFFER
+        </small>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MEDICAL / PRODUCT DISCLAIMER
+========================================================= -->
+
+<section class="legal-disclaimer-section">
+
+
+  <div class="luxury-container">
+
+
+    <div class="legal-disclaimer-box">
+
+
+      <div class="legal-icon">
+        !
+      </div>
+
+
+      <div>
+
+
+        <strong>
+          महत्वपूर्ण जानकारी
+        </strong>
+
+
+        <p>
+
+          यह website general product marketing और
+          wellness information के लिए है तथा medical
+          advice, diagnosis या treatment का विकल्प नहीं है।
+
+          Website पर उपयोग किए गए horse, banana,
+          cucumber, couple और अन्य creative visuals
+          symbolic advertising imagery हैं और guaranteed
+          sexual performance, penis enlargement,
+          erectile dysfunction treatment या किसी निश्चित
+          medical outcome का प्रमाण नहीं हैं।
+
+          किसी भी supplement का उपयोग करने से पहले
+          actual product label, ingredients, dosage,
+          warnings और directions पढ़ें।
+
+          यदि आप कोई medication लेते हैं, किसी medical
+          condition से प्रभावित हैं, ingredients से allergy
+          की संभावना है, या आपको health-related concern है,
+          तो उपयोग से पहले qualified healthcare professional
+          से सलाह लें।
+
+        </p>
+
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</section>
+
 
 
 </main>
 
 
 
-<!-- =====================================================
-     DISCLAIMER
-===================================================== -->
-
-<section class="disclaimer-strip">
-
-  <div class="container">
-
-    <p>
-
-      <strong>महत्वपूर्ण:</strong>
-
-      यह website general product और wellness information
-      के लिए है और medical advice का विकल्प नहीं है।
-      Marketing visuals guaranteed enlargement, erectile
-      dysfunction treatment या किसी guaranteed medical
-      outcome का प्रमाण नहीं हैं। यदि आप medication लेते हैं,
-      कोई medical condition है, या ingredients को लेकर concern
-      है, तो उपयोग से पहले qualified healthcare professional
-      से सलाह लें। Final product label, directions और warnings
-      को हमेशा follow करें।
-
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- =========================================================
      FOOTER
-===================================================== -->
+========================================================= -->
 
-<footer class="footer">
-
-  <div class="container footer-grid">
+<footer class="site-footer">
 
 
-    <div>
+  <div class="footer-top-line"></div>
 
-      <div class="brand footer-brand">
 
-        <span class="brand-main">
-          MORE POWER
+  <div class="luxury-container">
+
+
+    <div class="footer-main">
+
+
+      <!-- BRAND -->
+
+      <div class="footer-brand-column">
+
+
+        <a
+          href="#home"
+          class="brand-logo footer-logo"
+        >
+
+          <span class="brand-name">
+            MORE POWER
+          </span>
+
+          <span class="brand-tagline">
+            PREMIUM MEN'S WELLNESS
+          </span>
+
+        </a>
+
+
+        <p>
+
+          Premium men's herbal wellness,
+          confidence और sophisticated lifestyle
+          positioning के लिए बनाया गया एक
+          bold luxury brand experience।
+
+        </p>
+
+
+        <div class="footer-brand-line">
+
+          <span></span>
+
+          <strong>
+            POWER • PASSION • PRESENCE
+          </strong>
+
+        </div>
+
+
+      </div>
+
+
+
+      <!-- NAVIGATION -->
+
+      <div class="footer-column">
+
+
+        <h3>
+          EXPLORE
+        </h3>
+
+
+        <a href="#home">
+          Home
+        </a>
+
+        <a href="#benefits">
+          Benefits
+        </a>
+
+        <a href="#formula">
+          Formula
+        </a>
+
+        <a href="#ingredients">
+          Ingredients
+        </a>
+
+        <a href="#offer">
+          Special Offer
+        </a>
+
+
+      </div>
+
+
+
+      <!-- HELP -->
+
+      <div class="footer-column">
+
+
+        <h3>
+          SUPPORT
+        </h3>
+
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+        <a
+          href="#"
+          class="footer-order-trigger"
+        >
+          Order Now
+        </a>
+
+        <a href="#">
+          Contact
+        </a>
+
+        <a href="#">
+          Shipping
+        </a>
+
+
+      </div>
+
+
+
+      <!-- LEGAL -->
+
+      <div class="footer-column">
+
+
+        <h3>
+          LEGAL
+        </h3>
+
+
+        <a href="privacy.html">
+          Privacy Policy
+        </a>
+
+        <a href="terms.html">
+          Terms & Conditions
+        </a>
+
+        <a href="disclaimer.html">
+          Disclaimer
+        </a>
+
+        <a href="refund.html">
+          Refund Policy
+        </a>
+
+
+      </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+
+      <p>
+
+        ©
+        <span id="currentYear"></span>
+        MORE POWER.
+        All Rights Reserved.
+
+      </p>
+
+
+      <div class="footer-bottom-center">
+
+        <span>
+          PREMIUM
         </span>
 
-        <span class="brand-sub">
-          PREMIUM HERBAL FORMULA
+        <i>
+          ◆
+        </i>
+
+        <span>
+          DISCREET
+        </span>
+
+        <i>
+          ◆
+        </i>
+
+        <span>
+          CONFIDENT
         </span>
 
       </div>
 
+
       <p>
-        Premium men's herbal wellness.
+
+        Designed for a premium
+        men's wellness experience.
+
       </p>
 
-    </div>
-
-
-    <div class="footer-links">
-
-      <a href="#home">
-        Home
-      </a>
-
-      <a href="#benefits">
-        फायदे
-      </a>
-
-      <a href="#ingredients">
-        Ingredients
-      </a>
-
-      <a href="#offer">
-        Order
-      </a>
 
     </div>
 
-
-    <div class="footer-links">
-
-      <a href="#">
-        Privacy Policy
-      </a>
-
-      <a href="#">
-        Terms & Conditions
-      </a>
-
-      <a href="disclaimer.html">
-        Disclaimer
-      </a>
-
-    </div>
 
   </div>
 
-
-  <div class="container footer-bottom">
-
-    <p>
-      © <span id="year"></span>
-      MORE POWER. All Rights Reserved.
-    </p>
-
-  </div>
 
 </footer>
 
 
 
-<!-- =====================================================
+<!-- =========================================================
      MOBILE STICKY ORDER BAR
-===================================================== -->
+========================================================= -->
 
-<div class="mobile-sticky">
+<div
+  class="mobile-sticky-order"
+  id="mobileStickyOrder"
+>
 
-  <div>
 
-    <del>
-      ₹6,999
-    </del>
+  <div class="mobile-sticky-price">
+
+    <span>
+
+      <del>
+        ₹6,999
+      </del>
+
+      SPECIAL OFFER
+
+    </span>
+
 
     <strong>
       ₹2,999
@@ -1409,14 +3938,183 @@
   </div>
 
 
-  <a href="#offer">
-    अभी ऑर्डर करें
+  <a
+    href="#"
+    class="mobile-order-trigger"
+  >
+
+    <span>
+      ORDER NOW
+    </span>
+
+    <strong>
+      ↗
+    </strong>
+
   </a>
+
 
 </div>
 
 
+
+<!-- =========================================================
+     ORDER CONFIRMATION MODAL
+     NOTE: THIS IS NOT AN 18+ POPUP.
+     It only appears when customer clicks ORDER.
+========================================================= -->
+
+<div
+  class="order-modal"
+  id="orderModal"
+  aria-hidden="true"
+>
+
+
+  <div
+    class="order-modal-backdrop"
+    id="orderModalBackdrop"
+  ></div>
+
+
+  <div class="order-modal-card">
+
+
+    <button
+      type="button"
+      class="order-modal-close"
+      id="orderModalClose"
+      aria-label="Close order window"
+    >
+      ×
+    </button>
+
+
+    <div class="order-modal-product">
+
+
+      <img
+        src="hero-product.png"
+        alt="MORE POWER"
+      >
+
+
+    </div>
+
+
+    <div class="order-modal-content">
+
+
+      <span class="modal-small-label">
+        READY TO ORDER?
+      </span>
+
+
+      <h2>
+
+        Get
+
+        <span>
+          MORE POWER
+        </span>
+
+      </h2>
+
+
+      <div class="modal-price">
+
+        <del>
+          ₹6,999
+        </del>
+
+        <strong>
+          ₹2,999
+        </strong>
+
+      </div>
+
+
+      <p>
+
+        नीचे दिए गए button से WhatsApp पर
+        order enquiry भेजें।
+
+      </p>
+
+
+      <a
+        href="#"
+        class="modal-whatsapp-button"
+        id="whatsappOrderButton"
+      >
+
+        <span class="whatsapp-icon">
+          ◉
+        </span>
+
+
+        <div>
+
+          <small>
+            ORDER VIA
+          </small>
+
+          <strong>
+            WHATSAPP
+          </strong>
+
+        </div>
+
+
+        <span class="whatsapp-arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+      <small class="modal-note">
+
+        WhatsApp number अगले `script.js` में
+        configure किया जाएगा।
+
+      </small>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     BACK TO TOP
+========================================================= -->
+
+<button
+  class="back-to-top"
+  id="backToTop"
+  type="button"
+  aria-label="Back to top"
+>
+
+  ↑
+
+</button>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
